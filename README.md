@@ -6,6 +6,8 @@ WordPress の制作サンプル集。各サンプルはサンプル専用の自�
 
 ## サンプル
 
+一覧ページ: https://norio-io.github.io/samples-wordpress/
+
 | サンプル | 制作種別 | 公開側 | 管理画面 | 対応する静的サンプル |
 |---|---|---|---|---|
 | みずき歯科クリニック | コーポレートサイト | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/corporate/dental-clinic/blueprint.json) | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/corporate/dental-clinic/blueprint-admin.json) | [`corporate/dental-clinic/`](https://github.com/norio-io/samples/tree/main/corporate/dental-clinic) |
@@ -42,7 +44,7 @@ WordPress Playground はブラウザ内で WordPress を起動するため、開
 | `sites/<制作種別>/<業種の抽象名>/content/` | デモ記事（WXR）と画像 |
 | `sites/<制作種別>/<業種の抽象名>/blueprint.json` | 公開側を開く blueprint |
 | `sites/<制作種別>/<業種の抽象名>/blueprint-admin.json` | 管理画面を開く blueprint |
-| `pages/` | GitHub Pages の一覧ページ |
+| `pages/` | GitHub Pages の一覧ページ（`main` への統合時に公開する） |
 | `scripts/` | 検証用スクリプト |
 
 制作種別と業種の抽象名は、[`norio-io/samples`](https://github.com/norio-io/samples)・[`norio-io/samples-react`](https://github.com/norio-io/samples-react) と共通とする。
