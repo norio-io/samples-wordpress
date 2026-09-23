@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# ジョブ名は Ruleset `main protection` の必須ステータスチェックから
+# 名前で参照されている。変更する場合は Ruleset 側の更新が必要。
+#
+# 各ジョブは対象（PHP・blueprint）がない場合も成功として終了する。
+# 必須ステータスチェックが Expected のまま残らないよう、paths による絞り込みは行わない。
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer
+      - run: composer install --no-interaction --no-progress
+      - run: ./scripts/lint-php.sh
+
+  validate:
+    name: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      # blueprint が参照する main を、検証対象のコミットへ差し替える。
+      BLUEPRINT_REF: ${{ github.event.pull_request.head.sha || github.sha }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test

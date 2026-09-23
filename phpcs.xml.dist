@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ruleset name="samples-wordpress">
+	<description>サンプル専用テーマの PHP を WordPress Coding Standards で検査する。</description>
+
+	<file>sites</file>
+
+	<arg name="extensions" value="php"/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+
+	<!-- テキストドメインはテーマごとに異なるため、各テーマの検査では固定しない。 -->
+	<rule ref="WordPress"/>
+
+	<config name="minimum_wp_version" value="7.1"/>
+</ruleset>
