@@ -91,7 +91,7 @@ body { -webkit-font-smoothing: antialiased; }
 .gnav .current-menu-item > .wp-block-navigation-item__content { border-bottom-color: var(--hi); }
 .gnav .wp-block-navigation__responsive-container-open,
 .gnav .wp-block-navigation__responsive-container-close { color: #fff; }
-.gnav .wp-block-navigation__responsive-container.is-menu-open { background: var(--ai); color: #fff; padding: 24px; }
+.gnav .wp-block-navigation__responsive-container.is-menu-open { padding: 24px; }
 .gnav .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content { font-size: 17px; padding: 10px 0; }
 
 .head-contact { gap: 0; text-align: right; flex: none; }
