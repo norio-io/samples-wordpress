@@ -1,0 +1,141 @@
+<!-- wp:template-part {"slug":"notice"} /-->
+
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main","layout":{"type":"default"}} -->
+<main class="wp-block-group site-main"><!-- wp:group {"tagName":"section","align":"full","className":"hero","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull hero"><!-- wp:group {"className":"hero-in","layout":{"type":"default"}} -->
+<div class="wp-block-group hero-in"><!-- wp:group {"className":"hero-text","layout":{"type":"default"}} -->
+<div class="wp-block-group hero-text"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">晴野市の賃貸・ひなた不動産</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1,"className":"hero-title"} -->
+<h1 class="wp-block-heading hero-title">日当たりも、家賃も、<br>駅からの近さも。</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"hero-lead"} -->
+<p class="hero-lead">エリア・間取り・賃料の上限を選ぶだけで、いま募集中のお部屋が見つかります。気になる物件は、店頭でもお電話でもご案内します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:hinata/search {"variant":"panel"} /--></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">NEW</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">新着物件</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"sec-lead"} -->
+<p class="sec-lead">掲載から14日以内の物件には「新着」を付けています。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:query {"queryId":1,"query":{"perPage":6,"pages":0,"offset":0,"postType":"property","order":"desc","orderBy":"date","inherit":false},"className":"property-list"} -->
+<div class="wp-block-query property-list"><!-- wp:post-template {"className":"cards","layout":{"type":"default"}} -->
+<!-- wp:group {"tagName":"article","className":"card","layout":{"type":"default"}} -->
+<article class="wp-block-group card"><!-- wp:post-featured-image {"aspectRatio":"4/3","sizeSlug":"large","className":"card__plan"} /-->
+
+<!-- wp:group {"className":"card__body","layout":{"type":"default"}} -->
+<div class="wp-block-group card__body"><!-- wp:paragraph {"className":"badge-new","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"new"}}}}} -->
+<p class="badge-new"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"card__price","layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"bottom"}} -->
+<div class="wp-block-group card__price"><!-- wp:paragraph {"className":"rent num","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"rent"}}}}} -->
+<p class="rent num"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"fee","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"fee"}}}}} -->
+<p class="fee"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"badges","layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-group badges"><!-- wp:paragraph {"className":"badge","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"layout"}}}}} -->
+<p class="badge"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"badge num","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"sqm"}}}}} -->
+<p class="badge num"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"badge","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"walk"}}}}} -->
+<p class="badge"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:post-title {"level":3,"isLink":true,"className":"card__title"} /-->
+
+<!-- wp:paragraph {"className":"card__addr","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"address"}}}}} -->
+<p class="card__addr"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></article>
+<!-- /wp:group -->
+<!-- /wp:post-template --></div>
+<!-- /wp:query -->
+
+<!-- wp:buttons {"className":"more"} -->
+<div class="wp-block-buttons more"><!-- wp:button {"className":"is-style-outline","metadata":{"bindings":{"url":{"source":"hinata/url","args":{"key":"properties"}}}}} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button">物件一覧を見る</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","anchor":"areas","backgroundColor":"suna","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-suna-background-color has-background" id="areas" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">AREA</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">エリアから探す</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"sec-lead"} -->
+<p class="sec-lead">晴野市内の4つのエリアで、募集中の物件を掲載しています。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:hinata/area-list /--></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">SHOP</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">店舗案内</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"store-grid","layout":{"type":"default"}} -->
+<div class="wp-block-group store-grid"><!-- wp:hinata/store-info /-->
+
+<!-- wp:group {"className":"store-text","layout":{"type":"default"}} -->
+<div class="wp-block-group store-text"><!-- wp:paragraph -->
+<p>晴野駅北口から徒歩2分の店舗です。内見のご予約、お部屋探しのご相談は、お電話または問い合わせフォームから承ります。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"metadata":{"bindings":{"url":{"source":"hinata/url","args":{"key":"contact"}}}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">問い合わせる</a></div>
+<!-- /wp:button --><!-- wp:button {"className":"is-style-outline","metadata":{"bindings":{"url":{"source":"hinata/url","args":{"key":"company"}}}}} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button">会社概要</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /-->

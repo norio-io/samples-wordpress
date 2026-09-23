@@ -38,7 +38,7 @@ samples-wordpress/
 | 起動検査 | WordPress Playground の CLI（Node 24.18 以上） |
 
 - プラグインは使用しない。
-- blueprint は `git:directory` リソースで本リポジトリの `main` を参照する。単一のファイル（デモ記事の WXR など）は `url` リソースで `https://raw.githubusercontent.com/norio-io/samples-wordpress/main/…` を参照する。いずれも作業ブランチを参照したまま統合しない（`validate` ジョブで検査する）。
+- blueprint は `git:directory` リソースで本リポジトリの `main` を参照する。単一のファイル（デモ記事の WXR など）は `url` リソースで `https://raw.githubusercontent.com/norio-io/samples-wordpress/main/…` を参照する。複数のファイル（デモデータと画像、初期設定の PHP など）は、`writeFiles` ステップの `filesTree` に `git:directory` を指定して配置し、`vfs` リソースで参照する。いずれも作業ブランチを参照したまま統合しない（`validate` ジョブで検査する）。
 - 本文やテンプレートから投稿 ID で参照するもの（同期パターンの `wp:block`、ナビゲーションの `wp:navigation`）があるため、デモ記事の WXR では投稿 ID を固定する。WordPress の取り込みは空いている ID をそのまま用いる。
 - テンプレートパーツのリンクは、ルート相対のパスで書かない。WordPress Playground はサイトの URL にスコープのパスを含むため。ナビゲーションは `core/post-data`、ボタンはテーマのバインディング（`mizuki-dental/page-url` など）で URL を解決する。本文のリンクは、そのページからの相対パスで書く。
 - `installTheme` で `git:directory` を用いる場合は、`options.targetFolderName` にテーマのディレクトリ名を指定する。省略するとリポジトリの URL から導いた名前で配置される。WordPress 同梱のテーマ（`twentytwentyfive` など）と同名にすると導入に失敗する。

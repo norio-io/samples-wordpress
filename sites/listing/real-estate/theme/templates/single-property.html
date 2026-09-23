@@ -1,0 +1,139 @@
+<!-- wp:template-part {"slug":"notice"} /-->
+
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main","layout":{"type":"default"}} -->
+<main class="wp-block-group site-main"><!-- wp:group {"align":"full","className":"crumb","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull crumb"><!-- wp:breadcrumbs {"separator":"／"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"detail","layout":{"type":"default"}} -->
+<div class="wp-block-group detail"><!-- wp:group {"className":"detail__media","layout":{"type":"default"}} -->
+<div class="wp-block-group detail__media"><!-- wp:post-featured-image {"aspectRatio":"4/3","sizeSlug":"full","className":"detail__plan"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"detail__side","layout":{"type":"default"}} -->
+<div class="wp-block-group detail__side"><!-- wp:group {"className":"detail__tags","layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-group detail__tags"><!-- wp:paragraph {"className":"badge-closed","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"contracted"}}}}} -->
+<p class="badge-closed"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"badge-new","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"new"}}}}} -->
+<p class="badge-new"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"badge-area","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"area"}}}}} -->
+<p class="badge-area"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:post-title {"level":1,"className":"detail__title"} /-->
+
+<!-- wp:group {"className":"detail__price","layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"bottom"}} -->
+<div class="wp-block-group detail__price"><!-- wp:paragraph {"className":"rent num","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"rent"}}}}} -->
+<p class="rent num"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"fee","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"fee"}}}}} -->
+<p class="fee"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:hinata/property-summary {"className":"detail__summary"} /-->
+
+<!-- wp:hinata/property-cta /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"detail__more","layout":{"type":"default"}} -->
+<div class="wp-block-group detail__more"><!-- wp:group {"className":"detail__spec","layout":{"type":"default"}} -->
+<div class="wp-block-group detail__spec"><!-- wp:heading -->
+<h2 class="wp-block-heading">物件概要</h2>
+<!-- /wp:heading -->
+
+<!-- wp:hinata/property-spec /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"detail__equipment","layout":{"type":"default"}} -->
+<div class="wp-block-group detail__equipment"><!-- wp:heading -->
+<h2 class="wp-block-heading">設備</h2>
+<!-- /wp:heading -->
+
+<!-- wp:hinata/property-equipment /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"comment","layout":{"type":"default"}} -->
+<div class="wp-block-group comment"><!-- wp:paragraph {"className":"comment__label"} -->
+<p class="comment__label">担当者より</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-content {"layout":{"type":"default"}} /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"suna","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-suna-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">NEARBY</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">同じエリアの物件</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:query {"queryId":3,"query":{"perPage":3,"pages":0,"offset":0,"postType":"property","order":"desc","orderBy":"date","inherit":false,"hinataRelated":"area"},"className":"property-list"} -->
+<div class="wp-block-query property-list"><!-- wp:post-template {"className":"cards","layout":{"type":"default"}} -->
+<!-- wp:group {"tagName":"article","className":"card","layout":{"type":"default"}} -->
+<article class="wp-block-group card"><!-- wp:post-featured-image {"aspectRatio":"4/3","sizeSlug":"large","className":"card__plan"} /-->
+
+<!-- wp:group {"className":"card__body","layout":{"type":"default"}} -->
+<div class="wp-block-group card__body"><!-- wp:paragraph {"className":"badge-new","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"new"}}}}} -->
+<p class="badge-new"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"card__price","layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"bottom"}} -->
+<div class="wp-block-group card__price"><!-- wp:paragraph {"className":"rent num","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"rent"}}}}} -->
+<p class="rent num"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"fee","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"fee"}}}}} -->
+<p class="fee"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"badges","layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-group badges"><!-- wp:paragraph {"className":"badge","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"layout"}}}}} -->
+<p class="badge"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"badge num","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"sqm"}}}}} -->
+<p class="badge num"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"badge","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"walk"}}}}} -->
+<p class="badge"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:post-title {"level":3,"isLink":true,"className":"card__title"} /-->
+
+<!-- wp:paragraph {"className":"card__addr","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"address"}}}}} -->
+<p class="card__addr"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></article>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph {"className":"no-results__text"} -->
+<p class="no-results__text">このエリアで募集中の物件は、ほかにありません。</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></section>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /-->

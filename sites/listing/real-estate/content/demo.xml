@@ -1,0 +1,1512 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+	ひなた不動産（架空）のデモデータ。
+	会社名・物件名・所在地・駅名・電話番号・間取り図は、すべてサンプル用に作成した架空のものです。
+
+	投稿 ID は固定している。テーマのヘッダー・フッターのナビゲーション（wp:navigation の ref）が ID で参照するため。
+	- 141–142: ナビゲーション / 201–202: 固定ページ / 301–312: 物件
+	物件の間取り図（アイキャッチ画像）と掲載日は、取り込み後に content/setup.php が設定する。
+-->
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/"
+>
+<channel>
+	<title>ひなた不動産</title>
+	<link>https://example.com</link>
+	<description>晴野市の賃貸・お部屋探し</description>
+	<language>ja</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>https://example.com</wp:base_site_url>
+	<wp:base_blog_url>https://example.com</wp:base_blog_url>
+	<wp:author>
+		<wp:author_id>1</wp:author_id>
+		<wp:author_login><![CDATA[admin]]></wp:author_login>
+		<wp:author_email><![CDATA[admin@example.com]]></wp:author_email>
+		<wp:author_display_name><![CDATA[admin]]></wp:author_display_name>
+	</wp:author>
+	<wp:term>
+		<wp:term_id>11</wp:term_id>
+		<wp:term_taxonomy><![CDATA[area]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[hareno-ekimae]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[晴野駅前]]></wp:term_name>
+		<wp:term_description><![CDATA[晴野駅の北口に広がる商店街の周辺。単身向けの物件が多く、通勤・通学に便利なエリアです。]]></wp:term_description>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>12</wp:term_id>
+		<wp:term_taxonomy><![CDATA[area]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[asanagi]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[朝凪町]]></wp:term_name>
+		<wp:term_description><![CDATA[朝凪川沿いの静かな住宅地。スーパーと大きな公園が近く、落ち着いて暮らせます。]]></wp:term_description>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>13</wp:term_id>
+		<wp:term_taxonomy><![CDATA[area]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[hinooka]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[陽ノ丘]]></wp:term_name>
+		<wp:term_description><![CDATA[南向きのゆるやかな斜面に建つ住宅地。日当たりのよいファミリー向けの物件が中心です。]]></wp:term_description>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>14</wp:term_id>
+		<wp:term_taxonomy><![CDATA[area]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[suzunari]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[鈴鳴町]]></wp:term_name>
+		<wp:term_description><![CDATA[大学と総合病院に近いエリア。賃料が手ごろな物件がそろっています。]]></wp:term_description>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>21</wp:term_id>
+		<wp:term_taxonomy><![CDATA[layout]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[1r]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[1R]]></wp:term_name>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>22</wp:term_id>
+		<wp:term_taxonomy><![CDATA[layout]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[1k]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[1K]]></wp:term_name>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>23</wp:term_id>
+		<wp:term_taxonomy><![CDATA[layout]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[1ldk]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[1LDK]]></wp:term_name>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>24</wp:term_id>
+		<wp:term_taxonomy><![CDATA[layout]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[2ldk]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[2LDK]]></wp:term_name>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>25</wp:term_id>
+		<wp:term_taxonomy><![CDATA[layout]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[3ldk]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[3LDK]]></wp:term_name>
+	</wp:term>
+	<item>
+		<title><![CDATA[グローバルナビゲーション]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:navigation-link {"label":"物件を探す","kind":"custom","isTopLevelLink":true,"metadata":{"bindings":{"url":{"source":"hinata/url","args":{"key":"properties"}}}}} /-->
+<!-- wp:navigation-link {"label":"エリアから探す","kind":"custom","isTopLevelLink":true,"metadata":{"bindings":{"url":{"source":"hinata/url","args":{"key":"areas"}}}}} /-->
+<!-- wp:navigation-link {"label":"会社概要","type":"page","id":201,"kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"お問い合わせ","type":"page","id":202,"kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>141</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[global-navigation]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[フッターナビゲーション]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:home-link {"label":"ホーム"} /-->
+<!-- wp:navigation-link {"label":"物件を探す","kind":"custom","isTopLevelLink":true,"metadata":{"bindings":{"url":{"source":"hinata/url","args":{"key":"properties"}}}}} /-->
+<!-- wp:navigation-link {"label":"エリアから探す","kind":"custom","isTopLevelLink":true,"metadata":{"bindings":{"url":{"source":"hinata/url","args":{"key":"areas"}}}}} /-->
+<!-- wp:navigation-link {"label":"会社概要","type":"page","id":201,"kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"お問い合わせ","type":"page","id":202,"kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>142</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[footer-navigation]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[会社概要]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">COMPANY</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">会社概要</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:table {"hasFixedLayout":false,"className":"is-style-company"} -->
+<figure class="wp-block-table is-style-company"><table><tbody><tr><th scope="row">商号</th><td>ひなた不動産株式会社</td></tr><tr><th scope="row">代表者</th><td>代表取締役 日向 陽一</td></tr><tr><th scope="row">設立</th><td>2009年4月</td></tr><tr><th scope="row">免許番号</th><td>晴野県知事（3）第00000号</td></tr><tr><th scope="row">事業内容</th><td>賃貸住宅の仲介・管理</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:paragraph {"className":"note"} -->
+<p class="note">※ 会社名・代表者名・免許番号はすべてサンプル用に作成した架空のものです。</p>
+<!-- /wp:paragraph --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"suna","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-suna-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">SHOP</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">店舗</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:hinata/store-info /-->
+
+<!-- wp:paragraph -->
+<p>晴野駅北口から徒歩2分、晴野本町商店街の入口にあります。内見はご予約のうえ、店舗から車でご案内します。</p>
+<!-- /wp:paragraph --></section>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>201</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[company]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[お問い合わせ]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:paragraph {"className":"lead"} -->
+<p class="lead">物件へのお問い合わせ、内見のご予約、お部屋探しのご相談を承ります。物件の詳細ページから来た場合は、物件名が入力された状態で表示されます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:hinata/contact-form /--></section>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>202</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[contact]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[サンライズ晴野 201]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"おすすめポイントを入力（任意）"} -->
+<p>晴野駅まで徒歩4分。南東向きの2階で、朝から明るいお部屋です。宅配ボックスがあり、日中不在がちな方にも向いています。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>301</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[sunrise-hareno-201]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[property]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="area" nicename="hareno-ekimae"><![CDATA[晴野駅前]]></category>
+		<category domain="layout" nicename="1k"><![CDATA[1K]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[rent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[62000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[3000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deposit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[key_money]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[sqm]]></wp:meta_key>
+			<wp:meta_value><![CDATA[24.5]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floor]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[built]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2016-03]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[station]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野駅]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[walk]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[address]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野市晴野本町2-4-8]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[available]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_floorplan]]></wp:meta_key>
+			<wp:meta_value><![CDATA[sunrise-hareno-201.png]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[autolock]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[delivery_box]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[separate_bath]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[aircon]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[flooring]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[internet]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[晴野レジデンス 803]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"おすすめポイントを入力（任意）"} -->
+<p>10階建ての8階、南向きの角部屋です。LDKは11帖あり、在宅勤務の机を置いても余裕があります。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>302</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[hareno-residence-803]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[property]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="area" nicename="hareno-ekimae"><![CDATA[晴野駅前]]></category>
+		<category domain="layout" nicename="1ldk"><![CDATA[1LDK]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[rent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[118000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deposit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[key_money]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[sqm]]></wp:meta_key>
+			<wp:meta_value><![CDATA[42.8]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floor]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[10]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[built]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2021-09]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[station]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野駅]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[walk]]></wp:meta_key>
+			<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[address]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野市晴野本町1-9-2]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[available]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_floorplan]]></wp:meta_key>
+			<wp:meta_value><![CDATA[hareno-residence-803.png]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[autolock]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[delivery_box]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[separate_bath]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[washstand]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[laundry]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[reheat]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[aircon]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[flooring]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[internet]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[bicycle]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[コーポ晴野 102]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"おすすめポイントを入力（任意）"} -->
+<p>敷金・礼金なしで入居時の費用を抑えられます。室内は2023年に床と壁紙を張り替えています。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>303</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[corpo-hareno-102]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[property]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="area" nicename="hareno-ekimae"><![CDATA[晴野駅前]]></category>
+		<category domain="layout" nicename="1r"><![CDATA[1R]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[rent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[49000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deposit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[key_money]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[sqm]]></wp:meta_key>
+			<wp:meta_value><![CDATA[18.2]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floor]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[built]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1998-04]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[station]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野駅]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[walk]]></wp:meta_key>
+			<wp:meta_value><![CDATA[9]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[address]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野市東晴野3-12-5]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[available]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[30]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_floorplan]]></wp:meta_key>
+			<wp:meta_value><![CDATA[corpo-hareno-102.png]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[aircon]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[flooring]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[bicycle]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[ルミエール晴野 502]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"おすすめポイントを入力（任意）"} -->
+<p>駅から平坦な道で6分。2つの洋室がLDKをはさんで配置され、生活時間の異なる二人暮らしに向いています。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>304</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[lumiere-hareno-502]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[property]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="area" nicename="hareno-ekimae"><![CDATA[晴野駅前]]></category>
+		<category domain="layout" nicename="2ldk"><![CDATA[2LDK]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[rent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[136000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[10000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deposit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[key_money]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[sqm]]></wp:meta_key>
+			<wp:meta_value><![CDATA[58.6]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floor]]></wp:meta_key>
+			<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[7]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[built]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2019-11]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[station]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野駅]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[walk]]></wp:meta_key>
+			<wp:meta_value><![CDATA[6]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[address]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野市晴野本町3-1-14]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[contracted]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[45]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_floorplan]]></wp:meta_key>
+			<wp:meta_value><![CDATA[lumiere-hareno-502.png]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[autolock]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[delivery_box]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[separate_bath]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[washstand]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[laundry]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[reheat]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[aircon]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[flooring]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[internet]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[bicycle]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[parking]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[朝凪ハイツ 201]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"おすすめポイントを入力（任意）"} -->
+<p>礼金なし。バス・トイレ別で室内に洗濯機置場があります。近くのスーパーは夜22時まで営業しています。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>305</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[asanagi-heights-201]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[property]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="area" nicename="asanagi"><![CDATA[朝凪町]]></category>
+		<category domain="layout" nicename="1k"><![CDATA[1K]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[rent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[55000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[3000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deposit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[key_money]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[sqm]]></wp:meta_key>
+			<wp:meta_value><![CDATA[22.9]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floor]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[built]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2008-06]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[station]]></wp:meta_key>
+			<wp:meta_value><![CDATA[朝凪駅]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[walk]]></wp:meta_key>
+			<wp:meta_value><![CDATA[7]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[address]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野市朝凪町1-5-3]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[available]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[9]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_floorplan]]></wp:meta_key>
+			<wp:meta_value><![CDATA[asanagi-heights-201.png]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[separate_bath]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[laundry]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[aircon]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[flooring]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[bicycle]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[カーサ朝凪 205]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"おすすめポイントを入力（任意）"} -->
+<p>小型犬・猫1匹まで相談できます。朝凪川の遊歩道まで徒歩2分で、散歩の道に困りません。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>306</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[casa-asanagi-205]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[property]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="area" nicename="asanagi"><![CDATA[朝凪町]]></category>
+		<category domain="layout" nicename="1ldk"><![CDATA[1LDK]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[rent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[88000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[5000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deposit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[key_money]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[sqm]]></wp:meta_key>
+			<wp:meta_value><![CDATA[38.4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floor]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[built]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2014-02]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[station]]></wp:meta_key>
+			<wp:meta_value><![CDATA[朝凪駅]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[walk]]></wp:meta_key>
+			<wp:meta_value><![CDATA[11]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[address]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野市朝凪町2-18-7]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[available]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[20]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_floorplan]]></wp:meta_key>
+			<wp:meta_value><![CDATA[casa-asanagi-205.png]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[autolock]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[separate_bath]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[washstand]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[laundry]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[aircon]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[flooring]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[pets]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[bicycle]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[リバーサイド朝凪 301]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"おすすめポイントを入力（任意）"} -->
+<p>72㎡の3LDKで、各部屋に収納があります。敷地内に駐車場（空き1台）があります。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>307</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[riverside-asanagi-301]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[property]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="area" nicename="asanagi"><![CDATA[朝凪町]]></category>
+		<category domain="layout" nicename="3ldk"><![CDATA[3LDK]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[rent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[148000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[12000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deposit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[key_money]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[sqm]]></wp:meta_key>
+			<wp:meta_value><![CDATA[72.3]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floor]]></wp:meta_key>
+			<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[built]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2012-08]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[station]]></wp:meta_key>
+			<wp:meta_value><![CDATA[朝凪駅]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[walk]]></wp:meta_key>
+			<wp:meta_value><![CDATA[14]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[address]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野市朝凪町3-2-1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[available]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[60]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_floorplan]]></wp:meta_key>
+			<wp:meta_value><![CDATA[riverside-asanagi-301.png]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[autolock]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[delivery_box]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[separate_bath]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[washstand]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[laundry]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[reheat]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[aircon]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[flooring]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[bicycle]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[parking]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[メゾン陽ノ丘 203]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"おすすめポイントを入力（任意）"} -->
+<p>南向きのバルコニーが幅6mあり、洗濯物がよく乾きます。小学校まで徒歩5分です。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>308</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[maison-hinooka-203]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[property]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="area" nicename="hinooka"><![CDATA[陽ノ丘]]></category>
+		<category domain="layout" nicename="2ldk"><![CDATA[2LDK]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[rent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[98000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[6000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deposit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[key_money]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[sqm]]></wp:meta_key>
+			<wp:meta_value><![CDATA[55.1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floor]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[built]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2017-05]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[station]]></wp:meta_key>
+			<wp:meta_value><![CDATA[陽ノ丘駅]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[walk]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[address]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野市陽ノ丘2-6-11]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[available]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_floorplan]]></wp:meta_key>
+			<wp:meta_value><![CDATA[maison-hinooka-203.png]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[separate_bath]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[washstand]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[laundry]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[reheat]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[aircon]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[flooring]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[internet]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[bicycle]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[parking]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[パークサイド陽ノ丘 101]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"おすすめポイントを入力（任意）"} -->
+<p>1階の専用庭付き。公園に面しており、お子さまのいるご家庭に人気の物件です。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>309</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[parkside-hinooka-101]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[property]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="area" nicename="hinooka"><![CDATA[陽ノ丘]]></category>
+		<category domain="layout" nicename="3ldk"><![CDATA[3LDK]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[rent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[128000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deposit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[key_money]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[sqm]]></wp:meta_key>
+			<wp:meta_value><![CDATA[70.6]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floor]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[built]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2010-10]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[station]]></wp:meta_key>
+			<wp:meta_value><![CDATA[陽ノ丘駅]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[walk]]></wp:meta_key>
+			<wp:meta_value><![CDATA[12]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[address]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野市陽ノ丘4-3-9]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[available]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[75]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_floorplan]]></wp:meta_key>
+			<wp:meta_value><![CDATA[parkside-hinooka-101.png]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[separate_bath]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[washstand]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[laundry]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[reheat]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[aircon]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[flooring]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[pets]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[bicycle]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[parking]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[陽ノ丘ヒルズ 402]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"おすすめポイントを入力（任意）"} -->
+<p>2023年築。最上階の4階で、南西の窓から夕方まで日が入ります。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>310</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[hinooka-hills-402]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[property]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="area" nicename="hinooka"><![CDATA[陽ノ丘]]></category>
+		<category domain="layout" nicename="1ldk"><![CDATA[1LDK]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[rent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[79000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deposit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[key_money]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[sqm]]></wp:meta_key>
+			<wp:meta_value><![CDATA[36.2]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floor]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[built]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2023-03]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[station]]></wp:meta_key>
+			<wp:meta_value><![CDATA[陽ノ丘駅]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[walk]]></wp:meta_key>
+			<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[address]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野市陽ノ丘1-1-20]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[available]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[12]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_floorplan]]></wp:meta_key>
+			<wp:meta_value><![CDATA[hinooka-hills-402.png]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[autolock]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[delivery_box]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[separate_bath]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[washstand]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[laundry]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[aircon]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[flooring]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[internet]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[bicycle]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[鈴鳴コート 302]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"おすすめポイントを入力（任意）"} -->
+<p>敷金なし。晴野大学まで自転車で5分です。インターネットは入居日から使えます。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>311</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[suzunari-court-302]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[property]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="area" nicename="suzunari"><![CDATA[鈴鳴町]]></category>
+		<category domain="layout" nicename="1k"><![CDATA[1K]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[rent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[52000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2500]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deposit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[key_money]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[sqm]]></wp:meta_key>
+			<wp:meta_value><![CDATA[21.6]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floor]]></wp:meta_key>
+			<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[built]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2005-01]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[station]]></wp:meta_key>
+			<wp:meta_value><![CDATA[鈴鳴駅]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[walk]]></wp:meta_key>
+			<wp:meta_value><![CDATA[6]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[address]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野市鈴鳴町2-7-4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[available]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[90]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_floorplan]]></wp:meta_key>
+			<wp:meta_value><![CDATA[suzunari-court-302.png]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[separate_bath]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[laundry]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[aircon]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[flooring]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[internet]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[bicycle]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[グリーンハウス鈴鳴 105]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"おすすめポイントを入力（任意）"} -->
+<p>賃料4.5万円、敷金・礼金なし。バス停「鈴鳴四丁目」まで徒歩1分で、バスでの通勤にも便利です。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>312</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[green-suzunari-105]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[property]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="area" nicename="suzunari"><![CDATA[鈴鳴町]]></category>
+		<category domain="layout" nicename="1r"><![CDATA[1R]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[rent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[45000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deposit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[key_money]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[sqm]]></wp:meta_key>
+			<wp:meta_value><![CDATA[17.4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floor]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[floors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[built]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2001-07]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[station]]></wp:meta_key>
+			<wp:meta_value><![CDATA[鈴鳴駅]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[walk]]></wp:meta_key>
+			<wp:meta_value><![CDATA[16]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[address]]></wp:meta_key>
+			<wp:meta_value><![CDATA[晴野市鈴鳴町4-11-2]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[available]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[120]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_floorplan]]></wp:meta_key>
+			<wp:meta_value><![CDATA[green-suzunari-105.png]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[flooring]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[bicycle]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[equipment]]></wp:meta_key>
+			<wp:meta_value><![CDATA[internet]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+</channel>
+</rss>

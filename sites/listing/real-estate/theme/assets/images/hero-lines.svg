@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 560" fill="none" preserveAspectRatio="xMaxYMid slice">
+  <!-- 窓枠と差し込む日差しを抽象化した線。装飾として控えめに敷く。 -->
+  <g stroke="#e4dfd6" stroke-width="1.5">
+    <rect x="980" y="70" width="300" height="400"/>
+    <path d="M1130 70v400M980 270h300"/>
+    <rect x="1000" y="90" width="260" height="360"/>
+  </g>
+  <g stroke="#f2a65a" stroke-opacity=".45" stroke-width="1.5">
+    <path d="M1440 0 L760 560M1440 60 L880 560M1440 120 L1000 560M1400 0 L640 560"/>
+  </g>
+  <circle cx="1360" cy="40" r="90" stroke="#f2a65a" stroke-opacity=".5" stroke-width="1.5"/>
+</svg>

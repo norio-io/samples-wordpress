@@ -1,0 +1,532 @@
+@charset "utf-8";
+
+/*
+ * ひなた不動産（架空）— 制作サンプル
+ *
+ * 配色・書体・余白の値は theme.json に定義し、ここではプリセットの CSS 変数を参照する。
+ * 本ファイルは公開側とエディターの双方で読み込む（functions.php）。
+ *
+ * 方針: 物件の比較が主目的のため、賃料・間取り・駅徒歩が一目で比べられることを装飾より優先する。
+ * 角丸は入力欄とボタンなど操作する要素に限り、影は用いない。
+ */
+
+:root {
+  --sumi: var(--wp--preset--color--sumi);
+  --usuzumi: var(--wp--preset--color--usuzumi);
+  --kinari: var(--wp--preset--color--kinari);
+  --suna: var(--wp--preset--color--suna);
+  --kei: var(--wp--preset--color--kei);
+  --ai: var(--wp--preset--color--ai);
+  --hi: var(--wp--preset--color--hi);
+  --hi-l: var(--wp--preset--color--hi-light);
+  --kaki: var(--wp--preset--color--kaki);
+  --kaki-t: var(--wp--preset--color--kaki-text);
+  --num: var(--wp--preset--font-family--manrope);
+  --on-ai: #d9dee8; /* 藍の上の補足文字（コントラスト 9.4:1） */
+  --header-top: var(--wp-admin--admin-bar--height, 0px);
+}
+
+*, ::before, ::after { box-sizing: border-box; }
+body { -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--kaki); outline-offset: 2px; }
+.site-header :focus-visible,
+.foot :focus-visible { outline-color: var(--hi); }
+
+.num { font-family: var(--num); font-variant-numeric: tabular-nums; }
+.icon { width: 1.25em; height: 1.25em; flex: none; }
+
+.screen-reader-text {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 大枠の区画（ヘッダー・本文・フッター）と、本文のセクションの間に余白を置かない。 */
+.wp-site-blocks > * + *,
+.site-main > *,
+.site-main .wp-block-post-content > .alignfull { margin-block: 0; }
+
+/* バインディングの値が空のときは、要素ごと表示しない（新着・成約済みの札など）。 */
+.badge-new:empty,
+.badge-closed:empty,
+.badge-area:empty { display: none; }
+
+/* ------------------------------------------------------------ 注記 */
+
+.demo {
+  margin: 0;
+  padding: 7px 16px;
+  background: var(--sumi);
+  color: #e6e8ec;
+  font-size: var(--wp--preset--font-size--x-small);
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------ ヘッダー（藍の帯・上部に固定） */
+
+.site-header {
+  position: sticky;
+  top: var(--header-top);
+  z-index: 50;
+}
+.band { background: var(--ai); color: #fff; }
+.band .bar { gap: 16px 28px; align-items: center; padding-block: 12px; }
+.band .bar > * { margin: 0; }
+.brand-wrap { gap: 0; flex: none; }
+.brand-wrap > * { margin: 0; }
+.brand { margin: 0; font-size: 21px; font-weight: 700; letter-spacing: .08em; line-height: 1.3; }
+.brand a { color: #fff; text-decoration: none; }
+.brand-sub { font-size: 11px; letter-spacing: .12em; color: var(--on-ai); line-height: 1.5; }
+
+.gnav { flex: 1; font-size: 14px; }
+.gnav .wp-block-navigation__container { gap: 4px 26px; }
+.gnav .wp-block-navigation-item { color: #fff; }
+.gnav .wp-block-navigation-item__content { padding: 6px 0; border-bottom: 2px solid transparent; text-decoration: none; }
+.gnav .wp-block-navigation-item__content:hover { border-bottom-color: var(--on-ai); }
+.gnav .current-menu-item > .wp-block-navigation-item__content { border-bottom-color: var(--hi); }
+.gnav .wp-block-navigation__responsive-container-open,
+.gnav .wp-block-navigation__responsive-container-close { color: #fff; }
+.gnav .wp-block-navigation__responsive-container.is-menu-open { background: var(--ai); color: #fff; padding: 24px; }
+.gnav .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content { font-size: 17px; padding: 10px 0; }
+
+.head-contact { gap: 0; text-align: right; flex: none; }
+.head-contact > * { margin: 0; }
+.head-tel { font-size: 21px; font-weight: 700; letter-spacing: .02em; line-height: 1.3; }
+.head-hours { font-size: 11px; color: var(--on-ai); line-height: 1.5; }
+
+/* ------------------------------------------------------------ パンくず・ページ見出し */
+
+.crumb { border-bottom: 1px solid var(--kei); background: var(--kinari); }
+.crumb .wp-block-breadcrumbs { padding-block: 10px; font-size: var(--wp--preset--font-size--x-small); color: var(--usuzumi); }
+.crumb .wp-block-breadcrumbs a { color: var(--usuzumi); }
+
+.page-head { background: var(--suna); border-bottom: 1px solid var(--kei); padding-block: clamp(26px, 4vw, 44px); }
+.page-head-in > * { margin-block: 0; }
+.page-head h1,
+.page-head .wp-block-query-title,
+.page-head .wp-block-post-title { margin: 0; }
+.page-head .lead,
+.page-head .wp-block-term-description { margin-top: 10px; max-width: 64ch; color: var(--usuzumi); font-size: 14px; }
+.page-head .wp-block-term-description p { margin: 0; }
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-family: var(--num);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  color: var(--kaki-t);
+}
+
+.sec-head { margin-bottom: clamp(20px, 3vw, 32px); }
+.sec-head > * { margin-block: 0; }
+.sec-head .sec-lead { margin-top: 8px; color: var(--usuzumi); font-size: 14px; }
+
+.more { margin-top: 28px; justify-content: center; }
+.note { font-size: 13px; color: var(--usuzumi); }
+
+/* ------------------------------------------------------------ トップの第一画面 */
+
+.hero {
+  background: var(--kinari) url(../images/hero-lines.svg) right center / auto 100% no-repeat;
+  border-bottom: 1px solid var(--kei);
+}
+.hero-in {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  padding-block: clamp(36px, 6vw, 80px);
+}
+.hero-in > * { margin: 0; }
+.hero-text > * { margin-block: 0; }
+.hero-title { margin-block: 4px 16px !important; font-size: clamp(28px, 4vw, 44px); line-height: 1.45; letter-spacing: .04em; }
+.hero-lead { max-width: 34em; color: var(--usuzumi); }
+
+/* ------------------------------------------------------------ 物件検索 */
+
+.wp-block-hinata-search.is-panel {
+  padding: clamp(20px, 3vw, 32px);
+  background: #fff;
+  border: 1px solid var(--kei);
+  border-top: 4px solid var(--hi);
+}
+.hinata-search__form { display: grid; gap: 14px; }
+.is-panel .hinata-search__form { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.is-panel .hinata-search__submit { grid-column: 1 / -1; }
+.hinata-search__field { display: grid; gap: 4px; }
+.hinata-search__field label { font-size: 12.5px; font-weight: 700; color: var(--usuzumi); }
+.wp-block-hinata-search select {
+  width: 100%;
+  height: 46px;
+  padding: 0 10px;
+  border: 1px solid var(--kei);
+  border-radius: 4px;
+  background: var(--kinari);
+  color: var(--sumi);
+  font: inherit;
+  font-size: 15px;
+}
+.hinata-search__submit,
+.hinata-cta__primary,
+.hinata-contact__form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--kaki);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.hinata-search__submit:hover,
+.hinata-cta__primary:hover { background: var(--sumi); color: #fff; }
+.hinata-search__count { margin: 14px 0 0; font-size: 13px; color: var(--usuzumi); }
+.hinata-search__count .num { margin-inline: 2px; font-size: 22px; font-weight: 800; color: var(--sumi); }
+
+/* 絞り込み（物件一覧の左段） */
+.hinata-search__details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid var(--kei);
+  border-radius: 4px;
+  background: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.hinata-search__details > summary::after { content: "＋"; color: var(--kaki-t); }
+.hinata-search__details[open] > summary::after { content: "－"; }
+.hinata-search__details[open] > .hinata-search__form { margin-top: 12px; padding: 16px; border: 1px solid var(--kei); background: #fff; }
+
+/* ------------------------------------------------------------ 物件カード */
+
+.property-list .cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.property-list .cards > li { margin: 0; }
+.card { position: relative; height: 100%; background: #fff; border: 1px solid var(--kei); }
+.card:hover { border-color: var(--kaki); }
+.card > * { margin: 0; }
+.card__plan { margin: 0; background: var(--suna); border-bottom: 1px solid var(--kei); }
+.card__plan img { width: 100%; height: 100%; object-fit: contain; }
+.card__body { padding: 14px 16px 16px; }
+.card__body > * { margin-block: 0; }
+.card__body > * + * { margin-top: 8px; }
+
+.badge-new {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin: 0 !important;
+  padding: 2px 10px;
+  background: var(--hi-l);
+  border: 1px solid var(--hi);
+  color: var(--sumi);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.card__price,
+.detail__price { gap: 4px 10px; align-items: baseline; }
+.card__price > *,
+.detail__price > * { margin: 0; }
+.rent { font-weight: 800; color: var(--sumi); letter-spacing: .01em; line-height: 1.2; }
+.card .rent { font-size: 26px; }
+.fee { font-size: 12.5px; color: var(--usuzumi); }
+
+.badges { gap: 6px; }
+.badges > * { margin: 0; }
+.badge {
+  padding: 1px 8px;
+  background: var(--suna);
+  border: 1px solid var(--kei);
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--sumi);
+}
+
+.card__title { font-size: 14px; letter-spacing: .02em; line-height: 1.6; }
+.card__title a { color: var(--sumi); text-decoration: none; }
+/* 題名のリンクを、疑似要素でカード全体へ広げる。カード内のリンクを1つにし、読み上げを短くするため。 */
+.card__title a::after { content: ""; position: absolute; inset: 0; }
+.card:hover .card__title a { color: var(--kaki-t); text-decoration: underline; }
+.card__addr { font-size: 12.5px; color: var(--usuzumi); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ------------------------------------------------------------ 物件一覧 */
+
+.list-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 36px; align-items: start; }
+.list-layout > * { margin: 0; }
+.list-filter { position: sticky; top: calc(var(--header-top) + 96px); }
+.list-results > * + * { margin-top: 20px; }
+.list-results .property-list .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 1279px) {
+  .list-results .property-list .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.hinata-result-bar__row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 20px; }
+.hinata-result-bar__count { margin: 0; font-size: 14px; }
+.hinata-result-bar__count .num { margin-right: 2px; font-size: 26px; font-weight: 800; }
+.hinata-result-bar__sort ul { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 0; padding: 0; list-style: none; font-size: 13.5px; }
+.hinata-result-bar__sort a { color: var(--usuzumi); text-decoration: none; }
+.hinata-result-bar__sort a:hover { color: var(--kaki-t); text-decoration: underline; }
+.hinata-result-bar__sort a[aria-current] { color: var(--sumi); font-weight: 700; border-bottom: 2px solid var(--hi); }
+.hinata-result-bar__chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--hi-l);
+  border: 1px solid var(--hi);
+  border-radius: 999px;
+  color: var(--sumi);
+  font-size: 13px;
+  text-decoration: none;
+}
+.chip__label { font-size: 11.5px; color: var(--usuzumi); }
+.chip__x { font-weight: 700; }
+.chip:hover { border-color: var(--kaki); }
+.chip-clear { font-size: 13px; color: var(--kaki-t); }
+
+.wp-block-query-no-results { padding: 24px; background: #fff; border: 1px solid var(--kei); }
+.wp-block-query-no-results > * { margin-block: 0; }
+.wp-block-query-no-results > * + * { margin-top: 14px; }
+.no-results__text { color: var(--usuzumi); }
+
+.wp-block-query-pagination { gap: 6px; font-family: var(--num); }
+.wp-block-query-pagination a,
+.wp-block-query-pagination .current { padding: 4px 12px; border: 1px solid var(--kei); background: #fff; text-decoration: none; }
+.wp-block-query-pagination .current { background: var(--ai); border-color: var(--ai); color: #fff; }
+
+/* ------------------------------------------------------------ 物件詳細 */
+
+.detail { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.detail > * { margin: 0; }
+.detail__plan { margin: 0; background: var(--suna); border: 1px solid var(--kei); }
+.detail__plan img { width: 100%; height: 100%; object-fit: contain; }
+.detail__side { position: sticky; top: calc(var(--header-top) + 96px); }
+.detail__side > * { margin-block: 0; }
+.detail__side > * + * { margin-top: 16px; }
+.detail__tags { gap: 6px; }
+.detail__tags > * { margin: 0; }
+.detail__tags .badge-new { position: static; }
+.badge-closed { padding: 2px 10px; background: var(--sumi); color: #fff; font-size: 12px; font-weight: 700; }
+.badge-area { padding: 1px 10px; border: 1px solid var(--kei); font-size: 12px; color: var(--usuzumi); }
+.detail__title { margin-top: 8px !important; font-size: clamp(22px, 2.6vw, 28px); }
+.detail__price .rent { font-size: clamp(34px, 4vw, 44px); }
+
+.wp-block-hinata-property-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin: 0; border-top: 1px solid var(--kei); }
+.wp-block-hinata-property-summary > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 8px;
+  align-items: center;
+  padding: 10px 4px;
+  border-bottom: 1px solid var(--kei);
+}
+.wp-block-hinata-property-summary .icon { grid-row: span 2; width: 22px; height: 22px; color: var(--kaki-t); }
+.wp-block-hinata-property-summary dt { font-size: 11.5px; color: var(--usuzumi); }
+.wp-block-hinata-property-summary dd { margin: 0; font-weight: 700; font-size: 14px; }
+
+.hinata-cta__buttons { display: grid; gap: 10px; }
+.hinata-cta__tel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 50px;
+  border: 1px solid var(--kaki);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--kaki-t);
+  font-weight: 700;
+  text-decoration: none;
+}
+.hinata-cta__tel .num { font-size: 20px; }
+.hinata-cta__tel:hover { background: var(--hi-l); color: var(--sumi); }
+.hinata-cta__note { margin: 10px 0 0; font-size: 12.5px; color: var(--usuzumi); }
+.hinata-cta__fixed { display: none; }
+.wp-block-hinata-property-cta.is-contracted { padding: 18px; background: var(--suna); border-left: 4px solid var(--sumi); }
+.hinata-cta__closed { margin: 0 0 10px; }
+.hinata-cta__closed strong { display: block; font-size: 17px; }
+
+.detail__more { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 48px; margin-top: clamp(36px, 5vw, 56px); }
+.detail__more > * { margin: 0; }
+.detail__more h2 { margin: 0 0 14px; font-size: 19px; padding-left: 12px; border-left: 4px solid var(--hi); line-height: 1.4; }
+.comment { grid-column: 1 / -1; padding: 18px 20px; background: #fff; border: 1px solid var(--kei); }
+.comment:not(:has(.wp-block-post-content p:not(:empty))) { display: none; }
+.comment > * { margin-block: 0; }
+.comment__label { margin-bottom: 6px !important; font-size: 12.5px; font-weight: 700; color: var(--kaki-t); }
+.comment .wp-block-post-content p { margin: 0; }
+
+.wp-block-hinata-property-spec { margin: 0; border-top: 1px solid var(--kei); }
+.wp-block-hinata-property-spec > div { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); border-bottom: 1px solid var(--kei); }
+.wp-block-hinata-property-spec dt { padding: 10px 12px; background: var(--suna); font-size: 13px; font-weight: 700; }
+.wp-block-hinata-property-spec dd { margin: 0; padding: 10px 12px; font-size: 14px; background: #fff; }
+
+.wp-block-hinata-property-equipment {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wp-block-hinata-property-equipment li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--kei);
+  font-size: 13.5px;
+}
+.wp-block-hinata-property-equipment .is-on { background: #fff; border-color: var(--hi); font-weight: 700; }
+.wp-block-hinata-property-equipment .is-on .icon { color: var(--kaki-t); }
+.wp-block-hinata-property-equipment .is-off { color: var(--usuzumi); background: transparent; }
+.wp-block-hinata-property-equipment .is-off .icon { color: #b9b3a8; }
+.wp-block-hinata-property-equipment .is-off span:not(.screen-reader-text) { text-decoration: line-through; text-decoration-color: #b9b3a8; }
+
+/* ------------------------------------------------------------ エリア */
+
+.wp-block-hinata-area-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.wp-block-hinata-area-list a {
+  display: grid;
+  gap: 6px;
+  height: 100%;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--kei);
+  color: var(--sumi);
+  text-decoration: none;
+}
+.wp-block-hinata-area-list a:hover { border-color: var(--kaki); }
+.hinata-area-list__name { font-size: 18px; font-weight: 700; }
+.hinata-area-list__desc { font-size: 13px; color: var(--usuzumi); line-height: 1.7; }
+.hinata-area-list__count { font-size: 13px; color: var(--kaki-t); font-weight: 700; }
+.hinata-area-list__count .num { margin-right: 2px; font-size: 20px; }
+
+/* ------------------------------------------------------------ 店舗・会社概要 */
+
+.store-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+.store-grid > * { margin: 0; }
+.store-text > p { margin-top: 0; }
+.wp-block-hinata-store-info { margin: 0; border-top: 1px solid var(--kei); }
+.wp-block-hinata-store-info > div { display: grid; grid-template-columns: 7em minmax(0, 1fr); border-bottom: 1px solid var(--kei); }
+.wp-block-hinata-store-info dt { padding: 10px 12px; background: var(--suna); font-size: 13px; font-weight: 700; }
+.wp-block-hinata-store-info dd { margin: 0; padding: 10px 12px; background: #fff; }
+.has-suna-background-color .wp-block-hinata-store-info dt { background: #ece6db; }
+
+.wp-block-table.is-style-company table { width: 100%; border-collapse: collapse; }
+.wp-block-table.is-style-company :is(th, td) { padding: 12px; border: 0; border-bottom: 1px solid var(--kei); text-align: left; }
+.wp-block-table.is-style-company th { width: 9em; background: var(--suna); font-size: 13px; }
+.wp-block-table.is-style-company td { background: #fff; }
+
+/* ------------------------------------------------------------ 問い合わせ */
+
+.lead { color: var(--usuzumi); }
+.hinata-contact__notice { padding: 12px 16px; background: var(--hi-l); border-left: 4px solid var(--hi); }
+.hinata-contact__form { display: grid; gap: 16px; max-width: 40em; margin-top: 20px; }
+.hinata-contact__field { display: grid; gap: 4px; }
+.hinata-contact__field label { font-weight: 700; font-size: 14px; }
+.hinata-contact__req { margin-left: 8px; padding: 0 6px; background: var(--kaki); color: #fff; font-size: 11px; }
+.hinata-contact__field :is(input, textarea) {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--kei);
+  border-radius: 4px;
+  background: #fff;
+  font: inherit;
+}
+.hinata-contact__form button[disabled] { justify-self: start; background: var(--usuzumi); cursor: not-allowed; }
+
+/* ------------------------------------------------------------ フッター */
+
+.site-footer .foot { background: var(--ai); color: #fff; }
+.foot-grid { gap: 28px; padding-block: clamp(28px, 4vw, 44px); }
+.foot-grid > * { margin: 0; }
+.foot-store > * { margin: 0; }
+.foot-brand { font-size: 18px; font-weight: 700; letter-spacing: .08em; margin-bottom: 8px !important; }
+.foot-brand a { color: #fff; text-decoration: none; }
+.foot-line { font-size: 13.5px; color: var(--on-ai); }
+.foot-nav { font-size: 13.5px; }
+.foot-nav .wp-block-navigation__container { gap: 8px; }
+.foot-nav .wp-block-navigation-item { color: #fff; }
+.foot-nav .wp-block-navigation-item__content:hover { text-decoration: underline; }
+.foot-note { padding-block: 14px; border-top: 1px solid rgb(255 255 255 / 18%); }
+.foot-note > p { margin: 0; font-size: 12px; color: var(--on-ai); }
+
+/* ------------------------------------------------------------ 幅に応じた組み替え */
+
+@media (max-width: 1023px) {
+  .hero-in { grid-template-columns: 1fr; }
+  .list-layout { grid-template-columns: 1fr; gap: 20px; }
+  .list-filter { position: static; }
+  .detail { grid-template-columns: 1fr; gap: 24px; }
+  .detail__side { position: static; }
+  .detail__more { grid-template-columns: 1fr; }
+  .head-hours { display: none; }
+  .wp-block-hinata-area-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  /* 幅が広い画面では絞り込みを常に開き、開閉の見出しを出さない。 */
+  .hinata-search__details > summary { display: none; }
+  .hinata-search__details > .hinata-search__form { margin-top: 0 !important; }
+}
+
+@media (max-width: 1023px) and (min-width: 641px) {
+  .property-list .cards,
+  .list-results .property-list .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 781px) {
+  .band .bar { gap: 12px; }
+  .head-contact { display: none; }
+  .store-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .property-list .cards,
+  .list-results .property-list .cards { grid-template-columns: 1fr; }
+  .is-panel .hinata-search__form { grid-template-columns: 1fr; }
+  .wp-block-hinata-area-list { grid-template-columns: 1fr; }
+  .wp-block-hinata-property-equipment { grid-template-columns: 1fr 1fr; }
+  .wp-block-hinata-property-spec > div { grid-template-columns: 7.5em minmax(0, 1fr); }
+  .hero { background-size: auto 60%; background-position: right top; }
+
+  /* 物件詳細では、電話と問い合わせのボタンを画面下部に固定する。 */
+  .hinata-cta__fixed {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 60;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 8px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    background: #fff;
+    border-top: 1px solid var(--kei);
+  }
+  .hinata-cta__fixed a { min-height: 46px; }
+  body:has(.hinata-cta__fixed) { padding-bottom: 72px; }
+}

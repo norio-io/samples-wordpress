@@ -1,0 +1,76 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "meta": {
+    "title": "ひなた不動産",
+    "description": "架空の不動産会社の賃貸物件サイト。自作ブロックテーマの制作サンプル。",
+    "author": "norio-io",
+    "categories": [
+      "Theme"
+    ]
+  },
+  "landingPage": "/",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "steps": [
+    {
+      "step": "setSiteLanguage",
+      "language": "ja"
+    },
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "git:directory",
+        "url": "https://github.com/norio-io/samples-wordpress",
+        "ref": "main",
+        "refType": "branch",
+        "path": "sites/listing/real-estate/theme"
+      },
+      "options": {
+        "activate": true,
+        "targetFolderName": "hinata-realty"
+      }
+    },
+    {
+      "step": "writeFiles",
+      "writeToPath": "/wordpress/wp-content/hinata-demo",
+      "filesTree": {
+        "resource": "git:directory",
+        "url": "https://github.com/norio-io/samples-wordpress",
+        "ref": "main",
+        "refType": "branch",
+        "path": "sites/listing/real-estate/content"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\nrequire '/wordpress/wp-load.php';\n// 初期状態の投稿・固定ページを削除する。\nforeach ( array( 1, 2, 3 ) as $id ) {\n\twp_delete_post( $id, true );\n}\n"
+    },
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "ひなた不動産",
+        "blogdescription": "晴野市の賃貸・お部屋探し",
+        "timezone_string": "Asia/Tokyo",
+        "date_format": "Y.m.d",
+        "permalink_structure": "/%postname%/"
+      }
+    },
+    {
+      "step": "importWxr",
+      "file": {
+        "resource": "vfs",
+        "path": "/wordpress/wp-content/hinata-demo/demo.xml"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\nrequire '/wordpress/wp-load.php';\n// 間取り図の登録、掲載日の設定、店舗情報の初期値（content/setup.php）。\nrequire '/wordpress/wp-content/hinata-demo/setup.php';\n"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\nrequire '/wordpress/wp-load.php';\n// 書き換え規則を作り直す。物件（/properties/）とエリア（/area/）の規則を含めるため、テーマを有効にした後の要求で行う。\nflush_rewrite_rules();\n"
+    }
+  ]
+}
