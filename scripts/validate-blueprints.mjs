@@ -1,10 +1,11 @@
 // 各 blueprint を WordPress Playground の公式スキーマで検証する。
-// 併せて、本リポジトリを参照する git:directory リソースが main を指していることを検査する。
+// 併せて、本リポジトリを参照するリソース（git:directory と raw.githubusercontent.com の URL）が
+// main を指していることを検査する。
 // 公開中の blueprint が作業ブランチを参照したまま統合されることを防ぐため。
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { validateBlueprint } from '@wp-playground/blueprints';
-import { ROOT, findBlueprints, findOwnGitResources } from './lib/blueprints.mjs';
+import { ROOT, findBlueprints, findOwnResources } from './lib/blueprints.mjs';
 
 const blueprints = findBlueprints();
 
@@ -32,9 +33,9 @@ for (const path of blueprints) {
         errors.push(`${error.instancePath || '/'} ${error.message}`);
       }
     }
-    for (const resource of findOwnGitResources(blueprint)) {
+    for (const resource of findOwnResources(blueprint)) {
       if (resource.ref !== 'main') {
-        errors.push(`git:directory の ref が main ではない: ${JSON.stringify(resource.ref)}`);
+        errors.push(`本リポジトリを参照するリソースが main ではない: ${JSON.stringify(resource.ref)}`);
       }
     }
   }

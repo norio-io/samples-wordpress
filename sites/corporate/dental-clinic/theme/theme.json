@@ -1,0 +1,122 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
+		"layout": {
+			"contentSize": "1060px",
+			"wideSize": "1060px"
+		},
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"defaultDuotone": false,
+			"custom": false,
+			"customGradient": false,
+			"palette": [
+				{ "slug": "ink", "name": "文字", "color": "#17242a" },
+				{ "slug": "ink-soft", "name": "文字（弱）", "color": "#4d616a" },
+				{ "slug": "ink-faint", "name": "文字（補足）", "color": "#5e7079" },
+				{ "slug": "line", "name": "罫線", "color": "#dce5e7" },
+				{ "slug": "line-soft", "name": "罫線（弱）", "color": "#ebf1f2" },
+				{ "slug": "base", "name": "背景", "color": "#ffffff" },
+				{ "slug": "surface", "name": "面", "color": "#f4f8f8" },
+				{ "slug": "surface-2", "name": "面（濃）", "color": "#e8f1f0" },
+				{ "slug": "accent", "name": "アクセント", "color": "#2b7a72" },
+				{ "slug": "accent-dark", "name": "アクセント（濃）", "color": "#1f5c56" },
+				{ "slug": "accent-light", "name": "アクセント（淡）", "color": "#e4f1ef" }
+			]
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"customFontSize": false,
+			"fluid": false,
+			"fontFamilies": [
+				{
+					"slug": "gothic",
+					"name": "ゴシック",
+					"fontFamily": "\"Hiragino Sans\", \"Hiragino Kaku Gothic ProN\", \"Yu Gothic Medium\", \"Yu Gothic\", \"Noto Sans JP\", system-ui, sans-serif"
+				}
+			],
+			"fontSizes": [
+				{ "slug": "x-small", "name": "極小", "size": "12.5px" },
+				{ "slug": "small", "name": "小", "size": "13.5px" },
+				{ "slug": "medium", "name": "標準", "size": "15px" },
+				{ "slug": "large", "name": "大", "size": "17px" },
+				{ "slug": "x-large", "name": "見出し", "size": "clamp(19px, 2.6vw, 26px)" },
+				{ "slug": "xx-large", "name": "ページ見出し", "size": "clamp(23px, 3.4vw, 32px)" },
+				{ "slug": "hero", "name": "ヒーロー", "size": "clamp(25px, 4vw, 38px)" }
+			]
+		},
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"customSpacingSize": false,
+			"units": [ "px", "em", "rem", "%", "vw" ],
+			"spacingSizes": [
+				{ "slug": "10", "name": "極小", "size": "8px" },
+				{ "slug": "20", "name": "小", "size": "14px" },
+				{ "slug": "30", "name": "中", "size": "clamp(22px, 3.5vw, 36px)" },
+				{ "slug": "40", "name": "大", "size": "clamp(30px, 5vw, 52px)" },
+				{ "slug": "section", "name": "セクション", "size": "clamp(40px, 6vw, 72px)" }
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var:preset|color|base",
+			"text": "var:preset|color|ink"
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|gothic",
+			"fontSize": "var:preset|font-size|medium",
+			"lineHeight": "1.9"
+		},
+		"spacing": {
+			"blockGap": "20px",
+			"padding": {
+				"left": "17px",
+				"right": "17px"
+			}
+		},
+		"elements": {
+			"link": {
+				"color": { "text": "var:preset|color|accent" },
+				":hover": { "color": { "text": "var:preset|color|accent-dark" } }
+			},
+			"heading": {
+				"typography": { "fontWeight": "700", "letterSpacing": "0.05em", "lineHeight": "1.55" }
+			},
+			"h1": { "typography": { "fontSize": "var:preset|font-size|xx-large", "lineHeight": "1.5" } },
+			"h2": { "typography": { "fontSize": "var:preset|font-size|x-large" } },
+			"h3": { "typography": { "fontSize": "var:preset|font-size|large", "letterSpacing": "0.03em" } },
+			"button": {
+				"border": { "radius": "3px", "width": "1px", "style": "solid", "color": "transparent" },
+				"color": { "background": "var:preset|color|accent", "text": "var:preset|color|base" },
+				"spacing": { "padding": { "top": "11px", "bottom": "11px", "left": "20px", "right": "20px" } },
+				"typography": { "fontSize": "var:preset|font-size|small", "fontWeight": "700", "lineHeight": "1.9" },
+				":hover": { "color": { "background": "var:preset|color|accent-dark", "text": "var:preset|color|base" } }
+			}
+		},
+		"blocks": {
+			"core/button": {
+				"variations": {
+					"outline": {
+						"border": { "color": "var:preset|color|accent", "width": "1px" },
+						"color": { "background": "var:preset|color|base", "text": "var:preset|color|accent" },
+						"spacing": { "padding": { "top": "11px", "bottom": "11px", "left": "20px", "right": "20px" } }
+					}
+				}
+			},
+			"core/post-title": {
+				"typography": { "fontSize": "var:preset|font-size|xx-large" }
+			}
+		}
+	},
+	"templateParts": [
+		{ "name": "header", "title": "ヘッダー", "area": "header" },
+		{ "name": "footer", "title": "フッター", "area": "footer" },
+		{ "name": "cta", "title": "ご予約・ご相談", "area": "uncategorized" }
+	],
+	"customTemplates": []
+}

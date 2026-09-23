@@ -1,0 +1,401 @@
+@charset "utf-8";
+
+/*
+ * みずき歯科クリニック（架空）— 制作サンプル
+ *
+ * 配色・書体・余白の値は theme.json に定義し、ここではプリセットの CSS 変数を参照する。
+ * 本ファイルは公開側とエディターの双方で読み込む（functions.php）。
+ * 見た目は norio-io/samples の corporate/dental-clinic/css/style.css と揃える。
+ */
+
+:root {
+  --ink: var(--wp--preset--color--ink);
+  --ink-soft: var(--wp--preset--color--ink-soft);
+  --ink-faint: var(--wp--preset--color--ink-faint);
+  --line: var(--wp--preset--color--line);
+  --line-soft: var(--wp--preset--color--line-soft);
+  --surface: var(--wp--preset--color--surface);
+  --surface-2: var(--wp--preset--color--surface-2);
+  --accent: var(--wp--preset--color--accent);
+  --accent-d: var(--wp--preset--color--accent-dark);
+  --accent-l: var(--wp--preset--color--accent-light);
+  --fs-xs: var(--wp--preset--font-size--x-small);
+  --fs-s: var(--wp--preset--font-size--small);
+}
+
+body { -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* 大枠の区画（ヘッダー・本文・帯・フッター）と、本文のセクションの間に余白を置かない。
+   セクションごとの余白はブロックの padding（プリセット section）で与える。 */
+.wp-site-blocks > * + *,
+.site-main > *,
+.site-main .wp-block-post-content > .alignfull { margin-block: 0; }
+
+/* ------------------------------------------------------------ アイコン */
+
+/* アイコンは assets/icons の SVG をマスクに用い、文字色で塗る。
+   本文のブロックに SVG を直接書かないため、エディターで文章を編集しても崩れない。 */
+.brand::before,
+.is-style-card::before,
+.is-style-person::before {
+  content: "";
+  display: block;
+  flex: none;
+  background: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+.brand { --icon: url(../icons/tooth.svg); }
+.ico-general { --icon: url(../icons/general.svg); }
+.ico-child { --icon: url(../icons/child.svg); }
+.ico-ortho { --icon: url(../icons/ortho.svg); }
+.ico-prevent { --icon: url(../icons/prevent.svg); }
+.ico-white { --icon: url(../icons/white.svg); }
+.ico-implant { --icon: url(../icons/implant.svg); }
+.is-style-person { --icon: url(../icons/person.svg); }
+
+/* ------------------------------------------------------------ 注記 */
+
+.demo {
+  margin: 0;
+  background: var(--ink);
+  color: #d8e3e6;
+  font-size: var(--fs-xs);
+  line-height: 1.6;
+  text-align: center;
+  padding: 9px 16px;
+}
+.is-style-note { font-size: 13px; color: var(--ink-soft); margin-top: 10px; }
+
+/* ------------------------------------------------------------ ヘッダー */
+
+.site-header { background: #fff; border-bottom: 1px solid var(--line); }
+.site-bar .bar { gap: 12px 18px; align-items: center; padding-block: 14px; }
+
+.brand { position: relative; gap: 0; padding-left: 41px; color: var(--accent); }
+.brand::before { position: absolute; left: 0; top: 50%; width: 30px; height: 30px; margin-top: -15px; }
+.brand .wp-block-site-title { margin: 0; font-size: 18.5px; font-weight: 700; letter-spacing: .08em; line-height: 1.35; }
+.brand .wp-block-site-title a { color: var(--ink); text-decoration: none; }
+.brand .brand-en { margin: 0; font-size: 10px; letter-spacing: .2em; line-height: 1.4; color: var(--ink-faint); }
+
+.head-right { gap: 18px; align-items: center; }
+.tel { margin: 0; text-align: right; line-height: 1.3; font-size: 10.5px; color: var(--ink-faint); }
+.tel strong { font-size: 21px; letter-spacing: .03em; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* ------------------------------------------------------------ グローバルナビ */
+
+.gnav { background: var(--surface); border-top: 1px solid var(--line-soft); }
+.gnav .wp-block-navigation { font-size: 14px; }
+.gnav .wp-block-navigation,
+.gnav .wp-block-navigation__container { gap: 0; }
+/* リンクの色は core の指定が強いため、項目（li）に色を与えてリンクに継承させる。 */
+.gnav .wp-block-navigation-item { color: var(--ink-soft); }
+.gnav .wp-block-navigation-item__content {
+  display: block;
+  padding: 13px 20px;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+.gnav .wp-block-navigation-item:hover { color: var(--accent); background: #fff; }
+.gnav .current-menu-item { color: var(--accent); background: #fff; font-weight: 700; }
+.gnav .current-menu-item > .wp-block-navigation-item__content { border-bottom-color: var(--accent); }
+
+/* ------------------------------------------------------------ パンくず・見出し */
+
+.crumb { border-bottom: 1px solid var(--line-soft); }
+.crumb .wp-block-breadcrumbs { padding-block: 11px; font-size: var(--fs-xs); color: var(--ink-faint); line-height: 1.6; }
+.crumb .wp-block-breadcrumbs a { color: var(--ink-soft); text-decoration: none; }
+.crumb .wp-block-breadcrumbs a:hover { color: var(--accent); text-decoration: underline; }
+
+.page-head { background: var(--surface); border-bottom: 1px solid var(--line); padding-block: clamp(30px, 5vw, 52px); }
+.page-head-in > * { margin-block: 0; }
+.page-head .wp-block-post-title,
+.page-head h1 { margin-top: 0; }
+.page-head .is-style-eyebrow:empty { display: none; }
+.page-head .lead { margin-top: 14px; color: var(--ink-soft); font-size: 14.5px; max-width: 62ch; }
+.page-head .wp-block-post-excerpt__excerpt { margin: 0; }
+
+.is-style-eyebrow {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .26em;
+  line-height: 1.6;
+  color: var(--accent);
+}
+
+.sec-head { margin-bottom: clamp(22px, 3.5vw, 36px); }
+.sec-head > * { margin-block: 0; }
+.sec-head .sec-lead { margin-top: 12px; color: var(--ink-soft); font-size: 14.5px; max-width: 62ch; }
+
+h3.wp-block-heading { margin-bottom: 10px; }
+
+/* ------------------------------------------------------------ ボタン */
+
+.wp-block-button.is-style-outline > .wp-block-button__link:hover { background: var(--accent-l); color: var(--accent-d); }
+.wp-block-button.is-style-link > .wp-block-button__link {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: var(--fs-s);
+  font-weight: 400;
+}
+.wp-block-button.is-style-link > .wp-block-button__link:hover { color: var(--accent-d); text-decoration: underline; }
+.wp-block-button__link { white-space: nowrap; }
+
+/* ------------------------------------------------------------ ヒーロー */
+
+.hero { background: linear-gradient(180deg, var(--surface-2), var(--surface)); border-bottom: 1px solid var(--line); }
+.hero-in {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  gap: clamp(24px, 4vw, 52px);
+  align-items: center;
+  padding-block: clamp(36px, 6vw, 76px);
+}
+.hero-in > * { margin-block: 0; }
+.hero-title { margin: 0 0 18px; font-size: var(--wp--preset--font-size--hero); line-height: 1.6; }
+.hero-lead { margin: 0 0 24px; color: var(--ink-soft); }
+.hero-art { background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 20px; }
+.hero-art .hours-title { margin: 0 0 10px; font-size: 15px; letter-spacing: .05em; }
+.hero-art .hours-title + * { margin-top: 0; }
+
+/* ------------------------------------------------------------ 診療科目 */
+
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.cards > * { margin: 0; }
+.is-style-card { background: #fff; padding: clamp(20px, 2.6vw, 28px); scroll-margin-top: 16px; }
+.is-style-card::before { width: 42px; height: 42px; color: var(--accent); margin-bottom: 14px; }
+.is-style-card > * { margin-block: 0 12px; }
+.is-style-card > p { font-size: 14px; color: var(--ink-soft); }
+.is-style-card .more { margin: 0; font-size: var(--fs-s); font-weight: 700; }
+.is-style-card .more a { text-decoration: none; }
+.is-style-card .more a::after { content: " →"; }
+
+/* ------------------------------------------------------------ 表 */
+
+/* core の表のスタイル（全辺の罫線）を打ち消し、スタイルごとに罫線を引き直す。 */
+.wp-block-table table { border-collapse: collapse; width: 100%; }
+.wp-block-table.wp-block-table thead { border-bottom: 0; }
+.wp-block-table.wp-block-table :is(th, td) { border: 0; }
+
+/* 診療時間。行見出しの列は時刻を1行で収める幅を em で指定し、曜日の7列で残りを分ける。
+   時刻は <br> で2行目に置き、1行目（午前・午後）だけを太字にする。 */
+.is-style-hours { margin: 0; }
+.is-style-hours table { table-layout: fixed; font-size: 14px; background: #fff; }
+.wp-block-table.is-style-hours th,
+.wp-block-table.is-style-hours td { border: 1px solid var(--line); padding: 10px 4px; text-align: center; }
+.wp-block-table.is-style-hours thead td { border: 0; }
+.is-style-hours thead th { background: var(--surface-2); font-weight: 700; font-size: var(--fs-s); }
+.is-style-hours thead td,
+.is-style-hours tbody th { width: 9em; }
+.is-style-hours tbody th {
+  background: var(--surface);
+  text-align: left;
+  padding-inline: 10px;
+  font-weight: 400;
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.is-style-hours tbody th::first-line { font-weight: 700; font-size: var(--fs-s); color: var(--ink); }
+.is-style-hours td { color: var(--accent); font-weight: 700; }
+.is-style-hours + .is-style-note { margin-top: 10px; }
+
+/* 料金表。項目名の下に補足を置き、金額は右寄せで桁を揃える。 */
+.price-title { margin: 44px 0 10px; font-size: 15px; letter-spacing: .05em; }
+.price-title:first-child { margin-top: 0; }
+.price-title + .is-style-price { margin-top: 0; }
+.is-style-price table { font-size: 14.5px; }
+.wp-block-table.is-style-price th,
+.wp-block-table.is-style-price td { border-bottom: 1px solid var(--line); padding: 13px 12px; text-align: left; vertical-align: top; }
+.wp-block-table.is-style-price thead th { background: var(--surface); border-bottom: 1px solid var(--line); font-size: var(--fs-s); }
+.is-style-price tbody th { font-weight: 400; font-size: var(--fs-xs); color: var(--ink-faint); line-height: 1.7; }
+.is-style-price tbody th::first-line { font-weight: 700; font-size: 14.5px; color: var(--ink); line-height: 1.9; }
+.is-style-price .has-text-align-right { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+/* 項目と説明（院内設備・所在地）。 */
+.is-style-defs { margin: 0; }
+.wp-block-table.is-style-defs th,
+.wp-block-table.is-style-defs td { border-bottom: 1px solid var(--line); padding: 14px 0; text-align: left; vertical-align: top; }
+.is-style-defs th { width: 11em; padding-right: 16px; font-weight: 700; }
+.is-style-defs td { color: var(--ink-soft); }
+
+/* ------------------------------------------------------------ 手順 */
+
+.is-style-flow { counter-reset: step; }
+.is-style-flow > .step { position: relative; margin: 0; padding: 0 0 26px 58px; counter-increment: step; }
+.is-style-flow > .step::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+}
+.is-style-flow > .step::after { content: ""; position: absolute; left: 18.5px; top: 44px; bottom: 6px; width: 1px; background: var(--line); }
+.is-style-flow > .step:last-child { padding-bottom: 0; }
+.is-style-flow > .step:last-child::after { display: none; }
+.is-style-flow h3 { margin: 7px 0 6px; }
+.is-style-flow p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+
+/* ------------------------------------------------------------ 箇条書き */
+
+.is-style-checks { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 26px; }
+.is-style-checks li { position: relative; padding-left: 26px; font-size: 14.5px; color: var(--ink-soft); }
+.is-style-checks li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: .62em;
+  width: 9px;
+  height: 5px;
+  border-left: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(-45deg);
+}
+.is-style-card .is-style-checks { grid-template-columns: 1fr; gap: 6px; margin-top: 14px; }
+
+.is-style-routes { margin: 0; padding: 0; list-style: none; }
+.is-style-routes li { padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+.is-style-routes strong { display: block; font-size: 13px; letter-spacing: .08em; color: var(--accent); }
+
+/* ------------------------------------------------------------ お知らせ */
+
+.news-list .wp-block-post-template { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.news-list .wp-block-post {
+  display: grid;
+  grid-template-columns: 7.5em 6.5em 1fr;
+  gap: 14px;
+  align-items: baseline;
+  margin: 0;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--line);
+}
+.news-list .wp-block-post > * { margin: 0; }
+.news-list .wp-block-post:hover { background: var(--surface); }
+.news-list .wp-block-post-date { font-size: 13px; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+.news-list .ttl { font-size: 15px; font-weight: 400; letter-spacing: 0; line-height: 1.9; }
+.news-list .ttl a { color: var(--ink); text-decoration: none; }
+.news-list .ttl a:hover { color: var(--accent); text-decoration: underline; }
+.news-list .wp-block-query-pagination { margin-top: 24px; }
+.more-link { margin-top: 12px; }
+
+.tag { display: inline-flex; flex-wrap: wrap; gap: 4px; }
+.tag a,
+.tag span:not(.wp-block-post-terms__separator) {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--accent);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.tag .wp-block-post-terms__separator { display: none; }
+
+/* 本文の行長を抑える。囲みは幅いっぱいに取り、子要素の幅を制限して左に揃える。 */
+.article > * { max-width: 46em; }
+.article > p { margin: 0 0 18px; }
+.article .meta { gap: 12px; align-items: center; margin: 0 0 14px; }
+.article .meta > * { margin: 0; }
+.article .meta .wp-block-post-date { font-size: 13px; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+.article .wp-block-post-title { margin: 0 0 22px; font-size: clamp(21px, 3vw, 28px); line-height: 1.6; }
+.article .wp-block-post-content > p { margin: 0 0 18px; }
+.back { margin-top: 34px; }
+.payment { margin-top: 40px; }
+.payment .article-title { font-size: 19px; margin-bottom: 14px; }
+
+/* ------------------------------------------------------------ 医師 */
+
+.people { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 2.6vw, 28px); }
+.people > * { margin: 0; }
+.is-style-person { background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 22px; }
+.is-style-person::before { width: 76px; height: 76px; margin-bottom: 14px; color: var(--accent); }
+.is-style-person > * { margin-block: 0; }
+.is-style-person .role { margin-bottom: 4px; font-size: 12px; letter-spacing: .12em; color: var(--accent); font-weight: 700; }
+.is-style-person h3 { margin-bottom: 10px; }
+.is-style-person > p:last-child { font-size: 14px; color: var(--ink-soft); }
+
+/* ------------------------------------------------------------ FAQ */
+
+.is-style-faq { border-top: 1px solid var(--line); }
+.is-style-faq > .wp-block-details { margin: 0; border-bottom: 1px solid var(--line); }
+.is-style-faq summary { position: relative; padding: 16px 4px 16px 34px; cursor: pointer; font-weight: 700; list-style: none; }
+.is-style-faq summary::-webkit-details-marker { display: none; }
+.is-style-faq summary::before { content: "Q"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+.is-style-faq details > p { position: relative; margin: 0; padding: 0 4px 18px 34px; color: var(--ink-soft); font-size: 14.5px; }
+.is-style-faq details > p::before { content: "A"; position: absolute; left: 4px; top: 0; color: var(--ink-faint); font-weight: 700; }
+
+/* ------------------------------------------------------------ アクセス */
+
+.access-grid { gap: clamp(22px, 3.5vw, 40px); margin: 0; }
+.map img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); }
+.map { margin: 0; }
+
+/* ------------------------------------------------------------ 帯 */
+
+.cta { background: var(--accent); color: #fff; }
+.cta-in { gap: 18px; align-items: center; padding-block: clamp(26px, 4vw, 42px); }
+.cta-in > * { margin: 0; }
+.cta h2 { margin: 0; color: #fff; }
+.cta p { margin: 8px 0 0; font-size: 14px; color: #e8f5f3; }
+.cta .tel-lg { margin: 0; font-size: var(--fs-xs); line-height: 1.4; letter-spacing: .04em; }
+.cta .tel-lg strong { font-size: 30px; letter-spacing: .03em; color: #fff; font-variant-numeric: tabular-nums; }
+
+/* ------------------------------------------------------------ フッター */
+
+.site-footer { background: var(--surface); border-top: 1px solid var(--line); }
+.foot-grid { gap: 26px; padding-block: clamp(28px, 4vw, 44px); }
+.foot-grid > * { margin: 0; }
+.foot-brand { margin: 0 0 8px; font-weight: 700; letter-spacing: .08em; }
+.foot-addr { margin: 0; font-size: var(--fs-s); color: var(--ink-soft); line-height: 1.9; }
+.foot-nav { font-size: var(--fs-s); }
+.foot-nav .wp-block-navigation__container { display: grid; grid-template-columns: repeat(2, auto); gap: 6px 30px; }
+.foot-nav .wp-block-navigation-item { color: var(--ink-soft); }
+.foot-nav .wp-block-navigation-item__content:hover { color: var(--accent); text-decoration: underline; }
+.foot-note { border-top: 1px solid var(--line); padding-block: 16px; }
+.foot-note > p { margin: 0; font-size: var(--fs-xs); color: var(--ink-faint); }
+
+/* ------------------------------------------------------------ 狭い画面 */
+
+@media (max-width: 900px) {
+  .hero-in { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .people { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 781px) {
+  .access-grid { flex-direction: column; }
+}
+
+@media (max-width: 640px) {
+  .head-right { width: 100%; justify-content: space-between; }
+  .gnav .wp-block-navigation-item__content { padding: 11px 14px; }
+  .gnav .wp-block-navigation { font-size: var(--fs-s); }
+  .cards { grid-template-columns: 1fr; }
+  .is-style-checks { grid-template-columns: 1fr; }
+  .is-style-defs th,
+  .is-style-defs td { display: block; width: auto; }
+  .is-style-defs th { padding-bottom: 0; border-bottom: 0; }
+  .is-style-defs td { padding-top: 4px; }
+  .news-list .wp-block-post { grid-template-columns: 7.5em 1fr; }
+  .news-list .ttl { grid-column: 1 / -1; }
+  .is-style-hours table { font-size: 13px; }
+  .is-style-hours th,
+  .is-style-hours td { padding: 8px 3px; }
+}

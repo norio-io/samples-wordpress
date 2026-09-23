@@ -1,0 +1,31 @@
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main","layout":{"type":"default"}} -->
+<main class="wp-block-group site-main"><!-- wp:group {"align":"full","className":"crumb","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull crumb"><!-- wp:breadcrumbs {"separator":"／"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"tagName":"article","className":"article","layout":{"type":"default"}} -->
+<article class="wp-block-group article"><!-- wp:group {"className":"meta","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group meta"><!-- wp:post-date {"format":"Y.m.d"} /-->
+
+<!-- wp:post-terms {"term":"category","className":"tag"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:post-title {"level":1} /-->
+
+<!-- wp:post-content {"layout":{"type":"default"}} /--></article>
+<!-- /wp:group -->
+
+<!-- wp:buttons {"className":"back"} -->
+<div class="wp-block-buttons back"><!-- wp:button {"className":"is-style-link","metadata":{"bindings":{"url":{"source":"mizuki-dental/page-url","args":{"path":"news"}}}}} -->
+<div class="wp-block-button is-style-link"><a class="wp-block-button__link wp-element-button">← お知らせの一覧へ</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></section>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"cta"} /-->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
