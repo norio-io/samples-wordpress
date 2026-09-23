@@ -71,6 +71,10 @@
     },
     {
       "step": "runPHP",
+      "code": "<?php\nrequire '/wordpress/wp-load.php';\n// 管理者の設定で、編集画面の「エディターへようこそ」のガイドを表示しない。物件の編集画面を開くたびにガイドを閉じずに済むようにする。\nglobal $wpdb;\n$key   = $wpdb->get_blog_prefix() . 'persisted_preferences';\n$prefs = get_user_meta( 1, $key, true );\n$prefs = is_array( $prefs ) ? $prefs : array();\n$prefs['core/edit-post'] = array_merge( $prefs['core/edit-post'] ?? array(), array( 'welcomeGuide' => false ) );\n$prefs['_modified']      = gmdate( 'c' );\nupdate_user_meta( 1, $key, $prefs );\n"
+    },
+    {
+      "step": "runPHP",
       "code": "<?php\nrequire '/wordpress/wp-load.php';\n// 書き換え規則を作り直す。物件（/properties/）とエリア（/area/）の規則を含めるため、テーマを有効にした後の要求で行う。\nflush_rewrite_rules();\n"
     }
   ]

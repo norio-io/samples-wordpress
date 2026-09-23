@@ -519,7 +519,7 @@ body { -webkit-font-smoothing: antialiased; }
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 60;
+    z-index: 40; /* ヘッダー（50）より下に置き、メニューの展開時にメニューを最前面とする。 */
     display: grid;
     grid-template-columns: 1fr 1.4fr;
     gap: 8px;
