@@ -4,13 +4,67 @@
 
 ## 概要
 
+WordPress の制作サンプル集。各サンプルはサンプル専用の自作テーマとデモ記事からなり、WordPress Playground で公開する。
+
 ## ディレクトリ構成
+
+```
+samples-wordpress/
+├── sites/
+│   └── <制作種別>/
+│       └── <業種の抽象名>/
+│           ├── theme/                ← サンプル専用の自作テーマ
+│           ├── content/              ← デモ記事（WXR）と画像
+│           ├── blueprint.json        ← 公開側を開く
+│           └── blueprint-admin.json  ← 管理画面を開く
+├── pages/                            ← GitHub Pages の一覧ページ
+├── scripts/                          ← 検証用スクリプト
+├── .github/workflows/
+├── composer.json                     ← PHPCS（WordPress Coding Standards）
+└── package.json                      ← WordPress Playground の CLI と blueprint の検証
+```
+
+- 命名は静的サンプルのリポジトリ `norio-io/samples`、React のリポジトリ `norio-io/samples-react` と共通とする。同一題材のサンプルは、制作種別と業種の抽象名を一致させる。
+  - 例: `norio-io/samples` の `corporate/dental-clinic/` に対し、本リポジトリでは `sites/corporate/dental-clinic/` とする。
+- `sites/` は配置のみに用いる入れ物である。
 
 ## 技術構成
 
+| 項目 | 採用 |
+|---|---|
+| WordPress | 最新の安定版 |
+| PHP | 8.3 |
+| テーマ | ブロックテーマ（`theme.json`）を自作する |
+| 公開 | WordPress Playground（blueprint） |
+| 静的解析 | PHP の構文検査、PHPCS（WordPress Coding Standards） |
+| 起動検査 | WordPress Playground の CLI（Node 24.18 以上） |
+
+- プラグインは使用しない。
+- blueprint は `git:directory` リソースで本リポジトリの `main` を参照する。作業ブランチを参照したまま統合しない（`validate` ジョブで検査する）。
+- `installTheme` で `git:directory` を用いる場合は、`options.targetFolderName` にテーマのディレクトリ名を指定する。省略するとリポジトリの URL から導いた名前で配置される。WordPress 同梱のテーマ（`twentytwentyfive` など）と同名にすると導入に失敗する。
+- 実行コマンド（リポジトリ直下）
+
+  ```sh
+  composer install
+  ./scripts/lint-php.sh   # 構文検査と PHPCS
+  npm ci
+  npm run validate        # blueprint のスキーマ検証
+  npm test                # blueprint の起動検査
+  ```
+
 ## CI / CD
 
-- テンプレートから生成した時点の Ruleset `main protection` には、必須ステータスチェックが含まれない。CI を追加した時点で、そのジョブ名を Ruleset の必須ステータスチェックに登録する。
+- プルリクエストおよび `main` への統合時に、`.github/workflows/ci.yml` の3ジョブを実行する。
+
+  | ジョブ | 内容 |
+  |---|---|
+  | `lint` | `sites/` 配下の PHP の構文検査、PHPCS（WordPress Coding Standards） |
+  | `validate` | 各 blueprint の JSON スキーマ検証（`@wp-playground/blueprints`）。本リポジトリを参照する `git:directory` の `ref` が `main` であること |
+  | `test` | WordPress Playground の CLI で各 blueprint を起動し、ログイン状態でトップと `/wp-admin/` が 200 を返すこと |
+
+- 各ジョブは対象がない場合もスキップとして成功する。
+- `test` は、blueprint が参照する `main` を検証対象のコミットへ差し替えて起動する（環境変数 `BLUEPRINT_REF`）。`main` のままではプルリクエストの変更を検証できないため。
+- **CI のジョブ名 `lint` / `validate` / `test` を、Ruleset `main protection` の必須ステータスチェックに登録している。** 定義は `.github/rulesets/main-protection.json` に置く。
 - 必須ステータスチェックは、Ruleset `main protection` がジョブ名で参照する。ジョブ名を変更する場合は Ruleset 側の更新が必須であり、一致しない場合はプルリクエストがマージ不能となる。
 - 変更されたファイルに応じて起動するジョブ（`paths` 指定のあるワークフロー）は、必須ステータスチェックに追加しない。対象外のプルリクエストではジョブが起動せず、チェックが Expected のまま残ってマージ不能となるため。
 

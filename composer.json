@@ -1,0 +1,17 @@
+{
+  "name": "norio-io/samples-wordpress",
+  "description": "WordPress の制作サンプル集",
+  "type": "project",
+  "license": "proprietary",
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^3.4"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "platform": {
+      "php": "8.3"
+    }
+  }
+}
