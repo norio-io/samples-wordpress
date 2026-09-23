@@ -64,6 +64,9 @@ samples-wordpress/
 
 - 各ジョブは対象がない場合もスキップとして成功する。
 - `test` は、blueprint が参照する `main` を検証対象のコミットへ差し替えて起動する（環境変数 `BLUEPRINT_REF`）。`git:directory` の `ref` と、raw.githubusercontent.com の URL のパスが対象である。`main` のままではプルリクエストの変更を検証できないため。
+- `main` への統合時に、`.github/workflows/deploy.yml` の `deploy` ジョブで `pages/` を GitHub Pages（https://norio-io.github.io/samples-wordpress/）へ公開する。公開元は GitHub Actions とする。ビルド工程は持たず、`pages/` をそのまま公開する。
+  - 同ジョブは `main` への統合時のみ実行するため、Ruleset の必須ステータスチェックには追加しない。
+  - サンプルを追加したときは、一覧ページ（`pages/index.html`）にカードを追加する。カードには名称、制作種別、概要、使用技術のタグ、公開側と管理画面の Playground への導線を置く。
 - **CI のジョブ名 `lint` / `validate` / `test` を、Ruleset `main protection` の必須ステータスチェックに登録している。** 定義は `.github/rulesets/main-protection.json` に置く。
 - 必須ステータスチェックは、Ruleset `main protection` がジョブ名で参照する。ジョブ名を変更する場合は Ruleset 側の更新が必須であり、一致しない場合はプルリクエストがマージ不能となる。
 - 変更されたファイルに応じて起動するジョブ（`paths` 指定のあるワークフロー）は、必須ステータスチェックに追加しない。対象外のプルリクエストではジョブが起動せず、チェックが Expected のまま残ってマージ不能となるため。
