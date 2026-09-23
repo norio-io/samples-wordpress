@@ -1,14 +1,14 @@
 // 各 blueprint を WordPress Playground の CLI で起動し、
 // トップと /wp-admin/ が 200 を返すことを検査する。
 //
-// 環境変数 BLUEPRINT_REF にコミットを指定した場合、本リポジトリを参照する
-// git:directory リソースの ref をそのコミットへ差し替える。blueprint は main を
+// 環境変数 BLUEPRINT_REF にコミットを指定した場合、本リポジトリを参照するリソース
+// （git:directory と raw.githubusercontent.com の URL）の版をそのコミットへ差し替える。blueprint は main を
 // 参照するため、差し替えなければプルリクエストの変更を検証できない。
 import { spawn } from 'node:child_process';
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { ROOT, findBlueprints, findOwnGitResources } from './lib/blueprints.mjs';
+import { ROOT, findBlueprints, findOwnResources } from './lib/blueprints.mjs';
 
 const PORT = 9400;
 const BASE_URL = `http://127.0.0.1:${PORT}`;
@@ -55,9 +55,8 @@ function prepare(path) {
   // CLI の --login は blueprint を指定した場合に効かないため、blueprint 側で指定する。
   blueprint.login = true;
   if (ref) {
-    for (const resource of findOwnGitResources(blueprint)) {
-      resource.ref = ref;
-      resource.refType = 'commit';
+    for (const resource of findOwnResources(blueprint)) {
+      resource.setRef(ref);
     }
   }
   return blueprint;

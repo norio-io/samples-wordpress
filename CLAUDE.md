@@ -38,7 +38,9 @@ samples-wordpress/
 | 起動検査 | WordPress Playground の CLI（Node 24.18 以上） |
 
 - プラグインは使用しない。
-- blueprint は `git:directory` リソースで本リポジトリの `main` を参照する。作業ブランチを参照したまま統合しない（`validate` ジョブで検査する）。
+- blueprint は `git:directory` リソースで本リポジトリの `main` を参照する。単一のファイル（デモ記事の WXR など）は `url` リソースで `https://raw.githubusercontent.com/norio-io/samples-wordpress/main/…` を参照する。いずれも作業ブランチを参照したまま統合しない（`validate` ジョブで検査する）。
+- 本文やテンプレートから投稿 ID で参照するもの（同期パターンの `wp:block`、ナビゲーションの `wp:navigation`）があるため、デモ記事の WXR では投稿 ID を固定する。WordPress の取り込みは空いている ID をそのまま用いる。
+- テンプレートパーツのリンクは、ルート相対のパスで書かない。WordPress Playground はサイトの URL にスコープのパスを含むため。ナビゲーションは `core/post-data`、ボタンはテーマのバインディング（`mizuki-dental/page-url` など）で URL を解決する。本文のリンクは、そのページからの相対パスで書く。
 - `installTheme` で `git:directory` を用いる場合は、`options.targetFolderName` にテーマのディレクトリ名を指定する。省略するとリポジトリの URL から導いた名前で配置される。WordPress 同梱のテーマ（`twentytwentyfive` など）と同名にすると導入に失敗する。
 - 実行コマンド（リポジトリ直下）
 
@@ -57,11 +59,11 @@ samples-wordpress/
   | ジョブ | 内容 |
   |---|---|
   | `lint` | `sites/` 配下の PHP の構文検査、PHPCS（WordPress Coding Standards） |
-  | `validate` | 各 blueprint の JSON スキーマ検証（`@wp-playground/blueprints`）。本リポジトリを参照する `git:directory` の `ref` が `main` であること |
+  | `validate` | 各 blueprint の JSON スキーマ検証（`@wp-playground/blueprints`）。本リポジトリを参照するリソース（`git:directory`、raw.githubusercontent.com の URL）が `main` を指すこと |
   | `test` | WordPress Playground の CLI で各 blueprint を起動し、ログイン状態でトップと `/wp-admin/` が 200 を返すこと |
 
 - 各ジョブは対象がない場合もスキップとして成功する。
-- `test` は、blueprint が参照する `main` を検証対象のコミットへ差し替えて起動する（環境変数 `BLUEPRINT_REF`）。`main` のままではプルリクエストの変更を検証できないため。
+- `test` は、blueprint が参照する `main` を検証対象のコミットへ差し替えて起動する（環境変数 `BLUEPRINT_REF`）。`git:directory` の `ref` と、raw.githubusercontent.com の URL のパスが対象である。`main` のままではプルリクエストの変更を検証できないため。
 - **CI のジョブ名 `lint` / `validate` / `test` を、Ruleset `main protection` の必須ステータスチェックに登録している。** 定義は `.github/rulesets/main-protection.json` に置く。
 - 必須ステータスチェックは、Ruleset `main protection` がジョブ名で参照する。ジョブ名を変更する場合は Ruleset 側の更新が必須であり、一致しない場合はプルリクエストがマージ不能となる。
 - 変更されたファイルに応じて起動するジョブ（`paths` 指定のあるワークフロー）は、必須ステータスチェックに追加しない。対象外のプルリクエストではジョブが起動せず、チェックが Expected のまま残ってマージ不能となるため。

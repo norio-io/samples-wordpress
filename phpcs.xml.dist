@@ -9,7 +9,13 @@
 	<arg value="sp"/>
 
 	<!-- テキストドメインはテーマごとに異なるため、各テーマの検査では固定しない。 -->
-	<rule ref="WordPress"/>
+	<rule ref="WordPress">
+		<!-- コメントは日本語で記述する。句点「。」と、大文字を持たない文字で始まる文を誤りと判定する規則を除外する。 -->
+		<exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop"/>
+		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+		<exclude name="Generic.Commenting.DocComment.ShortNotCapital"/>
+		<exclude name="Generic.Commenting.DocComment.LongNotCapital"/>
+	</rule>
 
 	<config name="minimum_wp_version" value="7.1"/>
 </ruleset>

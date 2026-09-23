@@ -1,0 +1,63 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "meta": {
+    "title": "みずき歯科クリニック",
+    "description": "架空の歯科医院のコーポレートサイト。自作ブロックテーマの制作サンプル。",
+    "author": "norio-io",
+    "categories": [
+      "Theme"
+    ]
+  },
+  "landingPage": "/",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "steps": [
+    {
+      "step": "setSiteLanguage",
+      "language": "ja"
+    },
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "git:directory",
+        "url": "https://github.com/norio-io/samples-wordpress",
+        "ref": "main",
+        "refType": "branch",
+        "path": "sites/corporate/dental-clinic/theme"
+      },
+      "options": {
+        "activate": true,
+        "targetFolderName": "mizuki-dental"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\nrequire '/wordpress/wp-load.php';\n// 初期状態の投稿・固定ページを削除する。お知らせの一覧に混ざらないようにするため。\nforeach ( array( 1, 2, 3 ) as $id ) {\n\twp_delete_post( $id, true );\n}\n"
+    },
+    {
+      "step": "importWxr",
+      "file": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/corporate/dental-clinic/content/demo.xml"
+      }
+    },
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "みずき歯科クリニック",
+        "blogdescription": "杉並区みずき台の歯科医院",
+        "show_on_front": "page",
+        "page_on_front": 110,
+        "page_for_posts": 116,
+        "timezone_string": "Asia/Tokyo",
+        "date_format": "Y.m.d"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\nrequire '/wordpress/wp-load.php';\n// パーマリンクを投稿名とし、書き換え規則を作り直す。\nglobal $wp_rewrite;\n$wp_rewrite->set_permalink_structure( '/%postname%/' );\nflush_rewrite_rules();\n"
+    }
+  ]
+}

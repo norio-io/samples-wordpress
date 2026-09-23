@@ -1,0 +1,43 @@
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main","layout":{"type":"default"}} -->
+<main class="wp-block-group site-main"><!-- wp:post-content {"align":"full","layout":{"type":"constrained"}} /-->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">NEWS</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">お知らせ</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":false},"className":"news-list"} -->
+<div class="wp-block-query news-list"><!-- wp:post-template -->
+<!-- wp:post-date {"format":"Y.m.d"} /-->
+
+<!-- wp:post-terms {"term":"category","className":"tag"} /-->
+
+<!-- wp:post-title {"isLink":true,"className":"ttl"} /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>お知らせはまだありません。</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query -->
+
+<!-- wp:buttons {"className":"more-link"} -->
+<div class="wp-block-buttons more-link"><!-- wp:button {"className":"is-style-link","metadata":{"bindings":{"url":{"source":"mizuki-dental/page-url","args":{"path":"news"}}}}} -->
+<div class="wp-block-button is-style-link"><a class="wp-block-button__link wp-element-button">お知らせの一覧へ →</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></section>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"cta"} /-->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

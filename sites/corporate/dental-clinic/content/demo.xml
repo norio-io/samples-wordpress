@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+	みずき歯科クリニック（架空）のデモ記事。
+	医院名・氏名・経歴・料金・所在地・電話番号・お知らせは、すべてサンプル用に作成した架空のものです。
+
+	投稿 ID は固定している。本文の同期パターン（wp:block の ref）と、テーマのナビゲーション（wp:navigation の ref）が ID で参照するため。
+	- 110–116: 固定ページ / 120–122: 投稿 / 130: 同期パターン「診療時間」 / 131–132: ナビゲーション
+-->
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/"
+>
+<channel>
+	<title>みずき歯科クリニック</title>
+	<link>https://example.com</link>
+	<description>杉並区みずき台の歯科医院</description>
+	<language>ja</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>https://example.com</wp:base_site_url>
+	<wp:base_blog_url>https://example.com</wp:base_blog_url>
+	<wp:author>
+		<wp:author_id>1</wp:author_id>
+		<wp:author_login><![CDATA[admin]]></wp:author_login>
+		<wp:author_email><![CDATA[admin@example.com]]></wp:author_email>
+		<wp:author_display_name><![CDATA[admin]]></wp:author_display_name>
+	</wp:author>
+	<wp:category>
+		<wp:term_id>5</wp:term_id>
+		<wp:category_nicename><![CDATA[info]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[お知らせ]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>6</wp:term_id>
+		<wp:category_nicename><![CDATA[closed]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[休診]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>7</wp:term_id>
+		<wp:category_nicename><![CDATA[equipment]]></wp:category_nicename>
+		<wp:category_parent><![CDATA[]]></wp:category_parent>
+		<wp:cat_name><![CDATA[設備]]></wp:cat_name>
+	</wp:category>
+	<item>
+		<title><![CDATA[診療時間]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:table {"className":"is-style-hours"} -->
+<figure class="wp-block-table is-style-hours"><table class="has-fixed-layout"><thead><tr><td></td><th scope="col">月</th><th scope="col">火</th><th scope="col">水</th><th scope="col">木</th><th scope="col">金</th><th scope="col">土</th><th scope="col">日</th></tr></thead><tbody><tr><th scope="row">午前<br>9:30–13:00</th><td>●</td><td>●</td><td>●</td><td>／</td><td>●</td><td>●</td><td>／</td></tr><tr><th scope="row">午後<br>14:30–19:00</th><td>●</td><td>●</td><td>／</td><td>／</td><td>●</td><td>▲</td><td>／</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:paragraph {"className":"is-style-note"} -->
+<p class="is-style-note">▲ 土曜の午後は 14:00–17:00 です。休診日は木曜・日曜・祝日です。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>130</wp:post_id>
+		<wp:post_date><![CDATA[2026-07-01 09:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-07-01 00:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[hours]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[wp_block]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[グローバルナビゲーション]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:navigation-link {"label":"医院紹介","type":"page","id":111,"url":"/about/","kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"診療案内","type":"page","id":112,"url":"/treatment/","kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"料金表","type":"page","id":113,"url":"/price/","kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"初めての方へ","type":"page","id":114,"url":"/first/","kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"お知らせ","type":"page","id":116,"url":"/news/","kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"アクセス","type":"page","id":115,"url":"/access/","kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>131</wp:post_id>
+		<wp:post_date><![CDATA[2026-07-01 09:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-07-01 00:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[global-navigation]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[フッターナビゲーション]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:home-link {"label":"ホーム"} /-->
+<!-- wp:navigation-link {"label":"医院紹介","type":"page","id":111,"url":"/about/","kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"診療案内","type":"page","id":112,"url":"/treatment/","kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"料金表","type":"page","id":113,"url":"/price/","kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"初めての方へ","type":"page","id":114,"url":"/first/","kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"お知らせ","type":"page","id":116,"url":"/news/","kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"アクセス","type":"page","id":115,"url":"/access/","kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>132</wp:post_id>
+		<wp:post_date><![CDATA[2026-07-01 09:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-07-01 00:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[footer-navigation]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[ホーム]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"tagName":"section","align":"full","className":"hero","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull hero"><!-- wp:group {"className":"hero-in","layout":{"type":"default"}} -->
+<div class="wp-block-group hero-in"><!-- wp:group {"className":"hero-text","layout":{"type":"default"}} -->
+<div class="wp-block-group hero-text"><!-- wp:heading {"level":1,"className":"hero-title"} -->
+<h1 class="wp-block-heading hero-title">歯を残すことを、<br>いちばん先に考える。</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"hero-lead"} -->
+<p class="hero-lead">みずき台駅から徒歩3分の歯科医院です。削る量と治療の回数を先にお伝えしてから始めます。一般歯科・小児歯科・矯正歯科に対応しています。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="first/">初めての方へ</a></div>
+<!-- /wp:button --><!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="treatment/">診療案内</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"hero-art","layout":{"type":"default"}} -->
+<div class="wp-block-group hero-art"><!-- wp:heading {"className":"hours-title"} -->
+<h2 class="wp-block-heading hours-title">診療時間</h2>
+<!-- /wp:heading -->
+
+<!-- wp:block {"ref":130} /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">TREATMENT</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">診療案内</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"sec-lead"} -->
+<p class="sec-lead">むし歯や歯周病の治療から、予防、矯正、自由診療まで対応しています。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"cards","layout":{"type":"default"}} -->
+<div class="wp-block-group cards"><!-- wp:group {"className":"is-style-card ico-general","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-card ico-general"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">一般歯科</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>むし歯と歯周病の治療です。痛みや腫れの原因を確かめたうえで、削る範囲と回数の見通しをお伝えしてから始めます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"more"} -->
+<p class="more"><a href="treatment/#general">くわしく</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><!-- wp:group {"className":"is-style-card ico-child","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-card ico-child"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">小児歯科</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>お子さまの歯の治療と予防です。初回は器具に触れて慣れるところから始め、そのお子さまの様子に合わせて進めます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"more"} -->
+<p class="more"><a href="treatment/#child">くわしく</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><!-- wp:group {"className":"is-style-card ico-ortho","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-card ico-ortho"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">矯正歯科</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>歯並びとかみ合わせの治療です。装置の種類ごとに、期間・通院回数・費用・想定される負担を先にご説明します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"more"} -->
+<p class="more"><a href="treatment/#ortho">くわしく</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><!-- wp:group {"className":"is-style-card ico-prevent","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-card ico-prevent"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">予防歯科</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>治療が終わったあとの状態を保つための定期検診とクリーニングです。次のご来院までの間隔は口の状態に応じて決めます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"more"} -->
+<p class="more"><a href="treatment/#prevent">くわしく</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><!-- wp:group {"className":"is-style-card ico-white","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-card ico-white"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">ホワイトニング</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>薬剤で歯の色調を明るくする自由診療です。効果の出方には個人差があり、知覚過敏が生じる場合があります。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"more"} -->
+<p class="more"><a href="treatment/#white">くわしく</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><!-- wp:group {"className":"is-style-card ico-implant","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-card ico-implant"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">インプラント</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>歯を失った部分に人工歯根を埋め込む自由診療です。骨の状態によっては適応とならないことがあります。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"more"} -->
+<p class="more"><a href="treatment/#implant">くわしく</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"surface","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-surface-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">POLICY</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">診療の進め方</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"is-style-flow","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-flow"><!-- wp:group {"className":"step","layout":{"type":"default"}} -->
+<div class="wp-block-group step"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">検査して、今の状態をお見せする</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>レントゲンと口腔内カメラで撮影し、モニタでご覧いただきながらご説明します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><!-- wp:group {"className":"step","layout":{"type":"default"}} -->
+<div class="wp-block-group step"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">治療の選択肢と費用をお伝えする</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>保険診療で行える方法と、自由診療の方法を並べてお示しします。回数と期間の見通しもあわせてお伝えします。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><!-- wp:group {"className":"step","layout":{"type":"default"}} -->
+<div class="wp-block-group step"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">ご同意のうえで治療を始める</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>その日に決めていただく必要はありません。持ち帰ってご検討いただけます。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><!-- wp:group {"className":"step","layout":{"type":"default"}} -->
+<div class="wp-block-group step"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">治療後の状態を保つ</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>治療が終わったあとは、3〜6か月ごとの定期検診で状態を確認します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>110</wp:post_id>
+		<wp:post_date><![CDATA[2026-07-01 09:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-07-01 00:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[home]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[医院紹介]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">GREETING</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">院長挨拶</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"article","layout":{"type":"default"}} -->
+<div class="wp-block-group article"><!-- wp:paragraph -->
+<p>歯は削れば元には戻りません。当院では、治療を始める前に検査の結果をモニタでご覧いただき、削る範囲と回数、費用の見通しをお伝えしています。そのうえでご納得いただけた方法で進めます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>痛みが出てから来院される方が多いのですが、治療が終わったあとをどう保つかのほうが、長い目では大きな差になります。3〜6か月ごとの定期検診をご案内しているのはそのためです。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>お子さまの診療では、初回は器具に触れて慣れるところから始めます。無理に進めることはしません。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"surface","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-surface-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">STAFF</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">スタッフ</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"people","layout":{"type":"default"}} -->
+<div class="wp-block-group people"><!-- wp:group {"className":"is-style-person","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-person"><!-- wp:paragraph {"className":"role"} -->
+<p class="role">院長・歯科医師</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">水木 涼介</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>総合病院の歯科口腔外科で9年勤務したのち、当院を開設。一般歯科と口腔外科を担当します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><!-- wp:group {"className":"is-style-person","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-person"><!-- wp:paragraph {"className":"role"} -->
+<p class="role">歯科医師</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">柴田 和佳子</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>小児歯科と矯正歯科を担当します。生え変わりの時期のご相談も承ります。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><!-- wp:group {"className":"is-style-person","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-person"><!-- wp:paragraph {"className":"role"} -->
+<p class="role">歯科衛生士</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">大石 千尋</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>予防歯科を担当します。歯みがきの道具の選び方と当て方を、お一人ずつご案内します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"className":"is-style-note"} -->
+<p class="is-style-note">※ 掲載している氏名・経歴はすべてサンプル用に作成した架空のものです。</p>
+<!-- /wp:paragraph --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">FACILITY</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">院内設備</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:table {"hasFixedLayout":false,"className":"is-style-defs"} -->
+<figure class="wp-block-table is-style-defs"><table><tbody><tr><th scope="row">診療チェア</th><td>4台。うち1台は個室で、車椅子のままお入りいただけます。</td></tr><tr><th scope="row">デジタルレントゲン</th><td>撮影した画像はその場でモニタに表示します。従来の機種に比べて撮影時間が短くなっています。</td></tr><tr><th scope="row">口腔内カメラ</th><td>お口の中の状態を拡大してご覧いただけます。治療の前後の比較にも用います。</td></tr><tr><th scope="row">滅菌器</th><td>ハンドピース（歯を削る器具）を患者さまごとに滅菌しています。</td></tr><tr><th scope="row">キッズスペース</th><td>待合室の一角にあります。保護者の方から見える位置に設けています。</td></tr></tbody></table></figure>
+<!-- /wp:table --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"surface","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-surface-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">HYGIENE</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">衛生管理の取り組み</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:list {"className":"is-style-checks"} -->
+<ul class="wp-block-list is-style-checks"><!-- wp:list-item -->
+<li>使い捨てできる器具は患者さまごとに交換</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>ハンドピースは患者さまごとに滅菌</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>器具は洗浄・消毒・滅菌の三段階で処理</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>診療チェアと周辺は診療のたびに消毒</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>グローブとマスクは患者さまごとに交換</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>診療室は常時換気</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></section>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[治療の内容と費用を先にお伝えし、ご同意をいただいてから始めます。通いやすさと、治療後の状態を保つことを大切にしています。]]></excerpt:encoded>
+		<wp:post_id>111</wp:post_id>
+		<wp:post_date><![CDATA[2026-07-01 09:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-07-01 00:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[about]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[mizuki_en]]></wp:meta_key>
+			<wp:meta_value><![CDATA[ABOUT]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[診療案内]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"cards","layout":{"type":"default"}} -->
+<div class="wp-block-group cards"><!-- wp:group {"className":"is-style-card ico-general","anchor":"general","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-card ico-general" id="general"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">一般歯科</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>むし歯と歯周病の治療です。痛みや腫れの原因を確かめたうえで、削る範囲と回数の見通しをお伝えしてから始めます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"className":"is-style-checks"} -->
+<ul class="wp-block-list is-style-checks"><!-- wp:list-item -->
+<li>むし歯の治療（詰め物・被せ物）</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>歯周病の検査と治療</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>根の治療</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>入れ歯の作製と調整</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group --><!-- wp:group {"className":"is-style-card ico-child","anchor":"child","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-card ico-child" id="child"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">小児歯科</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>お子さまの歯の治療と予防です。初回は器具に触れて慣れるところから始め、そのお子さまの様子に合わせて進めます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"className":"is-style-checks"} -->
+<ul class="wp-block-list is-style-checks"><!-- wp:list-item -->
+<li>乳歯のむし歯の治療</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>フッ素塗布</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>シーラント（奥歯の溝の予防処置）</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>生え変わりの確認</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group --><!-- wp:group {"className":"is-style-card ico-ortho","anchor":"ortho","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-card ico-ortho" id="ortho"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">矯正歯科</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>歯並びとかみ合わせの治療です。装置の種類ごとに、期間・通院回数・費用・想定される負担を先にご説明します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"className":"is-style-checks"} -->
+<ul class="wp-block-list is-style-checks"><!-- wp:list-item -->
+<li>ワイヤー装置による矯正</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>マウスピース型装置による矯正</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>小児の咬合誘導</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>保定（治療後の後戻りの防止）</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group --><!-- wp:group {"className":"is-style-card ico-prevent","anchor":"prevent","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-card ico-prevent" id="prevent"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">予防歯科</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>治療が終わったあとの状態を保つための定期検診とクリーニングです。次のご来院までの間隔は口の状態に応じて決めます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"className":"is-style-checks"} -->
+<ul class="wp-block-list is-style-checks"><!-- wp:list-item -->
+<li>歯石の除去</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>専用機器によるクリーニング</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>歯みがきの道具と当て方のご案内</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>定期検診（3〜6か月ごと）</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group --><!-- wp:group {"className":"is-style-card ico-white","anchor":"white","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-card ico-white" id="white"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">ホワイトニング</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>薬剤で歯の色調を明るくする自由診療です。効果の出方には個人差があり、知覚過敏が生じる場合があります。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"className":"is-style-checks"} -->
+<ul class="wp-block-list is-style-checks"><!-- wp:list-item -->
+<li>院内で行うホワイトニング</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>ご自宅で行うホワイトニング</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>両方を組み合わせる方法</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group --><!-- wp:group {"className":"is-style-card ico-implant","anchor":"implant","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-card ico-implant" id="implant"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">インプラント</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>歯を失った部分に人工歯根を埋め込む自由診療です。骨の状態によっては適応とならないことがあります。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"className":"is-style-checks"} -->
+<ul class="wp-block-list is-style-checks"><!-- wp:list-item -->
+<li>検査と治療計画の立案</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>人工歯根の埋入</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>被せ物の作製と装着</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>装着後の定期的な確認</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"className":"is-style-note"} -->
+<p class="is-style-note">※ ホワイトニングとインプラントは自由診療です。費用は<a href="../price/">料金表</a>をご覧ください。効果や経過には個人差があります。</p>
+<!-- /wp:paragraph --></section>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[保険診療で行えるものと、自由診療のものを分けてご説明します。自由診療は費用と想定される負担を先にお伝えします。]]></excerpt:encoded>
+		<wp:post_id>112</wp:post_id>
+		<wp:post_date><![CDATA[2026-07-01 09:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-07-01 00:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[treatment]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[mizuki_en]]></wp:meta_key>
+			<wp:meta_value><![CDATA[TREATMENT]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[料金表]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:heading {"level":3,"className":"price-title"} -->
+<h3 class="wp-block-heading price-title">ホワイトニング</h3>
+<!-- /wp:heading -->
+
+<!-- wp:table {"hasFixedLayout":false,"className":"is-style-price"} -->
+<figure class="wp-block-table is-style-price"><table><thead><tr><th scope="col">項目</th><th class="has-text-align-right" data-align="right" scope="col">料金（税込）</th></tr></thead><tbody><tr><th scope="row">院内で行うホワイトニング（上下）<br>1回あたり。2〜3回を目安にご案内しています。</th><td class="has-text-align-right" data-align="right">33,000円</td></tr><tr><th scope="row">ご自宅で行うホワイトニング<br>マウスピースの作製と薬剤2本を含みます。</th><td class="has-text-align-right" data-align="right">27,500円</td></tr><tr><th scope="row">追加の薬剤（1本）</th><td class="has-text-align-right" data-align="right">4,400円</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":3,"className":"price-title"} -->
+<h3 class="wp-block-heading price-title">インプラント</h3>
+<!-- /wp:heading -->
+
+<!-- wp:table {"hasFixedLayout":false,"className":"is-style-price"} -->
+<figure class="wp-block-table is-style-price"><table><thead><tr><th scope="col">項目</th><th class="has-text-align-right" data-align="right" scope="col">料金（税込）</th></tr></thead><tbody><tr><th scope="row">検査・診断（CT撮影を含む）</th><td class="has-text-align-right" data-align="right">22,000円</td></tr><tr><th scope="row">人工歯根の埋入（1本）</th><td class="has-text-align-right" data-align="right">253,000円</td></tr><tr><th scope="row">被せ物（1本）<br>素材により異なります。</th><td class="has-text-align-right" data-align="right">132,000円</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":3,"className":"price-title"} -->
+<h3 class="wp-block-heading price-title">矯正歯科</h3>
+<!-- /wp:heading -->
+
+<!-- wp:table {"hasFixedLayout":false,"className":"is-style-price"} -->
+<figure class="wp-block-table is-style-price"><table><thead><tr><th scope="col">項目</th><th class="has-text-align-right" data-align="right" scope="col">料金（税込）</th></tr></thead><tbody><tr><th scope="row">相談</th><td class="has-text-align-right" data-align="right">無料</td></tr><tr><th scope="row">精密検査・診断</th><td class="has-text-align-right" data-align="right">44,000円</td></tr><tr><th scope="row">小児矯正（第一期）</th><td class="has-text-align-right" data-align="right">385,000円</td></tr><tr><th scope="row">成人矯正（ワイヤー装置）</th><td class="has-text-align-right" data-align="right">770,000円</td></tr><tr><th scope="row">成人矯正（マウスピース型装置）</th><td class="has-text-align-right" data-align="right">880,000円</td></tr><tr><th scope="row">調整料（通院1回あたり）</th><td class="has-text-align-right" data-align="right">5,500円</td></tr><tr><th scope="row">保定装置<br>治療後の後戻りを防ぐための装置です。</th><td class="has-text-align-right" data-align="right">33,000円</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:heading {"level":3,"className":"price-title"} -->
+<h3 class="wp-block-heading price-title">その他</h3>
+<!-- /wp:heading -->
+
+<!-- wp:table {"hasFixedLayout":false,"className":"is-style-price"} -->
+<figure class="wp-block-table is-style-price"><table><thead><tr><th scope="col">項目</th><th class="has-text-align-right" data-align="right" scope="col">料金（税込）</th></tr></thead><tbody><tr><th scope="row">セラミックの詰め物</th><td class="has-text-align-right" data-align="right">55,000円〜</td></tr><tr><th scope="row">セラミックの被せ物</th><td class="has-text-align-right" data-align="right">110,000円〜</td></tr><tr><th scope="row">スポーツ用マウスガード</th><td class="has-text-align-right" data-align="right">16,500円</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:group {"className":"article payment","layout":{"type":"default"}} -->
+<div class="wp-block-group article payment"><!-- wp:heading {"className":"article-title"} -->
+<h2 class="wp-block-heading article-title">お支払いとご注意</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>自由診療のお支払いには、現金のほかクレジットカードをご利用いただけます。保険診療は現金のみです。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>自由診療は公的医療保険の対象外です。同じ処置を保険診療で行える場合があり、その際は選択肢を並べてご説明します。治療の経過や効果の出方には個人差があり、装置の種類によっては発音や食事に慣れるまで時間を要することがあります。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>矯正治療の費用は装置ごとの総額です。治療開始後に装置を変更する場合は、差額の取り扱いを事前にご説明します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"className":"is-style-note"} -->
+<p class="is-style-note">※ 掲載している料金はすべてサンプル用に作成した架空のものです。</p>
+<!-- /wp:paragraph --></section>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[自由診療の料金を掲載しています。保険診療は保険点数に基づくため、窓口でのお支払いは負担割合によって異なります。]]></excerpt:encoded>
+		<wp:post_id>113</wp:post_id>
+		<wp:post_date><![CDATA[2026-07-01 09:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-07-01 00:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[price]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[mizuki_en]]></wp:meta_key>
+			<wp:meta_value><![CDATA[PRICE]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[初めての方へ]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">FLOW</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">ご来院の流れ</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"is-style-flow","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-flow"><!-- wp:group {"className":"step","layout":{"type":"default"}} -->
+<div class="wp-block-group step"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">ご予約</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>お電話でご予約ください。お困りの内容と、痛みの有無をお伺いします。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><!-- wp:group {"className":"step","layout":{"type":"default"}} -->
+<div class="wp-block-group step"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">受付・問診票のご記入</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>保険証をご提示ください。問診票には、これまでの治療やお薬、気になっていることをご記入ください。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><!-- wp:group {"className":"step","layout":{"type":"default"}} -->
+<div class="wp-block-group step"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">検査</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>レントゲンと口腔内カメラで撮影し、歯ぐきの状態を検査します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><!-- wp:group {"className":"step","layout":{"type":"default"}} -->
+<div class="wp-block-group step"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">ご説明</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>検査の結果をモニタでご覧いただきながら、治療の選択肢と費用、回数の見通しをお伝えします。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --><!-- wp:group {"className":"step","layout":{"type":"default"}} -->
+<div class="wp-block-group step"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">治療、または次回のご予約</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>お急ぎの処置があればその日に行います。ご検討いただく場合は、次回のご予約のみで結構です。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"surface","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-surface-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">BRING</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">お持ちいただくもの</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:list {"className":"is-style-checks"} -->
+<ul class="wp-block-list is-style-checks"><!-- wp:list-item -->
+<li>健康保険証</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>医療証（お持ちの方）</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>お薬手帳（お持ちの方）</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>紹介状（お持ちの方）</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>現在お使いの入れ歯・マウスピース</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li>診察券（2回目以降）</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">FAQ</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">よくあるご質問</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"is-style-faq","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-faq"><!-- wp:details -->
+<details class="wp-block-details"><summary>予約は必要ですか。</summary><!-- wp:paragraph -->
+<p>予約優先で診療しています。お電話または受付でご予約ください。急な痛みや腫れの場合は、当日の空き状況をお電話でご確認ください。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details --><!-- wp:details -->
+<details class="wp-block-details"><summary>保険証はいつ持参すればよいですか。</summary><!-- wp:paragraph -->
+<p>初診時と、月が変わって最初のご来院時にご提示ください。医療証をお持ちの方はあわせてご提示ください。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details --><!-- wp:details -->
+<details class="wp-block-details"><summary>子どもだけで通わせても大丈夫ですか。</summary><!-- wp:paragraph -->
+<p>小学生以下のお子さまは、治療内容のご説明と同意が必要なため、保護者の方とご一緒にご来院ください。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details --><!-- wp:details -->
+<details class="wp-block-details"><summary>治療は何回くらいかかりますか。</summary><!-- wp:paragraph -->
+<p>状態によって異なります。初回の検査のあと、想定される回数と期間をお伝えしてから治療を始めます。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details --><!-- wp:details -->
+<details class="wp-block-details"><summary>駐車場はありますか。</summary><!-- wp:paragraph -->
+<p>建物の地下に提携駐車場（8台）があります。受付で駐車券をご提示ください。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details --><!-- wp:details -->
+<details class="wp-block-details"><summary>クレジットカードは使えますか。</summary><!-- wp:paragraph -->
+<p>自由診療のお支払いにご利用いただけます。保険診療は現金のみとなります。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[初回は検査とご説明が中心で、40分ほどお時間をいただきます。痛みや腫れがある場合は、その日のうちに処置を行います。]]></excerpt:encoded>
+		<wp:post_id>114</wp:post_id>
+		<wp:post_date><![CDATA[2026-07-01 09:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-07-01 00:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[first]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[mizuki_en]]></wp:meta_key>
+			<wp:meta_value><![CDATA[FIRST VISIT]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[アクセス]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:columns {"className":"access-grid"} -->
+<div class="wp-block-columns access-grid"><!-- wp:column {"width":"53%"} -->
+<div class="wp-block-column" style="flex-basis:53%"><!-- wp:pattern {"slug":"mizuki-dental/access-map"} /--></div>
+<!-- /wp:column --><!-- wp:column {"width":"47%"} -->
+<div class="wp-block-column" style="flex-basis:47%"><!-- wp:table {"hasFixedLayout":false,"className":"is-style-defs"} -->
+<figure class="wp-block-table is-style-defs"><table><tbody><tr><th scope="row">所在地</th><td>〒166-0000<br>東京都杉並区みずき台2-8-1 みずき台メディカルビル2F</td></tr><tr><th scope="row">電話番号</th><td>03-0000-0000</td></tr><tr><th scope="row">休診日</th><td>木曜・日曜・祝日</td></tr><tr><th scope="row">駐車場</th><td>建物地下に提携駐車場8台。受付で駐車券をご提示ください。</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:list {"className":"is-style-routes"} -->
+<ul class="wp-block-list is-style-routes"><!-- wp:list-item -->
+<li><strong>電車</strong>みずき台駅 北口から徒歩3分</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>バス</strong>みずき台一丁目 バス停から徒歩5分</li>
+<!-- /wp:list-item --><!-- wp:list-item -->
+<li><strong>お車</strong>環八通り みずき台交差点から2分</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"surface","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-surface-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">HOURS</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">診療時間</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:block {"ref":130} /--></section>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[みずき台駅 北口から徒歩3分。建物の地下に提携駐車場があります。]]></excerpt:encoded>
+		<wp:post_id>115</wp:post_id>
+		<wp:post_date><![CDATA[2026-07-01 09:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-07-01 00:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[access]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[mizuki_en]]></wp:meta_key>
+			<wp:meta_value><![CDATA[ACCESS]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[お知らせ]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[休診日、診療時間の変更、設備の更新などをお知らせします。]]></excerpt:encoded>
+		<wp:post_id>116</wp:post_id>
+		<wp:post_date><![CDATA[2026-07-01 09:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-07-01 00:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[news]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[mizuki_en]]></wp:meta_key>
+			<wp:meta_value><![CDATA[NEWS]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[秋の予防歯科キャンペーンについて]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>9月から11月の期間、定期検診をご予約の方に歯みがきのご案内をお渡ししています。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>ご自身の歯並びに合わせた道具の選び方と当て方を、その場でお伝えします。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>120</wp:post_id>
+		<wp:post_date><![CDATA[2026-08-05 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-08-05 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[2026-08-05]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="info"><![CDATA[お知らせ]]></category>
+	</item>
+	<item>
+		<title><![CDATA[9月の休診日のお知らせ]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>9月21日（月）から9月23日（水）まで、院内設備の点検のため休診します。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>休診中のお問い合わせは、翌診療日以降に順次ご返信します。お急ぎの場合は、お住まいの地域の休日診療窓口へご相談ください。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>121</wp:post_id>
+		<wp:post_date><![CDATA[2026-09-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-09-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[2026-09-01]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="closed"><![CDATA[休診]]></category>
+	</item>
+	<item>
+		<title><![CDATA[デジタルレントゲンを更新しました]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>撮影時間が短くなり、従来の機種に比べて被ばく量を抑えられるようになりました。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>撮影した画像は診療室のモニタでそのままご覧いただけます。治療の前後で状態を見比べながらご説明します。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>122</wp:post_id>
+		<wp:post_date><![CDATA[2026-09-18 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-09-18 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[2026-09-18]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="equipment"><![CDATA[設備]]></category>
+	</item>
+</channel>
+</rss>

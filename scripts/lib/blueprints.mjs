@@ -38,23 +38,44 @@ function subdirectories(dir) {
 }
 
 /**
- * blueprint 内の、本リポジトリを参照する git:directory リソースを列挙する。
+ * blueprint 内の、本リポジトリを参照するリソースを列挙する。
+ *
+ * - git:directory リソース（ref で版を指定する）
+ * - url リソースのうち raw.githubusercontent.com の本リポジトリを指すもの（URL のパスで版を指定する）
+ *
+ * 戻り値の各要素は、参照している版（ref）と、版を差し替える関数（setRef）を持つ。
  */
-export function findOwnGitResources(value, found = []) {
+export function findOwnResources(value, found = []) {
   if (Array.isArray(value)) {
     for (const item of value) {
-      findOwnGitResources(item, found);
+      findOwnResources(item, found);
     }
   } else if (value && typeof value === 'object') {
     if (value.resource === 'git:directory' && isOwnRepository(value.url)) {
-      found.push(value);
+      found.push({
+        ref: value.ref,
+        setRef(ref) {
+          value.ref = ref;
+          value.refType = 'commit';
+        },
+      });
+    } else if (value.resource === 'url' && typeof value.url === 'string' && value.url.toLowerCase().startsWith(RAW_PREFIX.toLowerCase())) {
+      const [ref, ...rest] = value.url.slice(RAW_PREFIX.length).split('/');
+      found.push({
+        ref,
+        setRef(newRef) {
+          value.url = RAW_PREFIX + [newRef, ...rest].join('/');
+        },
+      });
     }
     for (const item of Object.values(value)) {
-      findOwnGitResources(item, found);
+      findOwnResources(item, found);
     }
   }
   return found;
 }
+
+const RAW_PREFIX = `https://raw.githubusercontent.com/${REPOSITORY}/`;
 
 function isOwnRepository(url) {
   if (typeof url !== 'string') {
