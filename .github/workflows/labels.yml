@@ -35,7 +35,7 @@ jobs:
       - name: GitHub 既定のラベルを削除する
         if: github.event_name == 'workflow_dispatch'
         run: |
-          for name in bug documentation duplicate enhancement "good first issue" "help wanted" invalid question wontfix; do
+          for name in accessibility bug documentation duplicate enhancement "good first issue" "help wanted" invalid question wontfix; do
             if jq -e --arg n "$name" 'any(.[]; .name == $n)' .github/labels.json > /dev/null; then
               continue
             fi
