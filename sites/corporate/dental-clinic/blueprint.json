@@ -52,12 +52,13 @@
         "page_on_front": 110,
         "page_for_posts": 116,
         "timezone_string": "Asia/Tokyo",
-        "date_format": "Y.m.d"
+        "date_format": "Y.m.d",
+        "permalink_structure": "/news/%postname%/"
       }
     },
     {
       "step": "runPHP",
-      "code": "<?php\nrequire '/wordpress/wp-load.php';\n// パーマリンクを投稿名とし、書き換え規則を作り直す。\nglobal $wp_rewrite;\n$wp_rewrite->set_permalink_structure( '/%postname%/' );\nflush_rewrite_rules();\n"
+      "code": "<?php\nrequire '/wordpress/wp-load.php';\n// 書き換え規則を作り直す。パーマリンクは直前の手順で「お知らせ（/news/）の配下の投稿名」とした。静的版と URL の階層を揃えるため。\n// カテゴリーの規則はパーマリンクの接頭辞（/news/）を含めて登録されるため、パーマリンクを変更した要求とは別の要求で作り直す。\nflush_rewrite_rules();\n"
     }
   ]
 }
