@@ -1,0 +1,99 @@
+<!-- wp:template-part {"slug":"notice"} /-->
+
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main","layout":{"type":"default"}} -->
+<main class="wp-block-group site-main"><!-- wp:group {"align":"full","className":"crumb","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull crumb"><!-- wp:breadcrumbs {"separator":"／"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"page-head","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull page-head"><!-- wp:group {"className":"page-head-in","layout":{"type":"default"}} -->
+<div class="wp-block-group page-head-in"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">AREA</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:query-title {"type":"archive","showPrefix":false} /-->
+
+<!-- wp:term-description {"className":"lead"} /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"list-layout","layout":{"type":"default"}} -->
+<div class="wp-block-group list-layout"><!-- wp:group {"tagName":"aside","className":"list-filter","layout":{"type":"default"}} -->
+<aside class="wp-block-group list-filter"><!-- wp:hinata/search {"variant":"sidebar"} /--></aside>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"list-results","layout":{"type":"default"}} -->
+<div class="wp-block-group list-results"><!-- wp:hinata/result-bar /-->
+
+<!-- wp:query {"queryId":2,"query":{"perPage":9,"pages":0,"offset":0,"postType":"property","order":"desc","orderBy":"date","inherit":true},"className":"property-list"} -->
+<div class="wp-block-query property-list"><!-- wp:post-template {"className":"cards","layout":{"type":"default"}} -->
+<!-- wp:group {"tagName":"article","className":"card","layout":{"type":"default"}} -->
+<article class="wp-block-group card"><!-- wp:post-featured-image {"aspectRatio":"4/3","sizeSlug":"large","className":"card__plan"} /-->
+
+<!-- wp:group {"className":"card__body","layout":{"type":"default"}} -->
+<div class="wp-block-group card__body"><!-- wp:paragraph {"className":"badge-new","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"new"}}}}} -->
+<p class="badge-new"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"card__price","layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"bottom"}} -->
+<div class="wp-block-group card__price"><!-- wp:paragraph {"className":"rent num","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"rent"}}}}} -->
+<p class="rent num"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"fee","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"fee"}}}}} -->
+<p class="fee"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"badges","layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-group badges"><!-- wp:paragraph {"className":"badge","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"layout"}}}}} -->
+<p class="badge"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"badge num","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"sqm"}}}}} -->
+<p class="badge num"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"badge","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"walk"}}}}} -->
+<p class="badge"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:post-title {"level":3,"isLink":true,"className":"card__title"} /-->
+
+<!-- wp:paragraph {"className":"card__addr","metadata":{"bindings":{"content":{"source":"hinata/property","args":{"key":"address"}}}}} -->
+<p class="card__addr"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></article>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+
+<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:query-pagination-previous {"label":"前へ"} /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next {"label":"次へ"} /-->
+<!-- /wp:query-pagination -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph {"className":"no-results__text"} -->
+<p class="no-results__text">条件に合う物件が見つかりませんでした。条件を減らすか、上の「すべて解除」から条件を外してお探しください。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline","metadata":{"bindings":{"url":{"source":"hinata/url","args":{"key":"properties"}}}}} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button">条件をすべて解除する</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /-->

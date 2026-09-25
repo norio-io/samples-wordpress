@@ -1,0 +1,317 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
+		"layout": {
+			"contentSize": "1180px",
+			"wideSize": "1180px"
+		},
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"defaultDuotone": false,
+			"custom": false,
+			"customGradient": false,
+			"gradients": [],
+			"palette": [
+				{
+					"slug": "sumi",
+					"name": "墨",
+					"color": "#1e2430"
+				},
+				{
+					"slug": "usuzumi",
+					"name": "薄墨",
+					"color": "#555e6b"
+				},
+				{
+					"slug": "kinari",
+					"name": "生成り",
+					"color": "#fcfbf8"
+				},
+				{
+					"slug": "suna",
+					"name": "砂",
+					"color": "#f5f1ea"
+				},
+				{
+					"slug": "kei",
+					"name": "罫",
+					"color": "#e4dfd6"
+				},
+				{
+					"slug": "ai",
+					"name": "藍",
+					"color": "#26334a"
+				},
+				{
+					"slug": "hi",
+					"name": "陽",
+					"color": "#f2a65a"
+				},
+				{
+					"slug": "hi-light",
+					"name": "陽（淡）",
+					"color": "#fbe9d6"
+				},
+				{
+					"slug": "kaki",
+					"name": "柿",
+					"color": "#b5561a"
+				},
+				{
+					"slug": "kaki-text",
+					"name": "柿（文字）",
+					"color": "#a4501a"
+				},
+				{
+					"slug": "white",
+					"name": "白",
+					"color": "#ffffff"
+				}
+			]
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"customFontSize": false,
+			"fluid": false,
+			"fontFamilies": [
+				{
+					"slug": "noto-sans-jp",
+					"name": "Noto Sans JP",
+					"fontFamily": "\"Noto Sans JP\", \"Hiragino Sans\", \"Yu Gothic\", sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Noto Sans JP",
+							"fontWeight": "400 700",
+							"fontStyle": "normal",
+							"fontDisplay": "swap",
+							"src": [
+								"file:./assets/fonts/noto-sans-jp.woff2"
+							]
+						}
+					]
+				},
+				{
+					"slug": "manrope",
+					"name": "Manrope（数字）",
+					"fontFamily": "Manrope, \"Noto Sans JP\", sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Manrope",
+							"fontWeight": "200 800",
+							"fontStyle": "normal",
+							"fontDisplay": "swap",
+							"src": [
+								"file:./assets/fonts/manrope.woff2"
+							]
+						}
+					]
+				}
+			],
+			"fontSizes": [
+				{
+					"slug": "x-small",
+					"name": "極小",
+					"size": "12px"
+				},
+				{
+					"slug": "small",
+					"name": "小",
+					"size": "13.5px"
+				},
+				{
+					"slug": "medium",
+					"name": "標準",
+					"size": "15px"
+				},
+				{
+					"slug": "large",
+					"name": "大",
+					"size": "18px"
+				},
+				{
+					"slug": "x-large",
+					"name": "見出し",
+					"size": "clamp(20px, 2.4vw, 26px)"
+				},
+				{
+					"slug": "xx-large",
+					"name": "ページ見出し",
+					"size": "clamp(24px, 3.2vw, 34px)"
+				}
+			]
+		},
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"customSpacingSize": false,
+			"units": [
+				"px",
+				"em",
+				"rem",
+				"%",
+				"vw"
+			],
+			"spacingSizes": [
+				{
+					"slug": "10",
+					"name": "極小",
+					"size": "8px"
+				},
+				{
+					"slug": "20",
+					"name": "小",
+					"size": "16px"
+				},
+				{
+					"slug": "30",
+					"name": "中",
+					"size": "clamp(20px, 3vw, 32px)"
+				},
+				{
+					"slug": "40",
+					"name": "大",
+					"size": "clamp(28px, 4.5vw, 48px)"
+				},
+				{
+					"slug": "section",
+					"name": "セクション",
+					"size": "clamp(44px, 6vw, 80px)"
+				}
+			]
+		},
+		"blocks": {
+			"core/post-featured-image": {
+				"color": {
+					"duotone": []
+				}
+			}
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var:preset|color|kinari",
+			"text": "var:preset|color|sumi"
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|noto-sans-jp",
+			"fontSize": "var:preset|font-size|medium",
+			"lineHeight": "1.85"
+		},
+		"spacing": {
+			"blockGap": "20px",
+			"padding": {
+				"left": "20px",
+				"right": "20px"
+			}
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var:preset|color|kaki-text"
+				},
+				":hover": {
+					"typography": {
+						"textDecoration": "none"
+					}
+				}
+			},
+			"heading": {
+				"typography": {
+					"fontWeight": "700",
+					"letterSpacing": "0.02em",
+					"lineHeight": "1.5"
+				}
+			},
+			"h1": {
+				"typography": {
+					"fontSize": "var:preset|font-size|xx-large"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "var:preset|font-size|x-large"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "var:preset|font-size|large"
+				}
+			},
+			"button": {
+				"border": {
+					"radius": "4px",
+					"width": "1px",
+					"style": "solid",
+					"color": "var:preset|color|kaki"
+				},
+				"color": {
+					"background": "var:preset|color|kaki",
+					"text": "var:preset|color|white"
+				},
+				"spacing": {
+					"padding": {
+						"top": "12px",
+						"bottom": "12px",
+						"left": "22px",
+						"right": "22px"
+					}
+				},
+				"typography": {
+					"fontSize": "var:preset|font-size|medium",
+					"fontWeight": "700",
+					"lineHeight": "1.5"
+				},
+				":hover": {
+					"color": {
+						"background": "var:preset|color|sumi",
+						"text": "var:preset|color|white"
+					},
+					"border": {
+						"color": "var:preset|color|sumi"
+					}
+				}
+			}
+		},
+		"blocks": {
+			"core/button": {
+				"variations": {
+					"outline": {
+						"border": {
+							"color": "var:preset|color|kaki",
+							"width": "1px"
+						},
+						"color": {
+							"background": "var:preset|color|white",
+							"text": "var:preset|color|kaki-text"
+						}
+					}
+				}
+			},
+			"core/post-title": {
+				"typography": {
+					"fontSize": "var:preset|font-size|xx-large"
+				}
+			}
+		}
+	},
+	"templateParts": [
+		{
+			"name": "notice",
+			"title": "制作サンプルの表示",
+			"area": "uncategorized"
+		},
+		{
+			"name": "header",
+			"title": "ヘッダー",
+			"area": "header"
+		},
+		{
+			"name": "footer",
+			"title": "フッター",
+			"area": "footer"
+		}
+	]
+}
