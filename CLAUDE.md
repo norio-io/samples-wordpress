@@ -42,6 +42,10 @@ samples-wordpress/
 - 本文やテンプレートから投稿 ID で参照するもの（同期パターンの `wp:block`、ナビゲーションの `wp:navigation`）があるため、デモ記事の WXR では投稿 ID を固定する。WordPress の取り込みは空いている ID をそのまま用いる。
 - テンプレートパーツのリンクは、ルート相対のパスで書かない。WordPress Playground はサイトの URL にスコープのパスを含むため。ナビゲーションは `core/post-data`、ボタンはテーマのバインディング（`mizuki-dental/page-url` など）で URL を解決する。本文のリンクは、そのページからの相対パスで書く。
 - `installTheme` で `git:directory` を用いる場合は、`options.targetFolderName` にテーマのディレクトリ名を指定する。省略するとリポジトリの URL から導いた名前で配置される。WordPress 同梱のテーマ（`twentytwentyfive` など）と同名にすると導入に失敗する。
+- ナビゲーションブロックのメニュー展開時の配色は、ブロックの属性 `overlayBackgroundColor` と `overlayTextColor` で指定する。CSS による指定は、コアの `.wp-block-navigation:not(.has-background)` を含むセレクタに詳細度で負けるため。
+- 画面に固定する要素（固定の問い合わせボタンなど）の `z-index` は、固定したヘッダーより小さい値とする。ヘッダーが重なりの文脈を作るため、ヘッダー内のメニューはページ全体ではヘッダーの `z-index` で扱われ、それより大きい値の固定要素が展開したメニューの前面に出る。
+- 管理画面用の blueprint（`blueprint-admin.json`）では、`runPHP` で管理者の `wp_persisted_preferences` の `core/edit-post` に `welcomeGuide: false` を保存する。WordPress Playground は起動のたびに初期状態へ戻り、編集画面を開くたびにエディターの初回ガイドが表示されるため。
+- 入力欄（投稿メタ）の既定値の保存は、`rest_after_insert_{post_type}` で行い、エディターからの保存時に限る。`save_post` は WXR の取り込みでも実行され、取り込み処理が入力欄を保存するより前に動くため、値が重複する。
 - 実行コマンド（リポジトリ直下）
 
   ```sh
@@ -51,6 +55,9 @@ samples-wordpress/
   npm run validate        # blueprint のスキーマ検証
   npm test                # blueprint の起動検査
   ```
+- プロキシ経由で外部へ接続する作業環境で WordPress Playground の CLI を実行する場合は、環境変数 `NODE_USE_ENV_PROXY=1` と `NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt` を指定する。Node の `fetch` は既定でプロキシを通らず、WordPress 本体などを取得できないため。
+- 起動した CLI のプロセスは、PID を指定して終了する。`pkill -f` はパターンが実行中のシェル自身にも一致し、シェルごと終了させるため。
+- 画面の実測は、対象の URL が 200 を返すことを確かめてから行う。存在しないスラッグでは 404 のページが表示され、誤った結果になるため。
 
 ## CI / CD
 
@@ -120,6 +127,11 @@ samples-wordpress/
 
 - レビュースレッドの解決はレビュー者が行う。実装者は解決しない。Ruleset の「会話の解決を必須」は、未解決の指摘を残したままマージされることを防ぐためのものであり、実装した側が自ら解決できる状態では機能しないため。
 - 指摘への対応を終えた場合は、スレッドへ返信して反映内容を伝えるにとどめる。
+- 伝達事項（検証の結果、判断の理由、制約、未対応の事項など）は、プルリクエストへのコメントで伝える。レビュー者はプルリクエストを確認するため。
+- 指摘への返信には、対応したコミットと変更内容を書く。
+- 返信は、対応したコミットを push した後に行う。返信の時点で、レビュー者がコミットの差分を確認できるようにするため。
+- 表示や動作の修正を伝える返信には、確認した条件（画面幅、URL、操作）と実測値（計算済みのスタイル、最前面の要素、axe の違反件数など）を添える。
+- 返信に誤りがあった場合は、同じスレッドに訂正を追記し、元の返信は投稿時のまま残す。
 
 ### その他
 
