@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600" fill="none" preserveAspectRatio="xMaxYMid slice">
+  <!-- 吹き出しと、声が広がる同心の弧を抽象化した細い線。装飾として控えめに敷く。 -->
+  <g stroke="#e2dde9" stroke-width="1.5">
+    <path d="M1010 120h250a28 28 0 0 1 28 28v120a28 28 0 0 1-28 28h-150l-46 40v-40h-54a28 28 0 0 1-28-28V148a28 28 0 0 1 28-28z"/>
+    <path d="M1180 360h160a24 24 0 0 1 24 24v76a24 24 0 0 1-24 24h-40v34l-38-34h-82a24 24 0 0 1-24-24v-76a24 24 0 0 1 24-24z"/>
+    <path d="M1040 190h150M1040 226h110"/>
+    <path d="M1204 412h110M1204 442h70"/>
+  </g>
+  <g stroke="#f08a6c" stroke-opacity=".5" stroke-width="1.5">
+    <path d="M1316 170a60 60 0 0 1 0 84M1344 142a100 100 0 0 1 0 140M1372 114a140 140 0 0 1 0 196"/>
+    <path d="M1100 420a44 44 0 0 0 0 60M1076 396a80 80 0 0 0 0 108"/>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+<!-- wp:template-part {"slug":"notice"} /-->
+
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main","layout":{"type":"default"}} -->
+<main class="wp-block-group site-main"><!-- wp:group {"align":"full","className":"crumb","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull crumb"><!-- wp:breadcrumbs {"separator":"／"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"profile","layout":{"type":"default"}} -->
+<div class="wp-block-group profile"><!-- wp:hibiki/portrait {"className":"profile__portrait"} /-->
+
+<!-- wp:group {"className":"profile__body","layout":{"type":"default"}} -->
+<div class="wp-block-group profile__body"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">INSTRUCTOR</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-title {"level":1,"className":"profile__name"} /-->
+
+<!-- wp:post-content {"className":"profile__text","layout":{"type":"default"}} /-->
+
+<!-- wp:hibiki/instructor-profile /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"usufuji","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-usufuji-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">COURSES</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">担当コース</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:query {"queryId":4,"query":{"perPage":12,"pages":0,"offset":0,"postType":"course","order":"asc","orderBy":"menu_order","inherit":false,"hibikiRelated":"instructor"},"className":"course-list"} -->
+<div class="wp-block-query course-list"><!-- wp:post-template {"className":"cards","layout":{"type":"default"}} -->
+<!-- wp:hibiki/course-card /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph {"className":"no-results__text"} -->
+<p class="no-results__text">現在、掲載中の担当コースはありません。</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></section>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"trial-cta"} /--></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /-->

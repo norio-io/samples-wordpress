@@ -1,0 +1,1226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+	ひびき英語スクール（架空）のデモデータ。
+	スクール名・コース・講師名・所在地・駅名・電話番号は、すべてサンプル用に作成した架空のものです。
+
+	投稿 ID は固定している。テーマのヘッダー・フッターのナビゲーション（wp:navigation の ref）と、
+	コースの「担当講師」（投稿メタ instructors）が ID で参照するため。
+	- 141–142: ナビゲーション / 201–203: 固定ページ / 301–310: コース / 401–404: 講師
+	コースの並び（おすすめ順）は menu_order（管理画面の「順序」）で決める。
+-->
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/"
+>
+<channel>
+	<title>ひびき英語スクール</title>
+	<link>https://example.com</link>
+	<description>千景市の英会話・英語スクール</description>
+	<language>ja</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>https://example.com</wp:base_site_url>
+	<wp:base_blog_url>https://example.com</wp:base_blog_url>
+	<wp:author>
+		<wp:author_id>1</wp:author_id>
+		<wp:author_login><![CDATA[admin]]></wp:author_login>
+		<wp:author_email><![CDATA[admin@example.com]]></wp:author_email>
+		<wp:author_display_name><![CDATA[admin]]></wp:author_display_name>
+	</wp:author>
+	<wp:term>
+		<wp:term_id>11</wp:term_id>
+		<wp:term_taxonomy><![CDATA[target]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[kids]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[キッズ]]></wp:term_name>
+		<wp:term_description><![CDATA[小学生。英語の音に親しむところから始めます。]]></wp:term_description>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>12</wp:term_id>
+		<wp:term_taxonomy><![CDATA[target]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[teens]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[中高生]]></wp:term_name>
+		<wp:term_description><![CDATA[学校の英語と、試験・留学に向けた学習を支えます。]]></wp:term_description>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>13</wp:term_id>
+		<wp:term_taxonomy><![CDATA[target]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[adults]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[大人]]></wp:term_name>
+		<wp:term_description><![CDATA[社会人・大学生。日常会話からビジネスまで。]]></wp:term_description>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>21</wp:term_id>
+		<wp:term_taxonomy><![CDATA[purpose]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[conversation]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[日常会話]]></wp:term_name>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>22</wp:term_id>
+		<wp:term_taxonomy><![CDATA[purpose]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[business]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[ビジネス]]></wp:term_name>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>23</wp:term_id>
+		<wp:term_taxonomy><![CDATA[purpose]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[exam]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[試験対策]]></wp:term_name>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>24</wp:term_id>
+		<wp:term_taxonomy><![CDATA[purpose]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[study-abroad]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[留学準備]]></wp:term_name>
+	</wp:term>
+	<item>
+		<title><![CDATA[グローバルナビゲーション]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:navigation-link {"label":"コース一覧","kind":"custom","isTopLevelLink":true,"metadata":{"bindings":{"url":{"source":"hibiki/url","args":{"key":"courses"}}}}} /-->
+<!-- wp:navigation-link {"label":"講師紹介","kind":"custom","isTopLevelLink":true,"metadata":{"bindings":{"url":{"source":"hibiki/url","args":{"key":"instructors"}}}}} /-->
+<!-- wp:navigation-link {"label":"スクール紹介","type":"page","id":201,"kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"よくある質問","type":"page","id":202,"kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>141</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[global-navigation]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[フッターナビゲーション]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:home-link {"label":"ホーム"} /-->
+<!-- wp:navigation-link {"label":"コース一覧","kind":"custom","isTopLevelLink":true,"metadata":{"bindings":{"url":{"source":"hibiki/url","args":{"key":"courses"}}}}} /-->
+<!-- wp:navigation-link {"label":"講師紹介","kind":"custom","isTopLevelLink":true,"metadata":{"bindings":{"url":{"source":"hibiki/url","args":{"key":"instructors"}}}}} /-->
+<!-- wp:navigation-link {"label":"スクール紹介","type":"page","id":201,"kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"よくある質問","type":"page","id":202,"kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"体験レッスン","type":"page","id":203,"kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>142</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[footer-navigation]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[スクール紹介]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">ABOUT</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">ひびき英語スクールについて</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>ひびき英語スクールは、千景市本町にある英会話を中心とした語学スクールです。「声に出した英語が、相手に届く」ことを目標に、子どもから社会人まで、目的とレベルに合わせたコースを少人数で開いています。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>教室でのグループのクラスとマンツーマンのレッスンに加え、自宅から受講できるオンラインのコースもあります。どの形式でも、同じ講師が同じ教材で教えます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"values","layout":{"type":"default"}} -->
+<div class="wp-block-group values"><!-- wp:group {"className":"value","layout":{"type":"default"}} -->
+<div class="wp-block-group value"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">話す時間を多く</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>グループのクラスは最大8名とし、1回のレッスンで一人ひとりが声に出す時間を確保します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"value","layout":{"type":"default"}} -->
+<div class="wp-block-group value"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">目的から逆算する</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>日常会話、ビジネス、試験対策、留学準備の目的ごとに教材と進め方を変えています。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"value","layout":{"type":"default"}} -->
+<div class="wp-block-group value"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">続けられる仕組み</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>欠席した回は、同じレベルの別のクラスで振り替えられます（月2回まで）。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"usufuji","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-usufuji-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">SCHOOL</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">教室情報</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:hibiki/school-info /-->
+
+<!-- wp:paragraph -->
+<p>千景駅の南口を出て、千景通りを右へ徒歩3分です。千景ビルの3階にあり、エレベーターがあります。駐車場はありませんので、近くの有料駐車場をご利用ください。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"note"} -->
+<p class="note">※ スクール名・所在地・電話番号・講師はすべてサンプル用に作成した架空のものです。</p>
+<!-- /wp:paragraph --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">NEXT</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">コースを探す</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>対象や目的、形式、月謝の上限から、コースを絞り込めます。迷ったときは体験レッスンでご相談ください。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"metadata":{"bindings":{"url":{"source":"hibiki/url","args":{"key":"courses"}}}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">コース一覧を見る</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"className":"is-style-outline","metadata":{"bindings":{"url":{"source":"hibiki/url","args":{"key":"trial"}}}}} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button">体験レッスンを申し込む</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></section>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>201</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[about]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[よくある質問]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:paragraph {"className":"lead"} -->
+<p class="lead">入会や受講について、よくいただく質問をまとめました。質問を選ぶと答えが開きます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"faq","layout":{"type":"default"}} -->
+<div class="wp-block-group faq"><!-- wp:details -->
+<details class="wp-block-details"><summary>体験レッスンに費用はかかりますか。</summary><!-- wp:paragraph -->
+<p>体験レッスンは無料です。1回50分、実際のクラスに入って受講していただきます。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>英語がまったく話せなくても大丈夫ですか。</summary><!-- wp:paragraph -->
+<p>はい。入門のコースは、アルファベットやあいさつから始めます。体験レッスンでレベルを確かめ、合うコースをご案内します。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>子どもは何歳から通えますか。</summary><!-- wp:paragraph -->
+<p>キッズのコースは小学1年生から受講できます。未就学のお子さまは、体験レッスンのときにご相談ください。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>欠席した回はどうなりますか。</summary><!-- wp:paragraph -->
+<p>同じレベルの別のクラスで振り替えられます（月2回まで）。マンツーマンのレッスンは、前日までのご連絡で日時を変えられます。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>教材費は月謝に含まれますか。</summary><!-- wp:paragraph -->
+<p>月謝には含みません。コースごとに指定の教材があり、入会時に購入していただきます。オンラインのコースは電子版の教材を用います。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>オンラインのコースに必要なものはありますか。</summary><!-- wp:paragraph -->
+<p>カメラとマイクのついたパソコンまたはタブレットと、安定したインターネット回線をご用意ください。接続の確認は体験レッスンのときに行います。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>満席のコースに申し込めますか。</summary><!-- wp:paragraph -->
+<p>満席のコースは、キャンセル待ちとして受け付けます。空きが出た場合に、登録順にご連絡します。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>退会や休会はできますか。</summary><!-- wp:paragraph -->
+<p>前月の20日までにお申し出ください。休会は最長3か月まで、休会中の月謝はかかりません。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"className":"note"} -->
+<p class="note">このほかのご質問は、体験レッスンの申し込みフォームまたはお電話でお問い合わせください。</p>
+<!-- /wp:paragraph --></section>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>202</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[faq]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>2</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[体験レッスンの申し込み]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"trial-layout","layout":{"type":"default"}} -->
+<div class="wp-block-group trial-layout"><!-- wp:group {"className":"trial-main","layout":{"type":"default"}} -->
+<div class="wp-block-group trial-main"><!-- wp:paragraph {"className":"lead"} -->
+<p class="lead">体験レッスンは無料・1回50分です。コースの詳細ページから来た場合は、そのコースを選んだ状態で表示されます。満席のコースはキャンセル待ちの登録として承ります。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:hibiki/trial-form /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"trial-aside","layout":{"type":"default"}} -->
+<div class="wp-block-group trial-aside"><!-- wp:heading -->
+<h2 class="wp-block-heading">お電話でも受け付けます</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"trial-tel num","metadata":{"bindings":{"content":{"source":"hibiki/school","args":{"key":"tel"}}}}} -->
+<p class="trial-tel num"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:hibiki/school-info /-->
+
+<!-- wp:paragraph {"className":"note"} -->
+<p class="note">体験レッスンの当日は、筆記用具をお持ちください。お子さまの場合は、保護者の方も見学できます。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>203</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[trial]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[早瀬 ミナ]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"プロフィールを入力"} -->
+<p>小学生から中学生まで、英語を「音」から教えてきました。歌やゲームを使いながら、フォニックスで読む力と話す力を一緒に育てます。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>401</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[hayase-mina]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[instructor]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[language]]></wp:meta_key>
+			<wp:meta_value><![CDATA[英語]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[years]]></wp:meta_key>
+			<wp:meta_value><![CDATA[12]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[specialty]]></wp:meta_key>
+			<wp:meta_value><![CDATA[キッズ英語・フォニックス]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualifications]]></wp:meta_key>
+			<wp:meta_value><![CDATA[小学校英語指導者資格]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[portrait]]></wp:meta_key>
+			<wp:meta_value><![CDATA[bob]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[ダニエル・ウォード]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"プロフィールを入力"} -->
+<p>会社員として働いた経験をもとに、会議やメールで実際に使う表現を教えています。間違いを恐れずに話せる雰囲気づくりを大切にしています。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>402</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[daniel-ward]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>2</wp:menu_order>
+		<wp:post_type><![CDATA[instructor]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[language]]></wp:meta_key>
+			<wp:meta_value><![CDATA[英語（母語）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[years]]></wp:meta_key>
+			<wp:meta_value><![CDATA[9]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[specialty]]></wp:meta_key>
+			<wp:meta_value><![CDATA[ビジネス英語・プレゼンテーション]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualifications]]></wp:meta_key>
+			<wp:meta_value><![CDATA[英語教授法の国際資格]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[portrait]]></wp:meta_key>
+			<wp:meta_value><![CDATA[short]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[小野寺 綾]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"プロフィールを入力"} -->
+<p>中学・高校で英語を教えたのち、ひびき英語スクールで試験対策のコースを担当しています。弱点を分析し、得点につながる学習の順序を一緒に考えます。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>403</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[onodera-aya]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[instructor]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[language]]></wp:meta_key>
+			<wp:meta_value><![CDATA[英語]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[years]]></wp:meta_key>
+			<wp:meta_value><![CDATA[15]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[specialty]]></wp:meta_key>
+			<wp:meta_value><![CDATA[級別・スコア型の英語試験の対策]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualifications]]></wp:meta_key>
+			<wp:meta_value><![CDATA[中学・高校の英語教員免許]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[portrait]]></wp:meta_key>
+			<wp:meta_value><![CDATA[glass]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[エマ・クラーク]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"プロフィールを入力"} -->
+<p>発音とリズムを大切にしたレッスンを行っています。ゆっくり、はっきり話すので、初めて外国人の講師と話す方も安心してください。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>404</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[emma-clark]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>4</wp:menu_order>
+		<wp:post_type><![CDATA[instructor]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[language]]></wp:meta_key>
+			<wp:meta_value><![CDATA[英語（母語）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[years]]></wp:meta_key>
+			<wp:meta_value><![CDATA[6]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[specialty]]></wp:meta_key>
+			<wp:meta_value><![CDATA[日常会話・発音]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualifications]]></wp:meta_key>
+			<wp:meta_value><![CDATA[英語教授法の修士号]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[portrait]]></wp:meta_key>
+			<wp:meta_value><![CDATA[curly]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[大人の英会話 入門]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"コースの内容を入力"} -->
+<p>旅行や買い物、道案内など、身近な場面の会話を少人数で練習します。毎回の表現は教材にまとめてあり、復習しやすくしています。3か月で、簡単な自己紹介と日常の受け答えができることを目標とします。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[英語を話すのは久しぶりという方のための、あいさつと自己紹介から始めるクラスです。]]></excerpt:encoded>
+		<wp:post_id>301</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[adult-conversation-starter]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[course]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="target" nicename="adults"><![CDATA[大人]]></category>
+		<category domain="purpose" nicename="conversation"><![CDATA[日常会話]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[12000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[entry_fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[11000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[minutes]]></wp:meta_key>
+			<wp:meta_value><![CDATA[50]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[times]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[format]]></wp:meta_key>
+			<wp:meta_value><![CDATA[group]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[capacity]]></wp:meta_key>
+			<wp:meta_value><![CDATA[6]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[schedule]]></wp:meta_key>
+			<wp:meta_value><![CDATA[毎週火曜日 19:00–19:50]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[level]]></wp:meta_key>
+			<wp:meta_value><![CDATA[starter]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[flow]]></wp:meta_key>
+			<wp:meta_value><![CDATA[あいさつと前回の復習（5分）
+今日の表現の練習（15分）
+ペアでの会話練習（20分）
+発表と講師からの助言（10分）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[instructors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[404]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[キッズ英語 はじめてのフォニックス]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"コースの内容を入力"} -->
+<p>アルファベットの音（フォニックス）を学び、簡単な単語を自分で読めるようになることを目指します。毎回、声に出す活動を中心に進めるため、英語が初めてのお子さまも楽しく続けられます。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[小学1〜3年生が対象です。歌とゲームで、英語の音と文字の結びつきを身につけます。]]></excerpt:encoded>
+		<wp:post_id>302</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[kids-phonics]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>2</wp:menu_order>
+		<wp:post_type><![CDATA[course]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="target" nicename="kids"><![CDATA[キッズ]]></category>
+		<category domain="purpose" nicename="conversation"><![CDATA[日常会話]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[7700]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[entry_fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[11000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[minutes]]></wp:meta_key>
+			<wp:meta_value><![CDATA[45]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[times]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[format]]></wp:meta_key>
+			<wp:meta_value><![CDATA[group]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[capacity]]></wp:meta_key>
+			<wp:meta_value><![CDATA[6]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[schedule]]></wp:meta_key>
+			<wp:meta_value><![CDATA[毎週水曜日 16:30–17:15]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[level]]></wp:meta_key>
+			<wp:meta_value><![CDATA[starter]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[flow]]></wp:meta_key>
+			<wp:meta_value><![CDATA[英語の歌とあいさつ（5分）
+フォニックスの練習（15分）
+単語のゲーム（15分）
+絵本の読み聞かせ（10分）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[instructors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[401]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[ビジネス英語 会議とメール]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"コースの内容を入力"} -->
+<p>会議の進行、意見の述べ方、合意の取り方など、仕事の場面で使う表現を学びます。メールは毎回1通を書き、講師が添削して返します。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[仕事で英語を使う方のためのクラスです。会議での発言とメールの書き方を練習します。]]></excerpt:encoded>
+		<wp:post_id>303</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[business-meeting]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[course]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="target" nicename="adults"><![CDATA[大人]]></category>
+		<category domain="purpose" nicename="business"><![CDATA[ビジネス]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[15400]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[entry_fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[11000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[minutes]]></wp:meta_key>
+			<wp:meta_value><![CDATA[60]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[times]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[format]]></wp:meta_key>
+			<wp:meta_value><![CDATA[group]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[capacity]]></wp:meta_key>
+			<wp:meta_value><![CDATA[6]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[schedule]]></wp:meta_key>
+			<wp:meta_value><![CDATA[毎週木曜日 19:30–20:30]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[level]]></wp:meta_key>
+			<wp:meta_value><![CDATA[intermediate]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[flow]]></wp:meta_key>
+			<wp:meta_value><![CDATA[近況の報告（10分）
+今日の表現の解説（15分）
+会議のロールプレイ（25分）
+メールの添削の返却（10分）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[instructors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[402]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[キッズ英会話 ステップアップ]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"コースの内容を入力"} -->
+<p>好きなものや学校のことなど、身近な話題を英語で話します。日本人講師と外国人講師が交代で担当し、聞き取る力と話す力の両方を伸ばします。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[フォニックスを終えた小学生が対象です。短い文で、自分のことを話す練習をします。]]></excerpt:encoded>
+		<wp:post_id>304</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[kids-conversation]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>4</wp:menu_order>
+		<wp:post_type><![CDATA[course]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="target" nicename="kids"><![CDATA[キッズ]]></category>
+		<category domain="purpose" nicename="conversation"><![CDATA[日常会話]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8800]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[entry_fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[11000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[minutes]]></wp:meta_key>
+			<wp:meta_value><![CDATA[50]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[times]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[format]]></wp:meta_key>
+			<wp:meta_value><![CDATA[group]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[capacity]]></wp:meta_key>
+			<wp:meta_value><![CDATA[6]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[schedule]]></wp:meta_key>
+			<wp:meta_value><![CDATA[毎週金曜日 17:00–17:50]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[level]]></wp:meta_key>
+			<wp:meta_value><![CDATA[elementary]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[few]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[flow]]></wp:meta_key>
+			<wp:meta_value><![CDATA[あいさつと今日の話題（5分）
+表現の練習（15分）
+グループでの会話（20分）
+発表（10分）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[instructors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[401]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[instructors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[404]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[スコア型英語試験 集中対策 オンライン]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"コースの内容を入力"} -->
+<p>模擬試験の結果から弱点を分析し、パートごとの解き方を練習します。毎回、次の回までの課題を出し、学習の記録を講師が確かめます。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[3か月で得点を上げたい方のためのオンラインのクラスです。週2回、自宅から受講します。]]></excerpt:encoded>
+		<wp:post_id>305</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[score-test-online]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>5</wp:menu_order>
+		<wp:post_type><![CDATA[course]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="target" nicename="adults"><![CDATA[大人]]></category>
+		<category domain="purpose" nicename="exam"><![CDATA[試験対策]]></category>
+		<category domain="purpose" nicename="business"><![CDATA[ビジネス]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[13200]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[entry_fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[5500]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[minutes]]></wp:meta_key>
+			<wp:meta_value><![CDATA[50]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[times]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[format]]></wp:meta_key>
+			<wp:meta_value><![CDATA[online]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[capacity]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[schedule]]></wp:meta_key>
+			<wp:meta_value><![CDATA[火曜日と金曜日 21:00–21:50]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[level]]></wp:meta_key>
+			<wp:meta_value><![CDATA[intermediate]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[flow]]></wp:meta_key>
+			<wp:meta_value><![CDATA[前回の課題の確認（10分）
+パート別の解き方（20分）
+演習（15分）
+次回の課題の説明（5分）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[instructors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[403]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[中高生 スピーキング オンライン]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"コースの内容を入力"} -->
+<p>教科書で学んだ文法を使って、意見を述べたり質問したりする練習をします。英語での発表やスピーチコンテストの準備にも対応します。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[学校の英語を「話せる英語」にするためのクラスです。オンラインで、4名までの少人数で行います。]]></excerpt:encoded>
+		<wp:post_id>306</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[teens-speaking]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>6</wp:menu_order>
+		<wp:post_type><![CDATA[course]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="target" nicename="teens"><![CDATA[中高生]]></category>
+		<category domain="purpose" nicename="conversation"><![CDATA[日常会話]]></category>
+		<category domain="purpose" nicename="study-abroad"><![CDATA[留学準備]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[9900]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[entry_fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[5500]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[minutes]]></wp:meta_key>
+			<wp:meta_value><![CDATA[40]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[times]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[format]]></wp:meta_key>
+			<wp:meta_value><![CDATA[online]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[capacity]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[schedule]]></wp:meta_key>
+			<wp:meta_value><![CDATA[毎週土曜日 10:00–10:40]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[level]]></wp:meta_key>
+			<wp:meta_value><![CDATA[elementary]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[flow]]></wp:meta_key>
+			<wp:meta_value><![CDATA[ウォームアップの会話（5分）
+今日の表現（10分）
+ディスカッション（20分）
+振り返り（5分）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[instructors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[404]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[マンツーマン英会話]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"コースの内容を入力"} -->
+<p>旅行の準備、仕事の面接、発音の矯正など、目的に合わせて内容を決めます。初回に学習の計画を一緒に立て、3か月ごとに見直します。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[講師と1対1で、目的に合わせて内容を組み立てるレッスンです。日時は毎回予約できます。]]></excerpt:encoded>
+		<wp:post_id>307</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[private-lesson]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>7</wp:menu_order>
+		<wp:post_type><![CDATA[course]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="target" nicename="adults"><![CDATA[大人]]></category>
+		<category domain="purpose" nicename="conversation"><![CDATA[日常会話]]></category>
+		<category domain="purpose" nicename="business"><![CDATA[ビジネス]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[22000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[entry_fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[11000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[minutes]]></wp:meta_key>
+			<wp:meta_value><![CDATA[50]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[times]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[format]]></wp:meta_key>
+			<wp:meta_value><![CDATA[private]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[capacity]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[schedule]]></wp:meta_key>
+			<wp:meta_value><![CDATA[平日 13:00–21:00 のうち希望の時間]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[level]]></wp:meta_key>
+			<wp:meta_value><![CDATA[elementary]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[few]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[flow]]></wp:meta_key>
+			<wp:meta_value><![CDATA[目標の確認（5分）
+今日の内容の練習（30分）
+会話の実践（10分）
+次回の計画（5分）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[instructors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[402]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[instructors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[404]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[小学生の級別英語試験対策]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"コースの内容を入力"} -->
+<p>過去の問題をもとに、単語・文法・リスニングを少しずつ積み上げます。試験の前には、本番と同じ形式の模擬面接を行います。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[級別の英語試験で、はじめの2つの級の合格を目指す小学生のクラスです。筆記と面接の両方を練習します。]]></excerpt:encoded>
+		<wp:post_id>308</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[kids-grade-test]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>8</wp:menu_order>
+		<wp:post_type><![CDATA[course]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="target" nicename="kids"><![CDATA[キッズ]]></category>
+		<category domain="purpose" nicename="exam"><![CDATA[試験対策]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[9900]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[entry_fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[11000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[minutes]]></wp:meta_key>
+			<wp:meta_value><![CDATA[50]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[times]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[format]]></wp:meta_key>
+			<wp:meta_value><![CDATA[group]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[capacity]]></wp:meta_key>
+			<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[schedule]]></wp:meta_key>
+			<wp:meta_value><![CDATA[毎週月曜日 17:00–17:50]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[level]]></wp:meta_key>
+			<wp:meta_value><![CDATA[elementary]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[flow]]></wp:meta_key>
+			<wp:meta_value><![CDATA[単語の小テスト（10分）
+文法とリスニング（25分）
+面接の練習（10分）
+宿題の説明（5分）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[instructors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[403]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[中高生 英文法と読解]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"コースの内容を入力"} -->
+<p>文法の単元ごとに解説と演習を行い、長文読解で使い方を確かめます。学校の教科書の進度に合わせて、試験前には範囲の復習の回を設けます。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[定期試験と高校・大学の入試に向けて、文法と長文読解を体系的に学ぶクラスです。]]></excerpt:encoded>
+		<wp:post_id>309</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[teens-grammar]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>9</wp:menu_order>
+		<wp:post_type><![CDATA[course]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="target" nicename="teens"><![CDATA[中高生]]></category>
+		<category domain="purpose" nicename="exam"><![CDATA[試験対策]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[11000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[entry_fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[11000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[minutes]]></wp:meta_key>
+			<wp:meta_value><![CDATA[60]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[times]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[format]]></wp:meta_key>
+			<wp:meta_value><![CDATA[group]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[capacity]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[schedule]]></wp:meta_key>
+			<wp:meta_value><![CDATA[毎週水曜日 19:00–20:00]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[level]]></wp:meta_key>
+			<wp:meta_value><![CDATA[intermediate]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[full]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[flow]]></wp:meta_key>
+			<wp:meta_value><![CDATA[小テスト（10分）
+文法の解説（20分）
+長文読解の演習（25分）
+解説と質問（5分）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[instructors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[403]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[留学準備 英語で学ぶ・書く]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"コースの内容を入力"} -->
+<p>英語で行う授業を想定し、講義の聞き取り、ノートの取り方、英語でのレポートの書き方を学びます。出願書類のエッセイの添削にも対応する予定です。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[海外の高校・大学への留学を考えている中高生のためのマンツーマンのコースです（開講準備中）。]]></excerpt:encoded>
+		<wp:post_id>310</wp:post_id>
+		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[study-abroad-teens]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>10</wp:menu_order>
+		<wp:post_type><![CDATA[course]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="target" nicename="teens"><![CDATA[中高生]]></category>
+		<category domain="purpose" nicename="study-abroad"><![CDATA[留学準備]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[19800]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[entry_fee]]></wp:meta_key>
+			<wp:meta_value><![CDATA[11000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[minutes]]></wp:meta_key>
+			<wp:meta_value><![CDATA[50]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[times]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[format]]></wp:meta_key>
+			<wp:meta_value><![CDATA[private]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[capacity]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[schedule]]></wp:meta_key>
+			<wp:meta_value><![CDATA[毎週日曜日 13:00–13:50（予定）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[level]]></wp:meta_key>
+			<wp:meta_value><![CDATA[intermediate]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[preparing]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[flow]]></wp:meta_key>
+			<wp:meta_value><![CDATA[近況の会話（5分）
+講義の聞き取り（20分）
+レポートの書き方（20分）
+課題の説明（5分）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[instructors]]></wp:meta_key>
+			<wp:meta_value><![CDATA[402]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+</channel>
+</rss>

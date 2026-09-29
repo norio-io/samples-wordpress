@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+<!-- 講師のイラスト。4名で線の太さ（3）・配色・構図を揃える。珊瑚は背景の円のみに用いる。 -->
+<circle cx="80" cy="80" r="72" fill="#f08a6c"/>
+<path d="M52 104V72c0-22 12-35 28-35s28 13 28 35v32z" fill="#3b2f5c" stroke="#22212b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28 160c2-28 22-46 52-46s50 18 52 46" fill="#f1eef6" stroke="#22212b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M70 102v12c0 7 20 7 20 0v-12" fill="#fbfaf7" stroke="#22212b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M64 116c4 8 28 8 32 0" fill="none" stroke="#22212b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="80" cy="76" rx="24" ry="28" fill="#fbfaf7" stroke="#22212b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="71" cy="78" r="2.6" fill="#22212b"/>
+<circle cx="89" cy="78" r="2.6" fill="#22212b"/>
+<path d="M73 91c4 3.5 10 3.5 14 0" fill="none" stroke="#22212b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M56 70c4-16 14-22 24-22s20 6 24 22c-12-2-20-8-24-14-4 6-12 12-24 14z" fill="#3b2f5c" stroke="#22212b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
