@@ -434,7 +434,7 @@
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[qualifications]]></wp:meta_key>
-			<wp:meta_value><![CDATA[CELTA]]></wp:meta_value>
+			<wp:meta_value><![CDATA[英語教授法の国際資格]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[portrait]]></wp:meta_key>
@@ -470,11 +470,11 @@
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[specialty]]></wp:meta_key>
-			<wp:meta_value><![CDATA[英検・TOEIC の試験対策]]></wp:meta_value>
+			<wp:meta_value><![CDATA[級別・スコア型の英語試験の対策]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[qualifications]]></wp:meta_key>
-			<wp:meta_value><![CDATA[英検1級・TOEIC 990点]]></wp:meta_value>
+			<wp:meta_value><![CDATA[中学・高校の英語教員免許]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[portrait]]></wp:meta_key>
@@ -514,7 +514,7 @@
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[qualifications]]></wp:meta_key>
-			<wp:meta_value><![CDATA[TESOL]]></wp:meta_value>
+			<wp:meta_value><![CDATA[英語教授法の修士号]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[portrait]]></wp:meta_key>
@@ -802,7 +802,7 @@
 		</wp:postmeta>
 	</item>
 	<item>
-		<title><![CDATA[TOEIC 集中対策 オンライン]]></title>
+		<title><![CDATA[スコア型英語試験 集中対策 オンライン]]></title>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"コースの内容を入力"} -->
 <p>模擬試験の結果から弱点を分析し、パートごとの解き方を練習します。毎回、次の回までの課題を出し、学習の記録を講師が確かめます。</p>
@@ -813,7 +813,7 @@
 		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[toeic-online]]></wp:post_name>
+		<wp:post_name><![CDATA[score-test-online]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>5</wp:menu_order>
@@ -1016,18 +1016,18 @@
 		</wp:postmeta>
 	</item>
 	<item>
-		<title><![CDATA[小学生の英検5級・4級対策]]></title>
+		<title><![CDATA[小学生の級別英語試験対策]]></title>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder":"コースの内容を入力"} -->
 <p>過去の問題をもとに、単語・文法・リスニングを少しずつ積み上げます。試験の前には、本番と同じ形式の模擬面接を行います。</p>
 <!-- /wp:paragraph -->]]></content:encoded>
-		<excerpt:encoded><![CDATA[英検5級・4級の合格を目指す小学生のクラスです。筆記と面接の両方を練習します。]]></excerpt:encoded>
+		<excerpt:encoded><![CDATA[級別の英語試験で、はじめの2つの級の合格を目指す小学生のクラスです。筆記と面接の両方を練習します。]]></excerpt:encoded>
 		<wp:post_id>308</wp:post_id>
 		<wp:post_date><![CDATA[2026-04-01 10:00:00]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2026-04-01 01:00:00]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[kids-eiken]]></wp:post_name>
+		<wp:post_name><![CDATA[kids-grade-test]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>8</wp:menu_order>
