@@ -1,0 +1,668 @@
+@charset "utf-8";
+
+/*
+ * ひびき英語スクール（架空）— 制作サンプル
+ *
+ * 配色・書体・余白の値は theme.json に定義し、ここではプリセットの CSS 変数を参照する。
+ * 本ファイルは公開側とエディターの双方で読み込む（functions.php）。
+ *
+ * 方針: 保護者と社会人の双方が閲覧するため、コースの対象・形式・月謝が一目で比べられることを装飾より優先する。
+ * 角丸は入力欄・ボタン・札など操作や状態を示す要素に限り、影は用いない。
+ */
+
+:root {
+  --sumi: var(--wp--preset--color--sumi);
+  --usuzumi: var(--wp--preset--color--usuzumi);
+  --shironeri: var(--wp--preset--color--shironeri);
+  --usufuji: var(--wp--preset--color--usufuji);
+  --kei: var(--wp--preset--color--kei);
+  --shikon: var(--wp--preset--color--shikon);
+  --sango: var(--wp--preset--color--sango);
+  --sango-l: var(--wp--preset--color--sango-light);
+  --renga: var(--wp--preset--color--renga);
+  --renga-t: var(--wp--preset--color--renga-text);
+  --num: var(--wp--preset--font-family--manrope);
+  --on-shikon: #d8d2e6; /* 紫紺の上の補足文字（コントラスト 8.6:1） */
+  --header-top: var(--wp-admin--admin-bar--height, 0px);
+}
+
+*, ::before, ::after { box-sizing: border-box; }
+body { -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--renga); outline-offset: 2px; }
+.site-header :focus-visible,
+.foot :focus-visible,
+.trial-band :focus-visible { outline-color: var(--sango); }
+
+.num { font-family: var(--num); font-variant-numeric: tabular-nums; }
+.icon { width: 1.25em; height: 1.25em; flex: none; }
+
+.screen-reader-text {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 大枠の区画（ヘッダー・本文・フッター）と、本文のセクションの間に余白を置かない。 */
+.wp-site-blocks > * + *,
+.site-main > *,
+.site-main .wp-block-post-content > .alignfull { margin-block: 0; }
+
+/* ------------------------------------------------------------ 注記 */
+
+.demo {
+  margin: 0;
+  padding: 7px 16px;
+  background: var(--sumi);
+  color: #e8e6ee;
+  font-size: var(--wp--preset--font-size--x-small);
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------ ヘッダー（紫紺の帯・上部に固定） */
+
+.site-header {
+  position: sticky;
+  top: var(--header-top);
+  z-index: 50;
+}
+.band { background: var(--shikon); color: #fff; }
+.band .bar { gap: 16px 28px; align-items: center; padding-block: 12px; }
+.band .bar > * { margin: 0; }
+.brand-wrap { gap: 0; flex: none; }
+.brand-wrap > * { margin: 0; }
+.brand { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: .08em; line-height: 1.35; }
+.brand a { color: #fff; text-decoration: none; }
+.brand-sub { font-family: var(--num); font-size: 10.5px; font-weight: 700; letter-spacing: .18em; color: var(--on-shikon); line-height: 1.5; }
+
+.gnav { flex: 1; font-size: 14px; }
+.gnav .wp-block-navigation__container { gap: 4px 26px; }
+.gnav .wp-block-navigation-item { color: #fff; }
+.gnav .wp-block-navigation-item__content { padding: 6px 0; border-bottom: 2px solid transparent; text-decoration: none; }
+.gnav .wp-block-navigation-item__content:hover { border-bottom-color: var(--on-shikon); }
+.gnav .current-menu-item > .wp-block-navigation-item__content { border-bottom-color: var(--sango); }
+.gnav .wp-block-navigation__responsive-container-open,
+.gnav .wp-block-navigation__responsive-container-close { color: #fff; }
+.gnav .wp-block-navigation__responsive-container.is-menu-open { padding: 24px; }
+.gnav .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content { font-size: 17px; padding: 10px 0; }
+
+.head-right { gap: 18px; flex: none; align-items: center; }
+.head-right > * { margin: 0; }
+.head-contact { gap: 0; text-align: right; }
+.head-contact > * { margin: 0; }
+.head-tel { font-size: 19px; font-weight: 700; letter-spacing: .02em; line-height: 1.3; }
+.head-hours { font-size: 11px; color: var(--on-shikon); line-height: 1.5; }
+.head-cta .wp-block-button__link { padding: 9px 16px; font-size: 14px; border-color: var(--renga); }
+.head-cta .wp-block-button__link:hover { background: #fff; border-color: #fff; color: var(--renga-t); }
+
+/* ------------------------------------------------------------ パンくず・ページ見出し */
+
+.crumb { border-bottom: 1px solid var(--kei); background: var(--shironeri); }
+.crumb .wp-block-breadcrumbs { padding-block: 10px; font-size: var(--wp--preset--font-size--x-small); color: var(--usuzumi); }
+.crumb .wp-block-breadcrumbs a { color: var(--usuzumi); }
+
+.page-head { background: var(--usufuji); border-bottom: 1px solid var(--kei); padding-block: clamp(26px, 4vw, 44px); }
+.page-head-in > * { margin-block: 0; }
+.page-head h1,
+.page-head .wp-block-query-title,
+.page-head .wp-block-post-title { margin: 0; }
+.page-head .lead,
+.page-head .wp-block-term-description { margin-top: 10px; max-width: 64ch; color: var(--usuzumi); font-size: 14px; }
+.page-head .wp-block-term-description p { margin: 0; }
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-family: var(--num);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  color: var(--renga-t);
+}
+
+.sec-head { margin-bottom: clamp(20px, 3vw, 32px); }
+.sec-head > * { margin-block: 0; }
+.sec-head .sec-lead { margin-top: 8px; color: var(--usuzumi); font-size: 14px; }
+
+.more { margin-top: 28px; justify-content: center; }
+.note { font-size: 13px; color: var(--usuzumi); }
+.lead { color: var(--usuzumi); }
+
+/* ------------------------------------------------------------ 札 */
+
+.status-badge,
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 9px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.8;
+  white-space: nowrap;
+}
+.status-badge { border-radius: 999px; border: 1px solid transparent; letter-spacing: .04em; }
+.status-badge.is-open { background: var(--sango-l); color: var(--sumi); }
+.status-badge.is-few { background: var(--sango); color: var(--sumi); }
+.status-badge.is-full { background: var(--sumi); color: #fff; }
+.status-badge.is-preparing { background: var(--usufuji); border-color: var(--kei); color: var(--usuzumi); }
+
+.tag { border: 1px solid var(--kei); background: #fff; color: var(--sumi); }
+.tag.is-target { background: var(--usufuji); border-color: var(--usufuji); }
+.tag .icon { width: 15px; height: 15px; color: var(--shikon); }
+.tag.is-level { color: var(--usuzumi); font-weight: 400; }
+
+/* ------------------------------------------------------------ トップの第一画面 */
+
+.hero {
+  background: var(--shironeri) url(../images/hero-lines.svg) right center / auto 100% no-repeat;
+  border-bottom: 1px solid var(--kei);
+}
+.hero-in {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 560px);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  padding-block: clamp(36px, 6vw, 80px);
+}
+.hero-in > * { margin: 0; }
+.hero-text > * { margin-block: 0; }
+.hero-title { margin-block: 4px 16px !important; font-size: clamp(30px, 4.2vw, 48px); line-height: 1.4; letter-spacing: .04em; }
+.hero-lead { max-width: 30em; color: var(--usuzumi); }
+.hero-actions { margin-top: 24px !important; gap: 10px; }
+
+.hero-entry { padding: clamp(18px, 2.5vw, 28px); background: #fff; border: 1px solid var(--kei); border-top: 4px solid var(--shikon); }
+.hero-entry > * { margin-block: 0; }
+.hero-entry__title { margin-bottom: 14px !important; font-size: 17px; }
+
+.target-entry { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.target-entry a {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  grid-template-areas: "icon name count" "icon desc count";
+  gap: 0 14px;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid var(--kei);
+  background: var(--shironeri);
+  color: var(--sumi);
+  text-decoration: none;
+}
+.target-entry a:hover { border-color: var(--renga); background: #fff; }
+.target-entry .icon { grid-area: icon; width: 44px; height: 44px; padding: 9px; border-radius: 50%; background: var(--usufuji); color: var(--shikon); }
+.target-entry__name { grid-area: name; font-size: 17px; font-weight: 700; line-height: 1.5; }
+.target-entry__desc { grid-area: desc; font-size: 12.5px; line-height: 1.6; color: var(--usuzumi); }
+.target-entry__count { grid-area: count; font-size: 12.5px; font-weight: 700; color: var(--renga-t); white-space: nowrap; }
+.target-entry__count .num { margin-right: 2px; font-size: 22px; }
+.target-entry__count::after { content: "›"; margin-left: 8px; font-size: 18px; }
+
+/* ------------------------------------------------------------ コースカード */
+
+.course-list .cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.course-list .cards > li { margin: 0; }
+
+.course-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 18px 18px 16px;
+  background: #fff;
+  border: 1px solid var(--kei);
+}
+.course-card:hover { border-color: var(--renga); }
+.course-card > * { margin: 0; }
+.course-card > .status-badge { position: absolute; top: 14px; right: 14px; }
+.course-card__head > * { margin: 0; }
+.course-card__tags { display: flex; flex-wrap: wrap; gap: 6px; padding-right: 96px; }
+.course-card__title { margin-top: 12px !important; font-size: 17px; line-height: 1.55; letter-spacing: .02em; }
+.course-card__title a { color: var(--sumi); text-decoration: none; }
+/* 題名のリンクを、疑似要素でカード全体へ広げる。カード内のリンクを1つにし、読み上げを短くするため。 */
+.course-card__title a::after { content: ""; position: absolute; inset: 0; }
+.course-card:hover .course-card__title a { color: var(--renga-t); text-decoration: underline; }
+.course-card__level { margin-top: 2px !important; font-size: 12.5px; color: var(--usuzumi); }
+
+.course-card__price { margin-top: 14px; padding-block: 12px; border-block: 1px solid var(--kei); }
+.course-card__price > * { margin: 0; }
+.fee { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 4px; }
+.fee__label { margin-right: 6px; font-size: 12.5px; font-weight: 700; color: var(--usuzumi); }
+.fee__num { font-weight: 800; color: var(--sumi); letter-spacing: .01em; line-height: 1.15; }
+.course-card .fee__num { font-size: 30px; }
+.fee__unit { font-size: 13px; font-weight: 700; }
+.per { margin-top: 2px; font-size: 12.5px; color: var(--usuzumi); }
+
+.course-card__meta { display: grid; gap: 6px; margin-top: 12px; font-size: 13px; }
+.course-card__meta > div { display: grid; grid-template-columns: 18px 3em minmax(0, 1fr); gap: 6px; align-items: start; }
+.course-card__meta .icon { width: 18px; height: 18px; margin-top: 2px; color: var(--shikon); }
+.course-card__meta dt { color: var(--usuzumi); }
+.course-card__meta dd { margin: 0; }
+.course-card__note { margin-top: 12px !important; padding: 6px 10px; background: var(--usufuji); font-size: 12.5px; }
+.course-card.is-full .fee__num { color: var(--usuzumi); }
+
+/* ------------------------------------------------------------ コース一覧 */
+
+.list-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 36px; align-items: start; }
+.list-layout > * { margin: 0; }
+.list-filter { position: sticky; top: calc(var(--header-top) + 90px); }
+.list-results > * + * { margin-top: 20px; }
+.list-results .course-list .cards { gap: 20px; }
+
+.filter__details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid var(--kei);
+  border-radius: 4px;
+  background: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.filter__details > summary::after { content: "＋"; color: var(--renga-t); }
+.filter__details[open] > summary::after { content: "－"; }
+.filter__form { display: grid; gap: 18px; padding: 16px; border: 1px solid var(--kei); background: #fff; }
+.filter__details[open] > .filter__form { margin-top: 12px; }
+.filter__group { margin: 0; padding: 0; border: 0; }
+.filter__group legend,
+.filter__label { display: block; margin-bottom: 8px; padding: 0; font-size: 13px; font-weight: 700; }
+.filter__choices { display: flex; flex-wrap: wrap; gap: 6px; }
+.choice { position: relative; cursor: pointer; }
+.choice input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.choice span {
+  display: inline-block;
+  padding: 4px 11px;
+  border: 1px solid var(--kei);
+  border-radius: 999px;
+  background: var(--shironeri);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.choice input:checked + span { background: var(--sango-l); border-color: var(--sango); font-weight: 700; }
+.choice input:focus-visible + span { outline: 2px solid var(--renga); outline-offset: 2px; }
+.choice:hover span { border-color: var(--renga); }
+.wp-block-hibiki-course-filter select,
+.form select {
+  width: 100%;
+  height: 44px;
+  padding: 0 10px;
+  border: 1px solid var(--kei);
+  border-radius: 4px;
+  background: var(--shironeri);
+  color: var(--sumi);
+  font: inherit;
+  font-size: 15px;
+}
+.filter__submit,
+.cta__primary,
+.form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--renga);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.filter__submit:hover,
+.cta__primary:hover { background: var(--shikon); color: #fff; }
+
+.result-bar__row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 20px; }
+.result-bar__count { margin: 0; font-size: 14px; }
+.result-bar__count .num { margin-right: 2px; font-size: 26px; font-weight: 800; }
+.result-bar__sort ul { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 0; padding: 0; list-style: none; font-size: 13.5px; }
+.result-bar__sort a { color: var(--usuzumi); text-decoration: none; }
+.result-bar__sort a:hover { color: var(--renga-t); text-decoration: underline; }
+.result-bar__sort a[aria-current] { color: var(--sumi); font-weight: 700; border-bottom: 2px solid var(--sango); }
+.result-bar__chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--sango-l);
+  border: 1px solid var(--sango);
+  border-radius: 999px;
+  color: var(--sumi);
+  font-size: 13px;
+  text-decoration: none;
+}
+.chip__label { font-size: 11.5px; color: var(--usuzumi); }
+.chip__x { font-weight: 700; }
+.chip:hover { border-color: var(--renga); }
+.chip-clear { font-size: 13px; color: var(--renga-t); }
+
+.wp-block-query-no-results { padding: 24px; background: #fff; border: 1px solid var(--kei); }
+.wp-block-query-no-results > * { margin-block: 0; }
+.wp-block-query-no-results > * + * { margin-top: 14px; }
+.no-results__text { color: var(--usuzumi); }
+
+.wp-block-query-pagination { gap: 6px; font-family: var(--num); }
+.wp-block-query-pagination a,
+.wp-block-query-pagination .current { padding: 4px 12px; border: 1px solid var(--kei); background: #fff; text-decoration: none; }
+.wp-block-query-pagination .current { background: var(--shikon); border-color: var(--shikon); color: #fff; }
+
+/* ------------------------------------------------------------ コース詳細 */
+
+.detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+  grid-template-areas: "head side" "body side";
+  grid-template-rows: auto 1fr;
+  gap: 0 48px;
+  align-items: start;
+}
+.detail > * { margin: 0; }
+.detail__head { grid-area: head; }
+.detail__side { grid-area: side; position: sticky; top: calc(var(--header-top) + 90px); }
+.detail__body { grid-area: body; }
+.detail__head > * { margin-block: 0; }
+.detail__title { margin-top: 12px !important; font-size: clamp(24px, 3vw, 32px); }
+.detail__lead { margin-top: 10px !important; color: var(--usuzumi); }
+.detail__lead p { margin: 0; }
+
+.course-head > * { margin: 0; }
+.course-head__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.course-head__notice { margin-top: 14px !important; padding: 14px 16px; background: var(--usufuji); border-left: 4px solid var(--shikon); font-size: 14px; }
+.course-head__notice strong { display: block; font-size: 16px; }
+
+.detail__side { padding: 22px; background: #fff; border: 1px solid var(--kei); border-top: 4px solid var(--shikon); }
+.detail__side > * { margin-block: 0; }
+.detail__side > * + * { margin-top: 16px; }
+.course-price > * { margin: 0; }
+.course-price .fee__num { font-size: clamp(36px, 4vw, 44px); }
+
+.course-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; border-top: 1px solid var(--kei); }
+.course-summary > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 8px;
+  align-items: center;
+  padding: 10px 4px;
+  border-bottom: 1px solid var(--kei);
+}
+.course-summary .icon { grid-row: span 2; width: 22px; height: 22px; color: var(--shikon); }
+.course-summary dt { font-size: 11.5px; color: var(--usuzumi); }
+.course-summary dd { margin: 0; font-weight: 700; font-size: 14px; }
+
+.cta > * { margin: 0; }
+.cta { display: grid; gap: 10px; }
+.cta__lead { font-size: 13px; }
+.cta__tel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  border: 1px solid var(--renga);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--renga-t);
+  font-weight: 700;
+  text-decoration: none;
+}
+.cta__tel .num { font-size: 18px; }
+.cta__tel:hover { background: var(--sango-l); color: var(--sumi); }
+.cta__note { font-size: 12px; color: var(--usuzumi); }
+.cta__fixed { display: none !important; }
+.cta.is-full .cta__lead { padding: 10px 12px; background: var(--usufuji); font-weight: 700; }
+.cta.is-preparing { padding: 16px; background: var(--usufuji); border-left: 4px solid var(--shikon); }
+.cta__closed strong { display: block; font-size: 17px; }
+.cta__closed { font-size: 13.5px; }
+.cta__secondary { color: var(--renga-t); font-weight: 700; }
+
+.detail .detail__sec { margin-top: clamp(32px, 4vw, 44px); }
+.detail__sec > * { margin-block: 0; }
+.detail__sec h2 { margin-bottom: 14px; padding-left: 12px; border-left: 4px solid var(--sango); font-size: 19px; line-height: 1.4; }
+.detail__content p { margin-block: 0 1em; }
+
+.flow { margin: 0; padding: 0; list-style: none; counter-reset: flow; border-top: 1px solid var(--kei); }
+.flow li {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: baseline;
+  padding: 11px 4px;
+  border-bottom: 1px solid var(--kei);
+  counter-increment: flow;
+}
+.flow li::before { content: counter(flow); font-family: var(--num); font-weight: 800; color: var(--renga-t); }
+.flow__time { font-size: 13px; color: var(--usuzumi); }
+
+.cost table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.cost :is(th, td) { padding: 11px 12px; border-bottom: 1px solid var(--kei); text-align: left; vertical-align: baseline; }
+.cost th { background: var(--usufuji); font-weight: 700; width: 60%; }
+.cost td { background: #fff; text-align: right; font-weight: 700; }
+.cost__note { display: block; font-size: 12px; font-weight: 400; color: var(--usuzumi); }
+.cost tfoot :is(th, td) { border-top: 2px solid var(--sumi); border-bottom: 0; }
+.cost tfoot td { font-size: 20px; font-weight: 800; }
+.cost__remark { margin: 10px 0 0; font-size: 12.5px; color: var(--usuzumi); }
+
+/* ------------------------------------------------------------ 講師 */
+
+.instructor-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin: 0; padding: 0; list-style: none; }
+.instructor-list > li { margin: 0; }
+.instructor-list.is-compact { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.instructor-card { position: relative; height: 100%; margin: 0; padding: 18px; background: #fff; border: 1px solid var(--kei); text-align: center; }
+.instructor-card:hover { border-color: var(--renga); }
+.instructor-card .portrait { width: min(160px, 70%); margin-inline: auto; }
+.instructor-card__body > * { margin: 0; }
+.instructor-card__name { margin-top: 12px !important; font-size: 17px; }
+.instructor-card__name a { color: var(--sumi); text-decoration: none; }
+.instructor-card__name a::after { content: ""; position: absolute; inset: 0; }
+.instructor-card:hover .instructor-card__name a { color: var(--renga-t); text-decoration: underline; }
+.instructor-card__meta { margin-top: 2px !important; font-size: 12.5px; color: var(--usuzumi); }
+.instructor-card__specialty { margin-top: 8px !important; font-size: 13.5px; }
+
+.is-compact .instructor-card { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 14px; align-items: center; padding: 12px 14px; text-align: left; }
+.is-compact .instructor-card .portrait { width: 76px; }
+.is-compact .instructor-card__name { margin-top: 0 !important; font-size: 16px; }
+.is-compact .instructor-card__specialty { margin-top: 4px !important; font-size: 13px; }
+
+.portrait svg,
+.portrait img { display: block; width: 100%; height: auto; }
+.portrait img { aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
+
+.profile { display: grid; grid-template-columns: minmax(0, 280px) minmax(0, 1fr); gap: clamp(24px, 5vw, 56px); align-items: start; }
+.profile > * { margin: 0; }
+.profile__body > * { margin-block: 0; }
+.profile__name { margin-top: 2px !important; }
+.profile__text { margin-top: 14px !important; }
+.profile__text p { margin-block: 0 1em; }
+.profile .spec { margin-top: 20px; }
+
+/* ------------------------------------------------------------ 定義リスト（教室情報・講師のプロフィール） */
+
+.spec { margin: 0; border-top: 1px solid var(--kei); }
+.spec > div { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); border-bottom: 1px solid var(--kei); }
+.spec dt { padding: 10px 12px; background: var(--usufuji); font-size: 13px; font-weight: 700; }
+.spec dd { margin: 0; padding: 10px 12px; background: #fff; }
+.has-usufuji-background-color .spec dt { background: #e6e1ee; }
+
+/* ------------------------------------------------------------ トップの特長・受講の流れ・教室案内 */
+
+.features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.features > * { margin: 0; }
+.feature { padding: 22px; background: #fff; border-top: 3px solid var(--shikon); }
+.feature > * { margin-block: 0; }
+.feature__no { font-size: 13px; font-weight: 800; letter-spacing: .12em; color: var(--renga-t); }
+.feature__title { margin-block: 4px 10px !important; font-size: 18px; }
+.feature p:not(.feature__no) { font-size: 14px; }
+
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; counter-reset: step; }
+.steps li { position: relative; padding: 20px 18px 18px; background: #fff; border: 1px solid var(--kei); font-size: 13.5px; counter-increment: step; }
+.steps li::before { content: "STEP " counter(step); display: block; margin-bottom: 6px; font-family: var(--num); font-size: 12px; font-weight: 800; letter-spacing: .14em; color: var(--renga-t); }
+.steps strong { display: block; margin-bottom: 4px; font-size: 16px; }
+
+.school-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+.school-grid > * { margin: 0; }
+.school-text > p { margin-top: 0; }
+
+/* ------------------------------------------------------------ 体験レッスンの案内（帯） */
+
+.trial-band { background: var(--shikon); color: #fff; padding-block: clamp(36px, 5vw, 56px); }
+.trial-band__in { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px 40px; align-items: center; }
+.trial-band__in > *,
+.trial-band__text > *,
+.trial-band__actions > * { margin: 0; }
+.trial-band .eyebrow { color: var(--sango); }
+.trial-band__title { font-size: clamp(22px, 2.6vw, 28px); }
+.trial-band__lead { margin-top: 6px !important; color: var(--on-shikon); font-size: 14px; }
+.trial-band__actions { text-align: center; }
+.trial-band__actions .wp-block-button__link:hover { background: #fff; border-color: #fff; color: var(--renga-t); }
+.trial-band__tel { margin-top: 12px !important; font-size: 22px; font-weight: 800; }
+.trial-band__hours { font-size: 12px; color: var(--on-shikon); }
+
+/* ------------------------------------------------------------ 固定ページ（スクール紹介・よくある質問・体験レッスン） */
+
+.faq { border-top: 1px solid var(--kei); }
+.faq .wp-block-details { margin: 0; border-bottom: 1px solid var(--kei); background: #fff; }
+.faq .wp-block-details summary {
+  position: relative;
+  padding: 16px 48px 16px 44px;
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+.faq .wp-block-details summary::-webkit-details-marker { display: none; }
+.faq .wp-block-details summary::before { content: "Q"; position: absolute; left: 14px; font-family: var(--num); font-weight: 800; color: var(--renga-t); }
+.faq .wp-block-details summary::after { content: "＋"; position: absolute; right: 16px; color: var(--renga-t); }
+.faq .wp-block-details[open] summary::after { content: "－"; }
+.faq .wp-block-details > :not(summary) { margin: 0; padding: 0 20px 16px 44px; color: var(--sumi); font-size: 14.5px; }
+
+.values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.values > * { margin: 0; padding: 20px; background: #fff; border: 1px solid var(--kei); }
+.values h3 { margin: 0 0 8px; font-size: 17px; }
+.values p { margin: 0; font-size: 14px; }
+
+.trial-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); gap: 40px; align-items: start; }
+.trial-layout > * { margin: 0; }
+.trial-aside > * { margin-block: 0; }
+.trial-aside > * + * { margin-top: 14px; }
+.trial-aside h2 { font-size: 18px; }
+.trial-aside .trial-tel { font-size: 24px; font-weight: 800; }
+
+.form__notice { margin: 0; padding: 12px 16px; background: var(--sango-l); border-left: 4px solid var(--sango); }
+.form__waitlist { margin: 14px 0 0; padding: 14px 16px; background: var(--usufuji); border-left: 4px solid var(--shikon); }
+.form__waitlist strong { display: block; }
+.form { display: grid; gap: 16px; max-width: 40em; margin-top: 20px; }
+.form__field { display: grid; gap: 4px; }
+.form__field label { font-weight: 700; font-size: 14px; }
+.form__req { margin-left: 8px; padding: 0 6px; background: var(--renga); color: #fff; font-size: 11px; }
+.form__field :is(input, textarea) {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--kei);
+  border-radius: 4px;
+  background: #fff;
+  font: inherit;
+}
+.form button[disabled] { justify-self: start; background: var(--usuzumi); cursor: not-allowed; }
+
+/* ------------------------------------------------------------ フッター */
+
+.site-footer .foot { background: var(--shikon); color: #fff; border-top: 1px solid rgb(255 255 255 / 18%); }
+.foot-grid { gap: 28px; padding-block: clamp(28px, 4vw, 44px); }
+.foot-grid > * { margin: 0; }
+.foot-school > * { margin: 0; }
+.foot-brand { font-size: 18px; font-weight: 700; letter-spacing: .08em; margin-bottom: 8px !important; }
+.foot-brand a { color: #fff; text-decoration: none; }
+.foot-line { font-size: 13.5px; color: var(--on-shikon); }
+.foot-nav { font-size: 13.5px; }
+.foot-nav .wp-block-navigation__container { gap: 8px; }
+.foot-nav .wp-block-navigation-item { color: #fff; }
+.foot-nav .wp-block-navigation-item__content:hover { text-decoration: underline; }
+.foot-note { padding-block: 14px; border-top: 1px solid rgb(255 255 255 / 18%); }
+.foot-note > p { margin: 0; font-size: 12px; color: var(--on-shikon); }
+
+/* ------------------------------------------------------------ 幅に応じた組み替え */
+
+@media (max-width: 1279px) {
+  .list-results .course-list .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .band .head-contact { display: none; }
+}
+
+@media (max-width: 1023px) {
+  .hero-in { grid-template-columns: 1fr; }
+  .list-layout { grid-template-columns: 1fr; gap: 20px; }
+  .list-filter { position: static; }
+  .detail { grid-template-columns: 1fr; grid-template-areas: "head" "side" "body"; grid-template-rows: auto; gap: 20px; }
+  .detail__side { position: static; }
+  .detail .detail__sec { margin-top: 28px; }
+  .instructor-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .trial-layout { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 1024px) {
+  /* 幅が広い画面では絞り込みを常に開き、開閉の見出しを出さない。 */
+  .filter__details > summary { display: none; }
+  .filter__details > .filter__form { margin-top: 0 !important; }
+}
+
+@media (max-width: 1023px) and (min-width: 641px) {
+  .course-list .cards,
+  .list-results .course-list .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 781px) {
+  .band .bar { gap: 12px; }
+  .band .head-cta { display: none; }
+  .features,
+  .values,
+  .school-grid { grid-template-columns: 1fr; }
+  .trial-band__in { grid-template-columns: 1fr; }
+  .trial-band__actions { text-align: left; }
+  .profile { grid-template-columns: minmax(0, 200px); justify-content: center; }
+  .profile__body { text-align: left; }
+}
+
+@media (max-width: 640px) {
+  .course-list .cards,
+  .list-results .course-list .cards { grid-template-columns: 1fr; }
+  .instructor-list,
+  .instructor-list.is-compact { grid-template-columns: 1fr; }
+  .instructor-list:not(.is-compact) .instructor-card { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; align-items: center; text-align: left; }
+  .instructor-list:not(.is-compact) .instructor-card .portrait { width: 96px; }
+  .instructor-list:not(.is-compact) .instructor-card__name { margin-top: 0 !important; }
+  .steps { grid-template-columns: 1fr; }
+  .spec > div { grid-template-columns: 6.5em minmax(0, 1fr); }
+  .hero { background-size: auto 55%; background-position: right top; }
+  .profile { grid-template-columns: 1fr; }
+  .profile__portrait { width: 180px; margin-inline: auto !important; }
+
+  /* コースの詳細では、体験レッスン（満席のコースはキャンセル待ち）のボタンを画面下部に固定する。 */
+  .cta__fixed {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 40; /* ヘッダー（50）より下に置き、メニューの展開時にメニューを最前面とする。 */
+    display: grid !important;
+    grid-template-columns: 1fr 2fr;
+    gap: 8px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    background: #fff;
+    border-top: 1px solid var(--kei);
+  }
+  .cta__fixed a { min-height: 46px; }
+  body:has(.cta__fixed) { padding-bottom: 72px; }
+}

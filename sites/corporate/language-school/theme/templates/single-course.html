@@ -1,0 +1,91 @@
+<!-- wp:template-part {"slug":"notice"} /-->
+
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main","layout":{"type":"default"}} -->
+<main class="wp-block-group site-main"><!-- wp:group {"align":"full","className":"crumb","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull crumb"><!-- wp:breadcrumbs {"separator":"／"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"detail","layout":{"type":"default"}} -->
+<div class="wp-block-group detail"><!-- wp:group {"className":"detail__head","layout":{"type":"default"}} -->
+<div class="wp-block-group detail__head"><!-- wp:hibiki/course-head /-->
+
+<!-- wp:post-title {"level":1,"className":"detail__title"} /-->
+
+<!-- wp:post-excerpt {"className":"detail__lead"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"detail__side","layout":{"type":"default"}} -->
+<div class="wp-block-group detail__side"><!-- wp:hibiki/course-price /-->
+
+<!-- wp:hibiki/course-summary /-->
+
+<!-- wp:hibiki/course-cta /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"detail__body","layout":{"type":"default"}} -->
+<div class="wp-block-group detail__body"><!-- wp:group {"tagName":"section","className":"detail__sec","layout":{"type":"default"}} -->
+<section class="wp-block-group detail__sec"><!-- wp:heading -->
+<h2 class="wp-block-heading">コースの内容</h2>
+<!-- /wp:heading -->
+
+<!-- wp:post-content {"className":"detail__content","layout":{"type":"default"}} /--></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"detail__sec","layout":{"type":"default"}} -->
+<section class="wp-block-group detail__sec"><!-- wp:heading -->
+<h2 class="wp-block-heading">1回のレッスンの流れ</h2>
+<!-- /wp:heading -->
+
+<!-- wp:hibiki/course-flow /--></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"detail__sec","layout":{"type":"default"}} -->
+<section class="wp-block-group detail__sec"><!-- wp:heading -->
+<h2 class="wp-block-heading">月謝と費用の内訳</h2>
+<!-- /wp:heading -->
+
+<!-- wp:hibiki/course-cost /--></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"detail__sec","layout":{"type":"default"}} -->
+<section class="wp-block-group detail__sec"><!-- wp:heading -->
+<h2 class="wp-block-heading">担当講師</h2>
+<!-- /wp:heading -->
+
+<!-- wp:hibiki/course-instructors /--></section>
+<!-- /wp:group --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"usufuji","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-usufuji-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">RELATED</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">同じ対象のコース</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:query {"queryId":3,"query":{"perPage":3,"pages":0,"offset":0,"postType":"course","order":"asc","orderBy":"menu_order","inherit":false,"hibikiRelated":"target"},"className":"course-list"} -->
+<div class="wp-block-query course-list"><!-- wp:post-template {"className":"cards","layout":{"type":"default"}} -->
+<!-- wp:hibiki/course-card /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph {"className":"no-results__text"} -->
+<p class="no-results__text">同じ対象のコースは、ほかにありません。</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></section>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"trial-cta"} /--></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /-->

@@ -11,6 +11,7 @@ WordPress の制作サンプル集。各サンプルはサンプル専用の自�
 | サンプル | 制作種別 | 公開側 | 管理画面 | 対応する静的サンプル |
 |---|---|---|---|---|
 | みずき歯科クリニック | コーポレートサイト | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/corporate/dental-clinic/blueprint.json) | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/corporate/dental-clinic/blueprint-admin.json) | [`corporate/dental-clinic/`](https://github.com/norio-io/samples/tree/main/corporate/dental-clinic) |
+| ひびき英語スクール | コーポレートサイト | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/corporate/language-school/blueprint.json) | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/corporate/language-school/blueprint-admin.json) | なし |
 | ひなた不動産 | 物件検索サイト | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/listing/real-estate/blueprint.json) | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/listing/real-estate/blueprint-admin.json) | なし |
 
 WordPress Playground はブラウザ内で WordPress を起動するため、開くたびに初期状態から構築される。管理画面で加えた変更は保存されない。
@@ -36,6 +37,31 @@ WordPress Playground はブラウザ内で WordPress を起動するため、開
 
 - プラグインは使用しない。パンくず・同期パターン・ブロックバインディングはいずれも WordPress 本体の機能である
 - 写真素材は使用しない。診療科目のアイコン、スタッフのシルエット、アクセスの略図はすべて SVG である
+
+### ひびき英語スクール
+
+架空の語学スクールのサイト。**架空の題材であり、実在の企業・団体・個人とは関係しません。** コースと講師を投稿・固定ページ以外のデータとして構造化し、更新担当者が入力欄を埋めるだけでコースの追加と募集状況の切り替えを行える形とした。
+
+- ソース: `sites/corporate/language-school/`（テーマ `theme/`、デモデータ `content/demo.xml`）
+- 画面: トップ、コース一覧（`/courses/`）、コース詳細（`/courses/<スラッグ>/`）、対象別一覧（`/target/<スラッグ>/`）、講師一覧（`/instructors/`）、講師詳細（`/instructors/<スラッグ>/`）、スクール紹介、よくある質問、体験レッスンの申し込み
+
+#### 実装した事項
+
+- **コースと講師のデータ構造** — コース・講師をカスタム投稿タイプとし、コースは対象・目的を分類、月謝・入会金・時間・回数・形式・定員・開講曜日・レベル・担当講師・募集状況などを型付きの入力欄（`register_post_meta`）として REST API に公開する。入力欄はエディターの「コース情報」「講師情報」パネルで編集し、本文は段落1つに固定する
+- **担当講師の逆引き** — 講師の詳細の「担当コース」は、コースの「担当講師」から逆引きして並べる。講師側での二重管理を要しない
+- **絞り込みと並べ替え** — 対象・目的・形式・月謝の上限の絞り込みと、おすすめ順（管理画面の「順序」）・月謝の安い順の並べ替え。条件はすべて URL のクエリで表し、共有・再読み込みで保つ。選択中の条件は解除できるチップで示し、該当がない場合は解除の方法を示す
+- **募集状況** — 「満席」にすると一覧に残したまま札を「満席」とし、申し込みの導線をキャンセル待ちの案内に切り替える。「開講準備中」にすると、トップ・一覧・対象別一覧・講師の担当コースから外れ、詳細の URL に直接来た場合は開講準備中と表示する
+- **表示書式の統一** — 月謝の桁区切りと税込の表記、1回あたりの金額（月謝 ÷ 月の回数）、初月の支払い額（入会金 ＋ 月謝）をテーマで一元化し、動的ブロックから用いる
+- **教室情報の一元管理** — 所在地・電話番号・受付時間・休校日を「設定 → 教室情報」の1か所で管理し、ヘッダー・フッター・トップ・スクール紹介・体験レッスンのページ・コースの申し込み導線へ反映する
+- **管理画面** — コースの一覧画面に対象・形式・月謝・募集状況の列を加える
+- **デザイン** — 紫紺の帯のヘッダー（上部に固定）、「対象から選ぶ」の入口を主役とする第一画面、月謝を最も大きく示すコースカード（3 / 2 / 1 列）、左段の絞り込み（幅 1024px 未満は折りたたみ）、右段が追従する2段組のコース詳細、画面下部に固定する体験レッスンのボタン（幅の狭い画面）
+
+#### 技術的な前提
+
+- プラグインは使用しない
+- 写真素材は使用しない。講師のイラスト（4名、線の太さ・配色・構図を統一）とアイコンはすべて自作の SVG である
+- 書体は Noto Sans JP（本文・見出し）と Manrope（数字）をテーマに同梱する。ひなた不動産と同じサブセットを用いる
+- 体験レッスンの申し込みフォームは表示のみとし、送信処理を持たない
 
 ### ひなた不動産
 

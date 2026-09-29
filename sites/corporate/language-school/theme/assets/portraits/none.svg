@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+<!-- イラストを選んでいない講師の代わりに表示する。 -->
+<circle cx="80" cy="80" r="72" fill="#f1eef6"/>
+<circle cx="80" cy="70" r="22" fill="none" stroke="#b9b2c6" stroke-width="3"/><path d="M36 138c6-22 24-34 44-34s38 12 44 34" fill="none" stroke="#b9b2c6" stroke-width="3" stroke-linecap="round"/>
+</svg>
