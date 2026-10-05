@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300">
+<!-- イラストを選んでいない場合の表示。 -->
+<rect width="480" height="300" fill="#eef3e4"/>
+<path d="M190 200v-60l50-34 50 34v60z" fill="none" stroke="#a7b3a0" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>

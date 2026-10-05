@@ -13,6 +13,7 @@ WordPress の制作サンプル集。各サンプルはサンプル専用の自�
 | みずき歯科クリニック | コーポレートサイト | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/corporate/dental-clinic/blueprint.json) | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/corporate/dental-clinic/blueprint-admin.json) | [`corporate/dental-clinic/`](https://github.com/norio-io/samples/tree/main/corporate/dental-clinic) |
 | ひびき英語スクール | コーポレートサイト | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/corporate/language-school/blueprint.json) | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/corporate/language-school/blueprint-admin.json) | なし |
 | ひなた不動産 | 物件検索サイト | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/listing/real-estate/blueprint.json) | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/listing/real-estate/blueprint-admin.json) | なし |
+| 社会福祉法人もえぎ会 | 採用サイト | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/recruit/nursing-care/blueprint.json) | [Playground で開く](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/norio-io/samples-wordpress/main/sites/recruit/nursing-care/blueprint-admin.json) | なし |
 
 WordPress Playground はブラウザ内で WordPress を起動するため、開くたびに初期状態から構築される。管理画面で加えた変更は保存されない。
 
@@ -86,6 +87,32 @@ WordPress Playground はブラウザ内で WordPress を起動するため、開
 - 写真素材は使用しない。間取り図（12件、線の太さ・文字・配色を統一）とアイコンはすべて自作である
 - 書体は Noto Sans JP（本文・見出し）と Manrope（数字）をテーマに同梱する。Noto Sans JP は JIS 第1水準の漢字と記号、太さ 400–700 に絞ったサブセットとし、それ以外の文字は端末の書体で表示する
 - 間取り図と掲載日はデモデータの取り込み後に `content/setup.php` が設定する。掲載日は取り込んだ日から数えるため、いつ開いても新着の物件がある
+
+### 社会福祉法人もえぎ会
+
+架空の社会福祉法人の、介護施設の採用サイト。**架空の題材であり、実在の企業・団体・個人とは関係しません。** 求人・施設・職員の声を投稿・固定ページ以外のデータとして構造化し、採用担当者が入力欄を埋めるだけで求人の追加と募集の停止・再開を行える形とした。
+
+- ソース: `sites/recruit/nursing-care/`（テーマ `theme/`、デモデータ `content/demo.xml`、初期設定 `content/setup.php`）
+- 画面: トップ、求人一覧（`/jobs/`）、求人詳細（`/jobs/<スラッグ>/`）、職種別一覧（`/job-type/<スラッグ>/`）、施設一覧（`/facilities/`）、施設詳細（`/facilities/<スラッグ>/`）、職員の声の一覧（`/voices/`）、職員の声の詳細（`/voices/<スラッグ>/`）、働く環境、よくある質問、応募フォーム
+
+#### 実装した事項
+
+- **データ構造** — 求人・施設・職員の声をカスタム投稿タイプとし、職種（求人と職員の声で共有）・雇用形態を分類、勤務施設・給与の単位と範囲・賞与・手当・勤務時間・夜勤の回数・年間休日・必要な資格・未経験の応募・募集状況・掲載期限などを型付きの入力欄（`register_post_meta`）として REST API に公開する。入力欄はエディターの「求人情報」「施設情報」「職員の情報」パネルで編集する
+- **逆引き** — 施設の詳細の「募集中の求人」は求人の「勤務施設」から、求人の詳細の「同じ職種の職員の声」は職種から自動で並べる。施設側・職員側での二重管理を要しない
+- **絞り込みと並べ替え** — 職種・雇用形態・勤務施設・未経験の応募の可否・夜勤の有無の絞り込み（単独・組み合わせ）と、新着順・給与の高い順（月給の求人を先に、それぞれ下限の高い順）の並べ替え。条件はすべて URL のクエリで表し、選択中の条件は解除できるチップで示す。該当がない場合は解除の方法を示す
+- **募集状況と掲載期限** — 急募は札を付けてトップ・一覧の先頭に置く。募集停止と掲載期限切れの求人は、トップ・一覧・職種別一覧・施設の詳細から外れ、詳細の URL に直接来た場合は募集を停止している旨を表示し、応募の導線を同じ職種の募集中の求人への導線に置き換える
+- **構造化データ** — 募集中・急募の求人の詳細に schema.org の `JobPosting`（JSON-LD）を出力する。職種名・仕事内容・掲載日・掲載期限・雇用形態・勤務地・給与の範囲と単位・採用主体を入力欄から生成し、画面の表示と一致させる
+- **採用窓口の一元管理** — 担当部署・電話番号・受付時間・見学会の日程を「設定 → 採用窓口」の1か所で管理し、ヘッダー・フッター・トップ・求人の詳細・応募フォームのページへ反映する
+- **応募フォーム** — 求人の詳細から遷移すると、その求人を選んだ状態で表示する（表示のみ。送信処理は持たない）
+- **管理画面** — 求人の一覧画面に職種・勤務施設・雇用形態・給与・募集状況・掲載期限の列を加える。掲載期限を過ぎた求人は募集状況を「期限切れ」と表示する
+- **デザイン** — 苔色を基調、菜の花色を差し色とする。苔の帯のヘッダー（上部に固定）、「職種から探す」を主役とする第一画面、給与を最も大きく示す求人カード（3 / 2 / 1 列）、左段の絞り込み（幅 1024px 未満は折りたたみ）、右段が追従する2段組の求人詳細、画面下部に固定する応募と電話のボタン（幅の狭い画面）
+
+#### 技術的な前提
+
+- プラグインは使用しない
+- 写真素材は使用しない。施設のイラスト（3件）、職員のイラスト（4名、線の太さ・配色・構図を統一）、アイコンはすべて自作の SVG である
+- 書体は Noto Sans JP（本文・見出し）と Manrope（数字）をテーマに同梱する。ひなた不動産と同じサブセットを用いる
+- 求人の掲載日・掲載期限と見学会の日程は、デモデータの取り込み後に `content/setup.php` が取り込んだ日から数えて設定する。いつ開いても、掲載期限を過ぎた求人が1件だけある
 
 ## 構成
 

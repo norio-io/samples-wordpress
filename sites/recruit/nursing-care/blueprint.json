@@ -1,0 +1,76 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "meta": {
+    "title": "社会福祉法人もえぎ会 採用サイト",
+    "description": "架空の社会福祉法人の介護施設の採用サイト。自作ブロックテーマの制作サンプル。",
+    "author": "norio-io",
+    "categories": [
+      "Theme"
+    ]
+  },
+  "landingPage": "/",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "steps": [
+    {
+      "step": "setSiteLanguage",
+      "language": "ja"
+    },
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "git:directory",
+        "url": "https://github.com/norio-io/samples-wordpress",
+        "ref": "main",
+        "refType": "branch",
+        "path": "sites/recruit/nursing-care/theme"
+      },
+      "options": {
+        "activate": true,
+        "targetFolderName": "moegi-recruit"
+      }
+    },
+    {
+      "step": "writeFiles",
+      "writeToPath": "/wordpress/wp-content/moegi-demo",
+      "filesTree": {
+        "resource": "git:directory",
+        "url": "https://github.com/norio-io/samples-wordpress",
+        "ref": "main",
+        "refType": "branch",
+        "path": "sites/recruit/nursing-care/content"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\nrequire '/wordpress/wp-load.php';\n// 初期状態の投稿・固定ページを削除する。\nforeach ( array( 1, 2, 3 ) as $id ) {\n\twp_delete_post( $id, true );\n}\n"
+    },
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "社会福祉法人もえぎ会",
+        "blogdescription": "介護職・看護職の採用情報",
+        "timezone_string": "Asia/Tokyo",
+        "date_format": "Y.m.d",
+        "permalink_structure": "/%postname%/"
+      }
+    },
+    {
+      "step": "importWxr",
+      "file": {
+        "resource": "vfs",
+        "path": "/wordpress/wp-content/moegi-demo/demo.xml"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\nrequire '/wordpress/wp-load.php';\n// 求人の掲載日と掲載期限、採用窓口の初期値（content/setup.php）。\nrequire '/wordpress/wp-content/moegi-demo/setup.php';\n"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\nrequire '/wordpress/wp-load.php';\n// 書き換え規則を作り直す。求人（/jobs/）・施設（/facilities/）・職員の声（/voices/）・職種（/job-type/）の規則を含めるため、テーマを有効にした後の要求で行う。\nflush_rewrite_rules();\n"
+    }
+  ]
+}

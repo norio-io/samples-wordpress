@@ -1,0 +1,111 @@
+<!-- wp:template-part {"slug":"notice"} /-->
+
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main","layout":{"type":"default"}} -->
+<main class="wp-block-group site-main"><!-- wp:group {"align":"full","className":"crumb","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull crumb"><!-- wp:breadcrumbs {"separator":"／"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"detail","layout":{"type":"default"}} -->
+<div class="wp-block-group detail"><!-- wp:group {"className":"detail__head","layout":{"type":"default"}} -->
+<div class="wp-block-group detail__head"><!-- wp:moegi/job-head /-->
+
+<!-- wp:post-title {"level":1,"className":"detail__title"} /-->
+
+<!-- wp:post-excerpt {"className":"detail__lead"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"aside","className":"detail__side","layout":{"type":"default"}} -->
+<aside class="wp-block-group detail__side"><!-- wp:moegi/job-wage /-->
+
+<!-- wp:moegi/job-summary /-->
+
+<!-- wp:moegi/job-cta /--></aside>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"detail__body","layout":{"type":"default"}} -->
+<div class="wp-block-group detail__body"><!-- wp:group {"tagName":"section","className":"detail__sec","layout":{"type":"default"}} -->
+<section class="wp-block-group detail__sec"><!-- wp:heading -->
+<h2 class="wp-block-heading">仕事内容</h2>
+<!-- /wp:heading -->
+
+<!-- wp:post-content {"className":"detail__content","layout":{"type":"default"}} /--></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"detail__sec","layout":{"type":"default"}} -->
+<section class="wp-block-group detail__sec"><!-- wp:heading -->
+<h2 class="wp-block-heading">給与と手当の内訳</h2>
+<!-- /wp:heading -->
+
+<!-- wp:moegi/job-pay /--></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"detail__sec","layout":{"type":"default"}} -->
+<section class="wp-block-group detail__sec"><!-- wp:heading -->
+<h2 class="wp-block-heading">勤務時間と休日</h2>
+<!-- /wp:heading -->
+
+<!-- wp:moegi/job-schedule /--></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"detail__sec","layout":{"type":"default"}} -->
+<section class="wp-block-group detail__sec"><!-- wp:heading -->
+<h2 class="wp-block-heading">応募の条件</h2>
+<!-- /wp:heading -->
+
+<!-- wp:moegi/job-requirement /--></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","className":"detail__sec","layout":{"type":"default"}} -->
+<section class="wp-block-group detail__sec"><!-- wp:heading -->
+<h2 class="wp-block-heading">勤務施設</h2>
+<!-- /wp:heading -->
+
+<!-- wp:moegi/job-facility /--></section>
+<!-- /wp:group --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"moegi-light","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-moegi-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">VOICES</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">同じ職種の職員の声</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"sec-lead"} -->
+<p class="sec-lead">この求人と同じ職種で働く職員に、仕事の様子を聞きました。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:query {"queryId":3,"query":{"perPage":3,"pages":0,"offset":0,"postType":"voice","order":"asc","orderBy":"menu_order","inherit":false,"moegiRelated":"job_type"},"className":"voice-query"} -->
+<div class="wp-block-query voice-query"><!-- wp:post-template {"className":"voice-list","layout":{"type":"default"}} -->
+<!-- wp:moegi/voice-card /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph {"className":"no-results__text"} -->
+<p class="no-results__text">この職種の職員の声は準備中です。ほかの職種の職員の声もご覧ください。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline","metadata":{"bindings":{"url":{"source":"moegi/url","args":{"key":"voices"}}}}} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button">職員の声の一覧へ</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","className":"cta-section","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull cta-section"><!-- wp:moegi/job-cta {"variant":"band"} /--></section>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /-->

@@ -1,0 +1,65 @@
+<!-- wp:template-part {"slug":"notice"} /-->
+
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main","layout":{"type":"default"}} -->
+<main class="wp-block-group site-main"><!-- wp:group {"align":"full","className":"crumb","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull crumb"><!-- wp:breadcrumbs {"separator":"／"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","className":"page-head","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull page-head"><!-- wp:group {"className":"page-head-in","layout":{"type":"default"}} -->
+<div class="wp-block-group page-head-in"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">JOBS</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">求人一覧</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"lead"} -->
+<p class="lead">いま募集している求人です。急募の求人を先頭に置いています。条件を選ぶと、この画面の URL に条件が入り、そのまま共有・再読み込みできます。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"list-layout","layout":{"type":"default"}} -->
+<div class="wp-block-group list-layout"><!-- wp:group {"className":"list-filter","layout":{"type":"default"}} -->
+<div class="wp-block-group list-filter"><!-- wp:moegi/job-filter /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"list-results","layout":{"type":"default"}} -->
+<div class="wp-block-group list-results"><!-- wp:moegi/result-bar /-->
+
+<!-- wp:query {"queryId":2,"query":{"perPage":12,"pages":0,"offset":0,"postType":"job","order":"desc","orderBy":"date","inherit":true},"className":"job-list"} -->
+<div class="wp-block-query job-list"><!-- wp:post-template {"className":"cards","layout":{"type":"default"}} -->
+<!-- wp:moegi/job-card {"level":2} /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
+<!-- wp:query-pagination-previous {"label":"前へ"} /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next {"label":"次へ"} /-->
+<!-- /wp:query-pagination -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph {"className":"no-results__text"} -->
+<p class="no-results__text">条件に合う求人が見つかりませんでした。上の「すべて解除」で条件を外すか、条件を1つずつ減らしてお探しください。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline","metadata":{"bindings":{"url":{"source":"moegi/url","args":{"key":"jobs"}}}}} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button">条件をすべて解除する</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /-->

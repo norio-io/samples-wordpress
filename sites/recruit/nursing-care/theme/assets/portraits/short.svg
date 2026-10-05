@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+<!-- 職員のイラスト。4名で線の太さ（3）・配色・構図を揃える。菜の花は背景の円のみに用いる。 -->
+<circle cx="80" cy="80" r="72" fill="#efc64a"/>
+<path d="M28 160c2-28 22-46 52-46s50 18 52 46" fill="#eef3e4" stroke="#1f2a22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M70 102v12c0 7 20 7 20 0v-12" fill="#fbfaf4" stroke="#1f2a22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M66 116l14 14 14-14" fill="none" stroke="#1f2a22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M80 130v30" fill="none" stroke="#1f2a22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+<ellipse cx="80" cy="76" rx="24" ry="28" fill="#fbfaf4" stroke="#1f2a22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="71" cy="78" r="2.6" fill="#1f2a22"/>
+<circle cx="89" cy="78" r="2.6" fill="#1f2a22"/>
+<path d="M73 91c4 3.5 10 3.5 14 0" fill="none" stroke="#1f2a22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55 74c-3-22 9-35 25-35s29 11 25 35c-3-10-10-17-22-17-10 0-20 6-28 17z" fill="#3a3428" stroke="#1f2a22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
