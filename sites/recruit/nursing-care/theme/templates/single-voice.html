@@ -1,0 +1,83 @@
+<!-- wp:template-part {"slug":"notice"} /-->
+
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main","layout":{"type":"default"}} -->
+<main class="wp-block-group site-main"><!-- wp:group {"align":"full","className":"crumb","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull crumb"><!-- wp:breadcrumbs {"separator":"／"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"profile","layout":{"type":"default"}} -->
+<div class="wp-block-group profile"><!-- wp:moegi/portrait {"className":"profile__portrait"} /-->
+
+<!-- wp:group {"className":"profile__body","layout":{"type":"default"}} -->
+<div class="wp-block-group profile__body"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">VOICE</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-excerpt {"className":"profile__quote"} /-->
+
+<!-- wp:post-title {"level":1,"className":"profile__name"} /-->
+
+<!-- wp:moegi/voice-profile /-->
+
+<!-- wp:post-content {"className":"profile__text","layout":{"type":"default"}} /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"moegi-light","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-moegi-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"day-layout","layout":{"type":"default"}} -->
+<div class="wp-block-group day-layout"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">ONE DAY</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">1日の流れ</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"sec-lead"} -->
+<p class="sec-lead">出勤から退勤まで、ある日の仕事を時刻順に紹介します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:moegi/voice-day /--></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className":"sec-head","layout":{"type":"default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className":"eyebrow"} -->
+<p class="eyebrow">OPEN POSITIONS</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">同じ職種の求人</h2>
+<!-- /wp:heading --></div>
+<!-- /wp:group -->
+
+<!-- wp:query {"queryId":7,"query":{"perPage":3,"pages":0,"offset":0,"postType":"job","order":"desc","orderBy":"date","inherit":false,"moegiRelated":"job_type"},"className":"job-list"} -->
+<div class="wp-block-query job-list"><!-- wp:post-template {"className":"cards","layout":{"type":"default"}} -->
+<!-- wp:moegi/job-card /-->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph {"className":"no-results__text"} -->
+<p class="no-results__text">この職種で、現在募集している求人はありません。</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query -->
+
+<!-- wp:buttons {"className":"more"} -->
+<div class="wp-block-buttons more"><!-- wp:button {"className":"is-style-outline","metadata":{"bindings":{"url":{"source":"moegi/url","args":{"key":"voices"}}}}} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button">ほかの職員の声を見る</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></section>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"entry-band"} /--></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /-->

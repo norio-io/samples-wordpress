@@ -1,0 +1,1965 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+	社会福祉法人もえぎ会（架空）採用サイトのデモデータ。
+	法人名・施設名・求人・職員名・所在地・駅名・電話番号は、すべてサンプル用に作成した架空のものです。
+
+	投稿 ID は固定している。テーマのヘッダー・フッターのナビゲーション（wp:navigation の ref）、
+	同期パターン（wp:block の ref）、求人と職員の声の「勤務施設」（投稿メタ facility）が ID で参照するため。
+	- 141–142: ナビゲーション / 151: 同期パターン / 201–203: 固定ページ / 301–303: 施設 / 401–412: 求人 / 501–504: 職員の声
+	求人の掲載日と掲載期限は、取り込み後に content/setup.php が取り込んだ日から数えて設定する
+	（_demo_days_ago: 何日前に掲載したか、_demo_deadline_days: 何日後を期限とするか。負の値は期限切れ）。
+-->
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/"
+>
+<channel>
+	<title>社会福祉法人もえぎ会</title>
+	<link>https://example.com</link>
+	<description>介護職・看護職の採用情報</description>
+	<language>ja</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>https://example.com</wp:base_site_url>
+	<wp:base_blog_url>https://example.com</wp:base_blog_url>
+	<wp:author>
+		<wp:author_id>1</wp:author_id>
+		<wp:author_login><![CDATA[admin]]></wp:author_login>
+		<wp:author_email><![CDATA[admin@example.com]]></wp:author_email>
+		<wp:author_display_name><![CDATA[admin]]></wp:author_display_name>
+	</wp:author>
+	<wp:term>
+		<wp:term_id>11</wp:term_id>
+		<wp:term_taxonomy><![CDATA[job_type]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[care-worker]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[介護職]]></wp:term_name>
+		<wp:term_description><![CDATA[食事・入浴・排せつの介助と、日々の暮らしの支援]]></wp:term_description>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>12</wp:term_id>
+		<wp:term_taxonomy><![CDATA[job_type]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[nurse]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[看護職]]></wp:term_name>
+		<wp:term_description><![CDATA[健康管理、服薬の管理、医療機関との連携]]></wp:term_description>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>13</wp:term_id>
+		<wp:term_taxonomy><![CDATA[job_type]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[counselor]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[生活相談員]]></wp:term_name>
+		<wp:term_description><![CDATA[利用者・ご家族の相談と、関係機関との調整]]></wp:term_description>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>14</wp:term_id>
+		<wp:term_taxonomy><![CDATA[job_type]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[therapist]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[機能訓練指導員]]></wp:term_name>
+		<wp:term_description><![CDATA[体の機能を保つための訓練の計画と実施]]></wp:term_description>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>15</wp:term_id>
+		<wp:term_taxonomy><![CDATA[job_type]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[cook]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[調理員]]></wp:term_name>
+		<wp:term_description><![CDATA[施設の厨房での調理と、食事形態に合わせた盛り付け]]></wp:term_description>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>16</wp:term_id>
+		<wp:term_taxonomy><![CDATA[job_type]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[driver]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[送迎ドライバー]]></wp:term_name>
+		<wp:term_description><![CDATA[デイサービスの利用者の送迎]]></wp:term_description>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>21</wp:term_id>
+		<wp:term_taxonomy><![CDATA[employment]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[full-time]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[正職員]]></wp:term_name>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>22</wp:term_id>
+		<wp:term_taxonomy><![CDATA[employment]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[contract]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[契約職員]]></wp:term_name>
+	</wp:term>
+	<wp:term>
+		<wp:term_id>23</wp:term_id>
+		<wp:term_taxonomy><![CDATA[employment]]></wp:term_taxonomy>
+		<wp:term_slug><![CDATA[part-time]]></wp:term_slug>
+		<wp:term_parent><![CDATA[]]></wp:term_parent>
+		<wp:term_name><![CDATA[パート]]></wp:term_name>
+	</wp:term>
+	<item>
+		<title><![CDATA[グローバルナビゲーション]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:navigation-link {"label":"求人を探す","kind":"custom","isTopLevelLink":true,"metadata":{"bindings":{"url":{"source":"moegi/url","args":{"key":"jobs"}}}}} /-->
+<!-- wp:navigation-link {"label":"施設紹介","kind":"custom","isTopLevelLink":true,"metadata":{"bindings":{"url":{"source":"moegi/url","args":{"key":"facilities"}}}}} /-->
+<!-- wp:navigation-link {"label":"職員の声","kind":"custom","isTopLevelLink":true,"metadata":{"bindings":{"url":{"source":"moegi/url","args":{"key":"voices"}}}}} /-->
+<!-- wp:navigation-link {"label":"働く環境","type":"page","id":201,"kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"よくある質問","type":"page","id":202,"kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>141</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[global-navigation]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[フッターナビゲーション]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:home-link {"label":"ホーム"} /-->
+<!-- wp:navigation-link {"label":"求人を探す","kind":"custom","isTopLevelLink":true,"metadata":{"bindings":{"url":{"source":"moegi/url","args":{"key":"jobs"}}}}} /-->
+<!-- wp:navigation-link {"label":"施設紹介","kind":"custom","isTopLevelLink":true,"metadata":{"bindings":{"url":{"source":"moegi/url","args":{"key":"facilities"}}}}} /-->
+<!-- wp:navigation-link {"label":"職員の声","kind":"custom","isTopLevelLink":true,"metadata":{"bindings":{"url":{"source":"moegi/url","args":{"key":"voices"}}}}} /-->
+<!-- wp:navigation-link {"label":"働く環境","type":"page","id":201,"kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"よくある質問","type":"page","id":202,"kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->
+<!-- wp:navigation-link {"label":"応募フォーム","type":"page","id":203,"kind":"post-type","metadata":{"bindings":{"url":{"source":"core/post-data","args":{"field":"link"}}}}} /-->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>142</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[footer-navigation]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[数字で見るもえぎ会]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"className": "numbers", "layout": {"type": "default"}} -->
+<div class="wp-block-group numbers"><!-- wp:group {"className": "number", "layout": {"type": "default"}} -->
+<div class="wp-block-group number"><!-- wp:paragraph {"className": "number__label"} -->
+<p class="number__label">年間休日</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className": "number__value"} -->
+<p class="number__value">115<span>日</span></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className": "number__note"} -->
+<p class="number__note">正職員の値です。4週8休のシフト制に、夏季・年末年始の休暇を加えた日数です。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className": "number", "layout": {"type": "default"}} -->
+<div class="wp-block-group number"><!-- wp:paragraph {"className": "number__label"} -->
+<p class="number__label">有給休暇の取得率</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className": "number__value"} -->
+<p class="number__value">78<span>%</span></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className": "number__note"} -->
+<p class="number__note">2025年度の法人全体の平均です。取得の理由は問いません。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className": "number", "layout": {"type": "default"}} -->
+<div class="wp-block-group number"><!-- wp:paragraph {"className": "number__label"} -->
+<p class="number__label">平均勤続年数</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className": "number__value"} -->
+<p class="number__value">8.6<span>年</span></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className": "number__note"} -->
+<p class="number__note">正職員と契約職員の平均です。3施設とも、10年以上働く職員がいます。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className": "number", "layout": {"type": "default"}} -->
+<div class="wp-block-group number"><!-- wp:paragraph {"className": "number__label"} -->
+<p class="number__label">資格取得の支援</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className": "number__value"} -->
+<p class="number__value">42<span>名</span></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className": "number__note"} -->
+<p class="number__note">過去5年間に、受講費の補助を受けて資格を取った職員の数です。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>151</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[numbers]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[wp_block]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[働く環境]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className": "sec-head", "layout": {"type": "default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className": "eyebrow"} -->
+<p class="eyebrow">BENEFITS</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">福利厚生</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className": "sec-lead"} -->
+<p class="sec-lead">パート・契約職員にも、勤務日数に応じて同じ制度を適用します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className": "benefits", "layout": {"type": "default"}} -->
+<div class="wp-block-group benefits"><!-- wp:group {"className": "benefit", "layout": {"type": "default"}} -->
+<div class="wp-block-group benefit"><!-- wp:heading {"level": 3} -->
+<h3 class="wp-block-heading">社会保険と退職金</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>健康保険・厚生年金・雇用保険・労災保険に加入します。正職員は、勤続3年以上で退職金を支給します。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className": "benefit", "layout": {"type": "default"}} -->
+<div class="wp-block-group benefit"><!-- wp:heading {"level": 3} -->
+<h3 class="wp-block-heading">休暇の取りやすさ</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>勤務表は希望休を先に入れてから作ります。有給休暇は半日単位で取得できます。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className": "benefit", "layout": {"type": "default"}} -->
+<div class="wp-block-group benefit"><!-- wp:heading {"level": 3} -->
+<h3 class="wp-block-heading">子育てとの両立</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>育児休業の取得実績は、過去5年で11名（うち男性3名）です。復帰後は短時間勤務を選べます。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className": "benefit", "layout": {"type": "default"}} -->
+<div class="wp-block-group benefit"><!-- wp:heading {"level": 3} -->
+<h3 class="wp-block-heading">健康診断と予防接種</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>年1回の健康診断（夜勤のある職員は年2回）と、インフルエンザの予防接種を法人の費用で行います。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className": "benefit", "layout": {"type": "default"}} -->
+<div class="wp-block-group benefit"><!-- wp:heading {"level": 3} -->
+<h3 class="wp-block-heading">職員の食事</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>施設の厨房で作った昼食を、1食 250円で食べられます。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className": "benefit", "layout": {"type": "default"}} -->
+<div class="wp-block-group benefit"><!-- wp:heading {"level": 3} -->
+<h3 class="wp-block-heading">駐車場と制服</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>職員用の駐車場は無料です。制服を貸与し、洗濯は施設で行います。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"moegi-light","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-moegi-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className": "sec-head", "layout": {"type": "default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className": "eyebrow"} -->
+<p class="eyebrow">TRAINING</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">研修制度</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className": "sec-lead"} -->
+<p class="sec-lead">入職の時期と経験に合わせて、段階を追って仕事を覚えられるようにしています。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:list {"ordered":true,"className":"steps"} -->
+<ol class="wp-block-list steps"><!-- wp:list-item -->
+<li><strong>入職時研修（2日）</strong>法人の考え方、感染症の予防、介助の基本の動きを学びます。</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>同行期間（2週間）</strong>先輩職員と同じ勤務に入り、入居者の方ごとの介助の方法を覚えます。</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>夜勤の独り立ち</strong>夜勤は、先輩との夜勤を3回以上経験し、本人と相談してから始めます。</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>年次研修</strong>毎月の施設内研修と、経験年数に応じた外部研修に、勤務として参加します。</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className": "sec-head", "layout": {"type": "default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className": "eyebrow"} -->
+<p class="eyebrow">QUALIFICATION</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">資格取得の支援</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className": "sec-lead"} -->
+<p class="sec-lead">受講費の補助は、取得後の勤務の継続を条件としません。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:table {"hasFixedLayout":false,"className":"is-style-plain"} -->
+<figure class="wp-block-table is-style-plain"><table><thead><tr><th>資格</th><th>支援の内容</th><th>過去5年の実績</th></tr></thead><tbody><tr><th scope="row">介護職員初任者研修</th><td>受講費の全額を法人が負担。受講日は勤務として扱います</td><td>19名</td></tr><tr><th scope="row">介護福祉士実務者研修</th><td>受講費の半額（上限 50,000円）を補助。スクーリングの日は勤務として扱います</td><td>14名</td></tr><tr><th scope="row">介護福祉士</th><td>受験料の全額を補助。合格後は資格手当（月 10,000円）を支給します</td><td>7名</td></tr><tr><th scope="row">介護支援専門員</th><td>受験料と講習の費用の全額を補助します</td><td>2名</td></tr></tbody></table><figcaption class="wp-element-caption">実績は2021年度から2025年度までの合計です。</figcaption></figure>
+<!-- /wp:table --></section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","align":"full","backgroundColor":"moegi-light","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull has-moegi-light-background-color has-background" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className": "sec-head", "layout": {"type": "default"}} -->
+<div class="wp-block-group sec-head"><!-- wp:paragraph {"className": "eyebrow"} -->
+<p class="eyebrow">NUMBERS</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">数字で見る職場</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className": "sec-lead"} -->
+<p class="sec-lead">トップに掲載している数字と同じものです。</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:block {"ref":151} /--></section>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[休日、研修、資格取得の支援など、もえぎ会で長く働くための制度をまとめています。]]></excerpt:encoded>
+		<wp:post_id>201</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[workplace]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[よくある質問]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className": "faq", "layout": {"type": "default"}} -->
+<div class="wp-block-group faq"><!-- wp:details -->
+<details class="wp-block-details"><summary>介護の仕事は未経験ですが、応募できますか。</summary><!-- wp:paragraph -->
+<p>できます。求人の詳細の「未経験の応募」が「可」の求人は、経験を問いません。入職後の2週間は先輩職員が同行し、夜勤は独り立ちしてから始めます。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>資格がなくても働けますか。</summary><!-- wp:paragraph -->
+<p>「資格不問」の求人は、資格がなくても応募できます。働きながら介護職員初任者研修を受ける場合、受講費は法人が負担します。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>夜勤のない働き方はできますか。</summary><!-- wp:paragraph -->
+<p>できます。デイサービスの求人と、特養のパート・看護職の求人には夜勤がありません。求人一覧の「夜勤」で「夜勤なし」を選ぶと絞り込めます。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>見学だけでも申し込めますか。</summary><!-- wp:paragraph -->
+<p>できます。応募フォームの「お申し込みの内容」で「見学してから決めたい」を選ぶか、採用窓口へお電話ください。見学会の日程はトップに掲載しています。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>面接では何を準備すればよいですか。</summary><!-- wp:paragraph -->
+<p>履歴書（写真付き）をお持ちください。職務経歴書は任意です。資格をお持ちの方は、資格証の写しをお持ちください。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>勤務する施設は選べますか。</summary><!-- wp:paragraph -->
+<p>求人ごとに勤務施設を決めています。複数の施設に興味がある場合は、応募フォームのご質問の欄にお書きください。面接で相談して決めます。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>パートから正職員になれますか。</summary><!-- wp:paragraph -->
+<p>なれます。過去5年で、パート・契約職員から正職員になった職員は9名です。年1回、本人の希望を聞く面談を行います。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>掲載されている求人が募集停止になっていました。</summary><!-- wp:paragraph -->
+<p>募集の人数に達した求人は、募集を停止しています。同じ職種の募集中の求人をご覧いただくか、採用窓口へお問い合わせください。欠員が出た場合は、募集を再開します。</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[応募の前によくいただく質問です。質問を選ぶと回答が開きます。]]></excerpt:encoded>
+		<wp:post_id>202</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[faq]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>2</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[応募フォーム]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|section","bottom":"var:preset|spacing|section"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--section);padding-bottom:var(--wp--preset--spacing--section)"><!-- wp:group {"className": "entry-layout", "layout": {"type": "default"}} -->
+<div class="wp-block-group entry-layout"><!-- wp:group {"className": "entry-main", "layout": {"type": "default"}} -->
+<div class="wp-block-group entry-main"><!-- wp:moegi/entry-form /--></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName": "aside", "className": "entry-aside", "layout": {"type": "default"}} -->
+<aside class="wp-block-group entry-aside"><!-- wp:heading -->
+<h2 class="wp-block-heading">採用窓口</h2>
+<!-- /wp:heading -->
+
+<!-- wp:moegi/contact-info /-->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">見学会の日程</h2>
+<!-- /wp:heading -->
+
+<!-- wp:moegi/tour /--></aside>
+<!-- /wp:group --></div>
+<!-- /wp:group --></section>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[求人への応募と、見学・相談のお申し込みを受け付けています。求人の詳細から来た場合は、その求人を選んだ状態で表示します。]]></excerpt:encoded>
+		<wp:post_id>203</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[entry]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+	<item>
+		<title><![CDATA[特別養護老人ホーム もえぎの里]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "施設の紹介を入力"} -->
+<p>緑ヶ丘の住宅地にある、10人ずつ8つのユニットからなる特別養護老人ホームです。ユニットごとに台所と食卓があり、ご飯を炊く匂いのするなかで、入居者の方がそれぞれの生活のリズムで暮らしています。介護・看護・調理の職員が同じ建物で働き、食事の形や体調の変化をその日のうちに共有しています。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[10人ずつのユニットで暮らす、80名の特別養護老人ホームです。]]></excerpt:encoded>
+		<wp:post_id>301</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[moegi-no-sato]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[facility]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[kind]]></wp:meta_key>
+			<wp:meta_value><![CDATA[特別養護老人ホーム（ユニット型）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[capacity]]></wp:meta_key>
+			<wp:meta_value><![CDATA[80]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[postal_code]]></wp:meta_key>
+			<wp:meta_value><![CDATA[000-0011]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[region]]></wp:meta_key>
+			<wp:meta_value><![CDATA[若葉県]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[locality]]></wp:meta_key>
+			<wp:meta_value><![CDATA[野々瀬市]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[street]]></wp:meta_key>
+			<wp:meta_value><![CDATA[緑ヶ丘2-14-1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[access]]></wp:meta_key>
+			<wp:meta_value><![CDATA[野々瀬駅からバス12分「緑ヶ丘」下車、徒歩2分]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[opened]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2004]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[staff]]></wp:meta_key>
+			<wp:meta_value><![CDATA[68]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[art]]></wp:meta_key>
+			<wp:meta_value><![CDATA[large]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[デイサービスセンター もえぎ]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "施設の紹介を入力"} -->
+<p>野々瀬駅から歩いて6分の、定員35名のデイサービスです。午前は入浴と機能訓練、午後は手作業やレクリエーションを中心に過ごします。営業は月曜から土曜の日中で、職員に夜勤はありません。送迎の車は6台で、送迎ドライバーと介護職員が組んで回ります。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[駅から歩ける、定員35名のデイサービスです。夜勤はありません。]]></excerpt:encoded>
+		<wp:post_id>302</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[day-service-moegi]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>2</wp:menu_order>
+		<wp:post_type><![CDATA[facility]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[kind]]></wp:meta_key>
+			<wp:meta_value><![CDATA[通所介護（デイサービス）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[capacity]]></wp:meta_key>
+			<wp:meta_value><![CDATA[35]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[postal_code]]></wp:meta_key>
+			<wp:meta_value><![CDATA[000-0023]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[region]]></wp:meta_key>
+			<wp:meta_value><![CDATA[若葉県]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[locality]]></wp:meta_key>
+			<wp:meta_value><![CDATA[野々瀬市]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[street]]></wp:meta_key>
+			<wp:meta_value><![CDATA[本町3-5-8]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[access]]></wp:meta_key>
+			<wp:meta_value><![CDATA[野々瀬駅から徒歩6分]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[opened]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2011]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[staff]]></wp:meta_key>
+			<wp:meta_value><![CDATA[18]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[art]]></wp:meta_key>
+			<wp:meta_value><![CDATA[day]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[グループホーム もえぎの家]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "施設の紹介を入力"} -->
+<p>認知症のある方が、9人ずつ2つのユニットで共同生活を送るグループホームです。買い物や調理、洗濯物たたみなど、できることは入居者の方と一緒に行います。少人数のため、一人ひとりの昔の仕事や好きな歌まで知ったうえで関わることができます。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[9人ずつ2つのユニットで暮らす、認知症の方のグループホームです。]]></excerpt:encoded>
+		<wp:post_id>303</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[moegi-no-ie]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[facility]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[kind]]></wp:meta_key>
+			<wp:meta_value><![CDATA[認知症対応型共同生活介護（グループホーム）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[capacity]]></wp:meta_key>
+			<wp:meta_value><![CDATA[18]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[postal_code]]></wp:meta_key>
+			<wp:meta_value><![CDATA[000-0035]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[region]]></wp:meta_key>
+			<wp:meta_value><![CDATA[若葉県]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[locality]]></wp:meta_key>
+			<wp:meta_value><![CDATA[野々瀬市]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[street]]></wp:meta_key>
+			<wp:meta_value><![CDATA[東野々瀬1-22-6]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[access]]></wp:meta_key>
+			<wp:meta_value><![CDATA[東野々瀬駅から徒歩9分]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[opened]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2016]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[staff]]></wp:meta_key>
+			<wp:meta_value><![CDATA[16]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[art]]></wp:meta_key>
+			<wp:meta_value><![CDATA[house]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[介護職員（正職員・夜勤あり）]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "仕事内容を入力"} -->
+<p>ユニット型の特別養護老人ホームで、食事・入浴・排せつの介助、居室の環境の整備、余暇の時間の支援を行います。1つのユニットを4〜5名の職員で担当し、入居者の方の生活のリズムに合わせて1日の段取りを組み立てます。記録はタブレットで入力するため、手書きの書類はほとんどありません。未経験の方は、先輩職員が2週間同行し、夜勤は独り立ちしてから始めます。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[ユニットケアの特養で、入居者10人の暮らしを支える介護職員を急募します。]]></excerpt:encoded>
+		<wp:post_id>401</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[sato-care-full-time]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[job]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="employment" nicename="full-time"><![CDATA[正職員]]></category>
+		<category domain="job_type" nicename="care-worker"><![CDATA[介護職]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[301]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_unit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[monthly]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_min]]></wp:meta_key>
+			<wp:meta_value><![CDATA[218000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_max]]></wp:meta_key>
+			<wp:meta_value><![CDATA[265000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[bonus]]></wp:meta_key>
+			<wp:meta_value><![CDATA[年2回、昨年度実績 3.2か月分]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[allowances]]></wp:meta_key>
+			<wp:meta_value><![CDATA[夜勤手当 1回 6,500円
+処遇改善手当 月 18,000円
+資格手当（介護福祉士） 月 10,000円
+通勤手当 月 上限 30,000円]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[hours]]></wp:meta_key>
+			<wp:meta_value><![CDATA[7:00 から 16:00 まで、10:00 から 19:00 まで、16:30 から翌 9:30 までの夜勤を含むシフト制]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[night_shifts]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holidays]]></wp:meta_key>
+			<wp:meta_value><![CDATA[115]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holiday_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4週8休のシフト制。有給休暇、夏季休暇3日、年末年始休暇3日]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification]]></wp:meta_key>
+			<wp:meta_value><![CDATA[initial]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[入職後の取得も可。受講費は法人が負担]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[inexperienced]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[urgent]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deadline]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[3]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_deadline_days]]></wp:meta_key>
+			<wp:meta_value><![CDATA[60]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[介護福祉士（正職員・ユニットリーダー候補）]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "仕事内容を入力"} -->
+<p>介護の業務に加え、ユニットの職員の勤務表の作成、新人職員の指導、ご家族との連絡を担当します。入職から半年ほどはユニットの一員として働き、施設の進め方に慣れてからリーダーに任命します。ユニットごとの会議は月に1回で、入居者の方の暮らし方の見直しを職員全員で話し合います。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[介護福祉士の経験を生かし、ユニットの運営を担う職員を募集します。]]></excerpt:encoded>
+		<wp:post_id>402</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[sato-care-leader]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[job]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="employment" nicename="full-time"><![CDATA[正職員]]></category>
+		<category domain="job_type" nicename="care-worker"><![CDATA[介護職]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[301]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_unit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[monthly]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_min]]></wp:meta_key>
+			<wp:meta_value><![CDATA[238000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_max]]></wp:meta_key>
+			<wp:meta_value><![CDATA[290000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[bonus]]></wp:meta_key>
+			<wp:meta_value><![CDATA[年2回、昨年度実績 3.2か月分]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[allowances]]></wp:meta_key>
+			<wp:meta_value><![CDATA[夜勤手当 1回 6,500円
+処遇改善手当 月 22,000円
+リーダー手当（任命後） 月 15,000円
+通勤手当 月 上限 30,000円]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[hours]]></wp:meta_key>
+			<wp:meta_value><![CDATA[7:00 から 16:00 まで、10:00 から 19:00 まで、16:30 から翌 9:30 までの夜勤を含むシフト制]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[night_shifts]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holidays]]></wp:meta_key>
+			<wp:meta_value><![CDATA[115]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holiday_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4週8休のシフト制。有給休暇、夏季休暇3日、年末年始休暇3日]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification]]></wp:meta_key>
+			<wp:meta_value><![CDATA[kaigo]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[inexperienced]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deadline]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[12]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_deadline_days]]></wp:meta_key>
+			<wp:meta_value><![CDATA[90]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[介護職員（パート・日勤のみ）]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "仕事内容を入力"} -->
+<p>日中の忙しい時間帯に、食事の配膳と介助、入浴の介助、シーツの交換などを担当します。夜勤や早番・遅番はなく、子育てや家庭の都合に合わせて曜日と時間を選べます。資格がなくても始められ、働きながら初任者研修を受ける方には受講費を補助します。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[日中の短い時間で、食事と入浴の介助を担当するパート職員です。]]></excerpt:encoded>
+		<wp:post_id>403</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[sato-care-part-time]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[job]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="employment" nicename="part-time"><![CDATA[パート]]></category>
+		<category domain="job_type" nicename="care-worker"><![CDATA[介護職]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[301]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_unit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[hourly]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_min]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1150]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_max]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1300]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[bonus]]></wp:meta_key>
+			<wp:meta_value><![CDATA[年2回 寸志]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[allowances]]></wp:meta_key>
+			<wp:meta_value><![CDATA[処遇改善手当 時給に 100円を加算
+通勤手当 実費（上限 月 15,000円）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[hours]]></wp:meta_key>
+			<wp:meta_value><![CDATA[9:00 から 13:00 まで、または 9:00 から 16:00 まで。週2日から相談可]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[night_shifts]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holidays]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holiday_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[希望の曜日で勤務表を作成。有給休暇は勤務日数に応じて付与]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification]]></wp:meta_key>
+			<wp:meta_value><![CDATA[none]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[inexperienced]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deadline]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_deadline_days]]></wp:meta_key>
+			<wp:meta_value><![CDATA[60]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[看護職員（正職員）]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "仕事内容を入力"} -->
+<p>入居者の方の健康状態の観察、服薬の管理、たんの吸引や胃ろうなどの医療的なケア、嘱託医の往診の補助を行います。看護職員は5名で、日中は2〜3名が勤務します。夜勤はなく、夜間は介護職員からの電話を受けるオンコールを交代で担当します。病院からの転職者が多く、施設の看護に慣れるまで先輩職員が付き添います。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[特養の入居者80名の健康管理を、看護職員5名の体制で担当します。]]></excerpt:encoded>
+		<wp:post_id>404</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[sato-nurse-full-time]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[job]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="employment" nicename="full-time"><![CDATA[正職員]]></category>
+		<category domain="job_type" nicename="nurse"><![CDATA[看護職]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[301]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_unit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[monthly]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_min]]></wp:meta_key>
+			<wp:meta_value><![CDATA[265000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_max]]></wp:meta_key>
+			<wp:meta_value><![CDATA[320000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[bonus]]></wp:meta_key>
+			<wp:meta_value><![CDATA[年2回、昨年度実績 3.2か月分]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[allowances]]></wp:meta_key>
+			<wp:meta_value><![CDATA[オンコール手当 1回 3,000円（呼び出し時は別途加算）
+処遇改善手当 月 10,000円
+通勤手当 月 上限 30,000円]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[hours]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8:30 から 17:30 まで（夜間は交代でオンコール対応、月4回程度）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[night_shifts]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holidays]]></wp:meta_key>
+			<wp:meta_value><![CDATA[115]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holiday_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4週8休のシフト制。有給休暇、夏季休暇3日、年末年始休暇3日]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification]]></wp:meta_key>
+			<wp:meta_value><![CDATA[nurse]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[准看護師も可]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[inexperienced]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deadline]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[20]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_deadline_days]]></wp:meta_key>
+			<wp:meta_value><![CDATA[90]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[介護職員（正職員・日勤のみ）]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "仕事内容を入力"} -->
+<p>デイサービスに通う方の入浴の介助、昼食の介助、レクリエーションの進行、送迎の添乗を担当します。日勤のみで、夕方には業務を終えられます。午後の手作業の時間は職員が内容を考えて準備しており、季節の飾りづくりなど、得意なことを生かせる場面があります。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[夜勤のないデイサービスで、入浴と機能訓練の時間を支える介護職員です。]]></excerpt:encoded>
+		<wp:post_id>405</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[day-care-full-time]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[job]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="employment" nicename="full-time"><![CDATA[正職員]]></category>
+		<category domain="job_type" nicename="care-worker"><![CDATA[介護職]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[302]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_unit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[monthly]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_min]]></wp:meta_key>
+			<wp:meta_value><![CDATA[205000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_max]]></wp:meta_key>
+			<wp:meta_value><![CDATA[240000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[bonus]]></wp:meta_key>
+			<wp:meta_value><![CDATA[年2回、昨年度実績 3.0か月分]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[allowances]]></wp:meta_key>
+			<wp:meta_value><![CDATA[処遇改善手当 月 15,000円
+送迎手当（運転を担当した日） 1日 500円
+通勤手当 月 上限 30,000円]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[hours]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8:30 から 17:30 まで（休憩60分）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[night_shifts]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holidays]]></wp:meta_key>
+			<wp:meta_value><![CDATA[120]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holiday_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[日曜日と、ほかに週1日のシフト休み。有給休暇、年末年始休暇]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification]]></wp:meta_key>
+			<wp:meta_value><![CDATA[initial]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[inexperienced]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deadline]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_deadline_days]]></wp:meta_key>
+			<wp:meta_value><![CDATA[75]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[看護職員（パート・週3日から）]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "仕事内容を入力"} -->
+<p>利用者の方が来所したときの血圧・体温の確認、入浴してよいかの判断、服薬の確認、ご家族とケアマネジャーへの体調の連絡を担当します。医療的なケアは少なく、利用者の方と話す時間が長い職場です。夜勤やオンコールはありません。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[デイサービスで、来所時の体調の確認と、入浴の可否の判断を担当します。]]></excerpt:encoded>
+		<wp:post_id>406</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[day-nurse-part-time]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[job]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="employment" nicename="part-time"><![CDATA[パート]]></category>
+		<category domain="job_type" nicename="nurse"><![CDATA[看護職]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[302]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_unit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[hourly]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_min]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1600]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_max]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1800]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[bonus]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[allowances]]></wp:meta_key>
+			<wp:meta_value><![CDATA[通勤手当 実費（上限 月 15,000円）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[hours]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8:30 から 17:30 までのうち 5時間以上。週3日から相談可]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[night_shifts]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holidays]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holiday_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[希望の曜日で勤務表を作成。有給休暇は勤務日数に応じて付与]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification]]></wp:meta_key>
+			<wp:meta_value><![CDATA[nurse]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[准看護師も可]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[inexperienced]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deadline]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[15]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_deadline_days]]></wp:meta_key>
+			<wp:meta_value><![CDATA[60]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[生活相談員（正職員）]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "仕事内容を入力"} -->
+<p>新しく利用を考えている方とご家族の相談を受け、見学の案内、契約の手続き、利用の計画づくりを担当します。ケアマネジャーや医療機関との連絡も相談員の仕事です。人数が少ない日は、介護の業務にも入ります。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[利用の相談から契約、ケアマネジャーとの連絡までを担当する相談員です。]]></excerpt:encoded>
+		<wp:post_id>407</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[day-counselor]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[job]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="employment" nicename="full-time"><![CDATA[正職員]]></category>
+		<category domain="job_type" nicename="counselor"><![CDATA[生活相談員]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[302]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_unit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[monthly]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_min]]></wp:meta_key>
+			<wp:meta_value><![CDATA[230000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_max]]></wp:meta_key>
+			<wp:meta_value><![CDATA[270000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[bonus]]></wp:meta_key>
+			<wp:meta_value><![CDATA[年2回、昨年度実績 3.0か月分]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[allowances]]></wp:meta_key>
+			<wp:meta_value><![CDATA[処遇改善手当 月 12,000円
+資格手当（社会福祉士） 月 10,000円
+通勤手当 月 上限 30,000円]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[hours]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8:30 から 17:30 まで（休憩60分）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[night_shifts]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holidays]]></wp:meta_key>
+			<wp:meta_value><![CDATA[120]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holiday_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[日曜日と、ほかに週1日のシフト休み。有給休暇、年末年始休暇]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification]]></wp:meta_key>
+			<wp:meta_value><![CDATA[other]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[社会福祉士、介護福祉士、または社会福祉主事任用資格]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[inexperienced]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[closed]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deadline]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[30]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_deadline_days]]></wp:meta_key>
+			<wp:meta_value><![CDATA[90]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[送迎ドライバー（パート・朝夕のみ）]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "仕事内容を入力"} -->
+<p>施設の車（8人乗り、車いすの昇降機付き）を運転し、利用者の方を自宅から施設まで送り迎えします。乗り降りの介助は添乗する介護職員と一緒に行います。送迎の道順は相談員が決めるため、毎日の道順を考える必要はありません。介護の経験がなくても始められます。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[デイサービスの利用者を、自宅と施設の間で送り迎えする仕事です。]]></excerpt:encoded>
+		<wp:post_id>408</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[day-driver]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[job]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="employment" nicename="part-time"><![CDATA[パート]]></category>
+		<category domain="job_type" nicename="driver"><![CDATA[送迎ドライバー]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[302]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_unit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[hourly]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_min]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1100]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_max]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1200]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[bonus]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[allowances]]></wp:meta_key>
+			<wp:meta_value><![CDATA[通勤手当 実費（上限 月 10,000円）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[hours]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8:00 から 10:00 まで、15:30 から 17:30 まで。朝のみ・夕方のみも可]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[night_shifts]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holidays]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holiday_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[日曜日は休み。月曜から土曜のうち、希望の曜日で勤務表を作成]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification]]></wp:meta_key>
+			<wp:meta_value><![CDATA[other]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[普通自動車免許（AT限定可）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[inexperienced]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deadline]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_deadline_days]]></wp:meta_key>
+			<wp:meta_value><![CDATA[45]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[機能訓練指導員（契約職員）]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "仕事内容を入力"} -->
+<p>利用者の方の体の状態を確かめ、3か月ごとに訓練の計画を立てます。午前は個別の訓練、午後は5〜6人の集団での体操を担当します。契約期間は1年で、更新があります。正職員への登用の実績もあります。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[利用者一人ひとりの訓練の計画を立て、小さな集団の体操を進めます。]]></excerpt:encoded>
+		<wp:post_id>409</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[day-therapist]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[job]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="employment" nicename="contract"><![CDATA[契約職員]]></category>
+		<category domain="job_type" nicename="therapist"><![CDATA[機能訓練指導員]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[302]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_unit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[monthly]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_min]]></wp:meta_key>
+			<wp:meta_value><![CDATA[240000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_max]]></wp:meta_key>
+			<wp:meta_value><![CDATA[275000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[bonus]]></wp:meta_key>
+			<wp:meta_value><![CDATA[年2回、昨年度実績 2.0か月分]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[allowances]]></wp:meta_key>
+			<wp:meta_value><![CDATA[処遇改善手当 月 8,000円
+通勤手当 月 上限 30,000円]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[hours]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8:30 から 17:30 まで（休憩60分）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[night_shifts]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holidays]]></wp:meta_key>
+			<wp:meta_value><![CDATA[120]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holiday_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[日曜日と、ほかに週1日のシフト休み。有給休暇、年末年始休暇]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification]]></wp:meta_key>
+			<wp:meta_value><![CDATA[other]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[理学療法士、作業療法士、看護師、柔道整復師のいずれか]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[inexperienced]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deadline]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[24]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_deadline_days]]></wp:meta_key>
+			<wp:meta_value><![CDATA[90]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[介護職員（契約職員・夜勤あり）]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "仕事内容を入力"} -->
+<p>認知症のある入居者の方と一緒に、買い物、調理、掃除、洗濯を行いながら、食事や入浴の介助をします。1つのユニットは9人で、日中は2〜3名、夜間は1名の職員で担当します。夜勤は月5回程度です。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[グループホームで、9人の入居者と一緒に家事をしながら暮らしを支えます。]]></excerpt:encoded>
+		<wp:post_id>410</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[ie-care-contract]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[job]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="employment" nicename="contract"><![CDATA[契約職員]]></category>
+		<category domain="job_type" nicename="care-worker"><![CDATA[介護職]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[303]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_unit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[monthly]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_min]]></wp:meta_key>
+			<wp:meta_value><![CDATA[200000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_max]]></wp:meta_key>
+			<wp:meta_value><![CDATA[232000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[bonus]]></wp:meta_key>
+			<wp:meta_value><![CDATA[年2回、昨年度実績 2.0か月分]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[allowances]]></wp:meta_key>
+			<wp:meta_value><![CDATA[夜勤手当 1回 7,000円
+処遇改善手当 月 15,000円
+通勤手当 月 上限 30,000円]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[hours]]></wp:meta_key>
+			<wp:meta_value><![CDATA[7:00 から 16:00 まで、11:00 から 20:00 まで、16:00 から翌 10:00 までの夜勤を含むシフト制]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[night_shifts]]></wp:meta_key>
+			<wp:meta_value><![CDATA[5]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holidays]]></wp:meta_key>
+			<wp:meta_value><![CDATA[110]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holiday_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4週8休のシフト制。有給休暇、年末年始休暇]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification]]></wp:meta_key>
+			<wp:meta_value><![CDATA[none]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[inexperienced]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deadline]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[40]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_deadline_days]]></wp:meta_key>
+			<wp:meta_value><![CDATA[-5]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[介護職員（正職員）]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "仕事内容を入力"} -->
+<p>入居者の方の生活の支援と、認知症の症状に合わせた関わりを担当します。献立づくりや畑の手入れなど、入居者の方が得意なことを日課に組み込んでいます。認知症介護の研修は、法人の費用で受講できます。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[少人数のグループホームで、入居者の方の「できること」を一緒に続けます。]]></excerpt:encoded>
+		<wp:post_id>411</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[ie-care-full-time]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[job]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="employment" nicename="full-time"><![CDATA[正職員]]></category>
+		<category domain="job_type" nicename="care-worker"><![CDATA[介護職]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[303]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_unit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[monthly]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_min]]></wp:meta_key>
+			<wp:meta_value><![CDATA[212000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_max]]></wp:meta_key>
+			<wp:meta_value><![CDATA[252000]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[bonus]]></wp:meta_key>
+			<wp:meta_value><![CDATA[年2回、昨年度実績 3.2か月分]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[allowances]]></wp:meta_key>
+			<wp:meta_value><![CDATA[夜勤手当 1回 7,000円
+処遇改善手当 月 18,000円
+資格手当（介護福祉士） 月 10,000円
+通勤手当 月 上限 30,000円]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[hours]]></wp:meta_key>
+			<wp:meta_value><![CDATA[7:00 から 16:00 まで、11:00 から 20:00 まで、16:00 から翌 10:00 までの夜勤を含むシフト制]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[night_shifts]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holidays]]></wp:meta_key>
+			<wp:meta_value><![CDATA[115]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holiday_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[4週8休のシフト制。有給休暇、夏季休暇3日、年末年始休暇3日]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification]]></wp:meta_key>
+			<wp:meta_value><![CDATA[initial]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[入職後の取得も可。受講費は法人が負担]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[inexperienced]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deadline]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[10]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_deadline_days]]></wp:meta_key>
+			<wp:meta_value><![CDATA[90]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[調理員（パート・早番）]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "仕事内容を入力"} -->
+<p>入居者80名分の朝食の調理と盛り付け、食器の洗浄を担当します。かむ力や飲み込む力に合わせて、きざみ食・ペースト食に整える作業があります。献立は管理栄養士が作るため、決まった手順で調理できます。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[特養の厨房で、朝食の調理と、きざみ食・ペースト食の盛り付けを担当します。]]></excerpt:encoded>
+		<wp:post_id>412</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[sato-cook-part-time]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[job]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="employment" nicename="part-time"><![CDATA[パート]]></category>
+		<category domain="job_type" nicename="cook"><![CDATA[調理員]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[301]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_unit]]></wp:meta_key>
+			<wp:meta_value><![CDATA[hourly]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_min]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1080]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[wage_max]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1180]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[bonus]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[allowances]]></wp:meta_key>
+			<wp:meta_value><![CDATA[早朝手当 1時間 100円
+通勤手当 実費（上限 月 10,000円）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[hours]]></wp:meta_key>
+			<wp:meta_value><![CDATA[6:00 から 10:00 まで。週3日から相談可]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[night_shifts]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holidays]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[holiday_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[希望の曜日で勤務表を作成。有給休暇は勤務日数に応じて付与]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification]]></wp:meta_key>
+			<wp:meta_value><![CDATA[none]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[qualification_note]]></wp:meta_key>
+			<wp:meta_value><![CDATA[調理師の資格は不要]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[inexperienced]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[open]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[deadline]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_days_ago]]></wp:meta_key>
+			<wp:meta_value><![CDATA[6]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_demo_deadline_days]]></wp:meta_key>
+			<wp:meta_value><![CDATA[45]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[早瀬 みのり]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "インタビューの本文を入力"} -->
+<p>飲食店で働いていたころから、人と話すことが好きでした。祖母の介護をきっかけにこの仕事を知り、未経験で入職しました。最初の2週間は先輩と同じ時間に出勤し、入居者の方ごとの食事の形や好みを一つずつ教わりました。夜勤を始めたのは入職から2か月後です。いまは働きながら初任者研修を修了し、次は介護福祉士を目指しています。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[「ありがとう」を、毎日まっすぐ受け取れる仕事です。]]></excerpt:encoded>
+		<wp:post_id>501</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[hayase]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[voice]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="job_type" nicename="care-worker"><![CDATA[介護職]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[301]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[joined]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2023]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[career]]></wp:meta_key>
+			<wp:meta_value><![CDATA[飲食店のホール担当（6年）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[portrait]]></wp:meta_key>
+			<wp:meta_value><![CDATA[tied]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[day]]></wp:meta_key>
+			<wp:meta_value><![CDATA[7:00 出勤、夜勤者からの申し送り
+7:30 朝食の介助、服薬の確認
+9:30 入浴の介助（午前は4名）
+11:30 昼食の準備、配膳と介助
+13:00 休憩（60分）
+14:00 ユニットでおやつづくり
+15:00 記録の入力、日勤者どうしの打ち合わせ
+16:00 遅番への申し送り、退勤]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[倉田 健]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "インタビューの本文を入力"} -->
+<p>前の職場は100床の特養で、毎日が時間との勝負でした。グループホームでは、入居者の方と一緒に台所に立ち、包丁の使い方を教わることもあります。元は大工だった方が棚を直してくれたり、昔の歌で場が和んだり。介護福祉士として、若い職員に認知症の方との関わり方を伝えるのがいまの役割です。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[9人の入居者の「昔の仕事」まで知っている。それが、ここの強みです。]]></excerpt:encoded>
+		<wp:post_id>502</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[kurata]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>2</wp:menu_order>
+		<wp:post_type><![CDATA[voice]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="job_type" nicename="care-worker"><![CDATA[介護職]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[303]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[joined]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2018]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[career]]></wp:meta_key>
+			<wp:meta_value><![CDATA[特別養護老人ホームの介護職員（5年）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[portrait]]></wp:meta_key>
+			<wp:meta_value><![CDATA[short]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[day]]></wp:meta_key>
+			<wp:meta_value><![CDATA[11:00 出勤、日勤者からの申し送り
+11:30 入居者の方と昼食づくり
+13:00 食事の介助、片付け
+14:00 近所のスーパーへ買い物
+15:30 おやつ、季節の行事の準備
+17:00 夕食の介助
+19:00 記録の入力、夜勤者への申し送り
+20:00 退勤]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[水本 さやか]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "インタビューの本文を入力"} -->
+<p>病院では、治療を終えた方を送り出すところまでが看護でした。特養では、入居者の方の暮らしがずっと続きます。食事が進まない理由を介護職員と一緒に探したり、ご家族と最期の過ごし方を話し合ったり、病院とは違う時間の流れのなかで看護をしています。夜勤がなく、子どもと夕食をとれるようになったのも大きな変化です。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[治すための看護から、暮らしを続けるための看護へ。]]></excerpt:encoded>
+		<wp:post_id>503</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[mizumoto]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[voice]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="job_type" nicename="nurse"><![CDATA[看護職]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[301]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[joined]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2021]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[career]]></wp:meta_key>
+			<wp:meta_value><![CDATA[総合病院の病棟看護師（10年）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[portrait]]></wp:meta_key>
+			<wp:meta_value><![CDATA[glass]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[day]]></wp:meta_key>
+			<wp:meta_value><![CDATA[8:30 出勤、夜間の様子の確認
+9:00 朝の服薬の確認、バイタルの測定
+10:00 嘱託医の往診の補助
+12:00 昼食時の食事の様子の観察
+13:00 休憩（60分）
+14:00 胃ろうの方の注入、たんの吸引
+16:00 ご家族への体調の連絡
+17:30 記録の入力、退勤]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title><![CDATA[石黒 洋子]]></title>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<content:encoded><![CDATA[<!-- wp:paragraph {"placeholder": "インタビューの本文を入力"} -->
+<p>学校給食で長く働いていたので、大量調理には慣れていました。驚いたのは、同じ献立でも入居者の方ごとに、きざみ・ペースト・とろみの具合が違うことです。介護職員から「今日はよく食べてくれた」と聞くと、早起きの疲れも忘れます。早番のパートなので、午前中で仕事を終えられるのも続けやすい理由です。</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[同じ献立でも、80通りの「食べやすさ」があります。]]></excerpt:encoded>
+		<wp:post_id>504</wp:post_id>
+		<wp:post_date><![CDATA[2026-01-10 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2026-01-10 01:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[ishiguro]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>4</wp:menu_order>
+		<wp:post_type><![CDATA[voice]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="job_type" nicename="cook"><![CDATA[調理員]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[facility]]></wp:meta_key>
+			<wp:meta_value><![CDATA[301]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[joined]]></wp:meta_key>
+			<wp:meta_value><![CDATA[2019]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[career]]></wp:meta_key>
+			<wp:meta_value><![CDATA[学校給食の調理員（12年）]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[portrait]]></wp:meta_key>
+			<wp:meta_value><![CDATA[cap]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[day]]></wp:meta_key>
+			<wp:meta_value><![CDATA[6:00 出勤、朝食の調理
+7:00 きざみ食・ペースト食の盛り付け
+7:30 ユニットへの配膳車の送り出し
+8:30 食器の洗浄
+9:30 翌日の朝食の下ごしらえ
+10:00 退勤]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+</channel>
+</rss>
